@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammet Ali Yavuz | Portfolio</title>
+  <meta name="description" content="Naval Architecture & Marine Engineering (ITU) | CFD | Python | Hydrodynamics" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="container header">
+    <div class="top">
+      <div>
+        <h1>Muhammet Ali Yavuz</h1>
+        <p class="subtitle">Naval Architecture & Marine Engineering — Istanbul Technical University</p>
+        <p class="tags">CFD • Ship Hydrodynamics • Python • Digital Twins</p>
+      </div>
+
+      <div class="cta">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+      <span>·</span>
+      <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+      <span>·</span>
+      <a href="#" target="_blank" rel="noreferrer">1-page CV (PDF)</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card" id="about">
+      <h2>About</h2>
+      <p>
+        I’m an ITU Naval Architecture student focused on CFD workflows, ship hydrodynamics, and engineering automation
+        with Python. I build practical tools (GUIs, post-processing scripts, automation) and run simulation studies
+        (RANS/VOF, resistance, wake, free-surface effects).
+      </p>
+    </section>
+
+    <section class="grid">
+      <section class="card">
+        <h2>Skills</h2>
+        <ul class="bullets">
+          <li><b>CFD:</b> STAR-CCM+, ANSYS Fluent, RANS, k-ω SST, VOF</li>
+          <li><b>Programming:</b> Python (pandas, openpyxl), MATLAB</li>
+          <li><b>Tools:</b> Tecplot, Rhino, Maxsurf</li>
+          <li><b>Rules/Refs:</b> ITTC, DNV (rule-based calculations)</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Highlights</h2>
+        <ul class="bullets">
+          <li>Project-based learning: simulation + scripting + reporting</li>
+          <li>Clean, reproducible workflows (data → plots → report)</li>
+          <li>Comfortable with debugging and performance tuning</li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="card" id="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <div class="project-head">
+          <h3>Alicat Flow Controller GUI (Python)</h3>
+          <div class="pill">Desktop App</div>
+        </div>
+        <p class="muted">
+          Tkinter/ttkbootstrap GUI to control/monitor flow controller, logging to Excel, responsive layout and UX polish.
+        </p>
+        <div class="proj-links">
+          <a href="#" target="_blank" rel="noreferrer">Repo</a>
+          <a href="#" target="_blank" rel="noreferrer">Demo / Screens</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <h3>Resistance Prediction (Holtrop–Mennen in Python)</h3>
+          <div class="pill">Hydrodynamics</div>
+        </div>
+        <p class="muted">
+          Implementation of the method to generate total resistance–speed curves, organized calculations and outputs.
+        </p>
+        <div class="proj-links">
+          <a href="#" target="_blank" rel="noreferrer">Code</a>
+          <a href="#" target="_blank" rel="noreferrer">Report</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <h3>KCS CFD Post-Processing</h3>
+          <div class="pill">CFD</div>
+        </div>
+        <p class="muted">
+          Wake fraction visualization and 2D heatmaps, contouring, and consistent plotting pipeline with Python/Tecplot.
+        </p>
+        <div class="proj-links">
+          <a href="#" target="_blank" rel="noreferrer">Plots</a>
+          <a href="#" target="_blank" rel="noreferrer">Notes</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="card" id="contact">
+      <h2>Contact</h2>
+      <p class="muted">Put your main contact points here.</p>
+      <ul class="bullets">
+        <li><b>Email:</b> yourmail@example.com</li>
+        <li><b>LinkedIn:</b> (link)</li>
+        <li><b>GitHub:</b> (link)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <span>© <span id="y"></span> Muhammet Ali Yavuz</span>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
