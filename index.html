@@ -11,24 +11,34 @@
 <body>
   <header class="container header">
     <div class="top">
-      <div>
+      <div class="identity">
         <h1>Muhammet Ali Yavuz</h1>
         <p class="subtitle">Naval Architecture & Marine Engineering — Istanbul Technical University</p>
         <p class="tags">CFD • Ship Hydrodynamics • Python • Digital Twins</p>
+
+        <div class="quick">
+          <span class="badge">Open to internship / research</span>
+          <span class="dot">•</span>
+          <span class="muted">Istanbul, Türkiye</span>
+        </div>
       </div>
 
       <div class="cta">
         <a class="btn" href="#projects">Projects</a>
+        <a class="btn ghost" href="#skills">Skills</a>
         <a class="btn ghost" href="#contact">Contact</a>
       </div>
     </div>
 
     <div class="links">
+      <!-- Replace # with your real links -->
       <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
       <span>·</span>
-      <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://github.com/muhali-itu" target="_blank" rel="noreferrer">GitHub</a>
       <span>·</span>
-      <a href="#" target="_blank" rel="noreferrer">1-page CV (PDF)</a>
+      <a href="cv.pdf" target="_blank" rel="noreferrer">1-page CV (PDF)</a>
+      <span>·</span>
+      <a href="mailto:yourmail@example.com">Email</a>
     </div>
   </header>
 
@@ -36,29 +46,29 @@
     <section class="card" id="about">
       <h2>About</h2>
       <p>
-        I’m an ITU Naval Architecture student focused on CFD workflows, ship hydrodynamics, and engineering automation
-        with Python. I build practical tools (GUIs, post-processing scripts, automation) and run simulation studies
-        (RANS/VOF, resistance, wake, free-surface effects).
+        I’m a Naval Architecture student at Istanbul Technical University, focused on CFD workflows, ship hydrodynamics,
+        and engineering automation with Python. I build practical tools (GUIs, post-processing scripts, automation)
+        and run simulation studies (RANS/VOF, resistance, wake, free-surface effects).
       </p>
     </section>
 
-    <section class="grid">
+    <section class="grid" id="skills">
       <section class="card">
         <h2>Skills</h2>
         <ul class="bullets">
           <li><b>CFD:</b> STAR-CCM+, ANSYS Fluent, RANS, k-ω SST, VOF</li>
           <li><b>Programming:</b> Python (pandas, openpyxl), MATLAB</li>
-          <li><b>Tools:</b> Tecplot, Rhino, Maxsurf</li>
+          <li><b>Post/Tools:</b> Tecplot, Rhino, Maxsurf</li>
           <li><b>Rules/Refs:</b> ITTC, DNV (rule-based calculations)</li>
         </ul>
       </section>
 
       <section class="card">
-        <h2>Highlights</h2>
+        <h2>What I do</h2>
         <ul class="bullets">
-          <li>Project-based learning: simulation + scripting + reporting</li>
-          <li>Clean, reproducible workflows (data → plots → report)</li>
-          <li>Comfortable with debugging and performance tuning</li>
+          <li>Turn messy data into clean plots + reports</li>
+          <li>Build repeatable pipelines (inputs → run → post-process)</li>
+          <li>Debug performance issues and improve UX for tools</li>
         </ul>
       </section>
     </section>
@@ -72,11 +82,17 @@
           <div class="pill">Desktop App</div>
         </div>
         <p class="muted">
-          Tkinter/ttkbootstrap GUI to control/monitor flow controller, logging to Excel, responsive layout and UX polish.
+          GUI for controlling/monitoring an Alicat flow controller with real-time polling, logging, and Excel outputs.
+          Focus on responsive layout and clean UX.
         </p>
+        <ul class="mini">
+          <li>Serial comms (RS-232/USB) + robust reconnect logic</li>
+          <li>Live metrics + logging pipeline</li>
+          <li>Excel export with formatting</li>
+        </ul>
         <div class="proj-links">
           <a href="#" target="_blank" rel="noreferrer">Repo</a>
-          <a href="#" target="_blank" rel="noreferrer">Demo / Screens</a>
+          <a href="#" target="_blank" rel="noreferrer">Screens</a>
         </div>
       </div>
 
@@ -86,8 +102,13 @@
           <div class="pill">Hydrodynamics</div>
         </div>
         <p class="muted">
-          Implementation of the method to generate total resistance–speed curves, organized calculations and outputs.
+          Implementation to generate total resistance–speed curves from hull parameters, producing consistent outputs
+          for comparison and reporting.
         </p>
+        <ul class="mini">
+          <li>Organized calculations and clear intermediate values</li>
+          <li>Automated plotting and tabulated results</li>
+        </ul>
         <div class="proj-links">
           <a href="#" target="_blank" rel="noreferrer">Code</a>
           <a href="#" target="_blank" rel="noreferrer">Report</a>
@@ -102,6 +123,10 @@
         <p class="muted">
           Wake fraction visualization and 2D heatmaps, contouring, and consistent plotting pipeline with Python/Tecplot.
         </p>
+        <ul class="mini">
+          <li>2D heatmaps and contour plots for wake distribution</li>
+          <li>Reusable plotting scripts for fast iteration</li>
+        </ul>
         <div class="proj-links">
           <a href="#" target="_blank" rel="noreferrer">Plots</a>
           <a href="#" target="_blank" rel="noreferrer">Notes</a>
@@ -112,12 +137,14 @@
 
     <section class="card" id="contact">
       <h2>Contact</h2>
-      <p class="muted">Put your main contact points here.</p>
       <ul class="bullets">
-        <li><b>Email:</b> yourmail@example.com</li>
-        <li><b>LinkedIn:</b> (link)</li>
-        <li><b>GitHub:</b> (link)</li>
+        <li><b>Email:</b> <a href="mailto:yourmail@example.com">yourmail@example.com</a></li>
+        <li><b>LinkedIn:</b> <a href="#" target="_blank" rel="noreferrer">Add your LinkedIn URL</a></li>
+        <li><b>GitHub:</b> <a href="https://github.com/muhali-itu" target="_blank" rel="noreferrer">github.com/muhali-itu</a></li>
       </ul>
+      <p class="muted">
+        Tip: Upload your PDF as <b>cv.pdf</b> in the repo root so the “1-page CV” button works.
+      </p>
     </section>
   </main>
 
