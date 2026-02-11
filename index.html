@@ -1,159 +1,90 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muhammet Ali Yavuz | Portfolio</title>
-  <meta name="description" content="Naval Architecture & Marine Engineering (ITU) | CFD | Python | Hydrodynamics" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Muhammet Ali Yavuz</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
-
 <body>
-  <header class="container header">
-    <div class="top">
-      <div class="identity">
-        <h1>Muhammet Ali Yavuz</h1>
-        <p class="subtitle">Naval Architecture & Marine Engineering — Istanbul Technical University</p>
-        <p class="tags">CFD • Ship Hydrodynamics • Python • Digital Twins</p>
 
-        <div class="quick">
-          <span class="badge">Open to internship / research</span>
-          <span class="dot">•</span>
-          <span class="muted">Istanbul, Türkiye</span>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <span class="dot"></span>
+      <span>Muhammet Ali Yavuz</span>
+    </a>
+
+    <nav class="links">
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="kicker">Naval Architect • CFD Engineer • Future Engineering Leader</div>
+    <h1 class="h1">Building high-impact maritime engineering solutions.</h1>
+    <p class="sub">
+      I work on hydrodynamics and CFD-based performance analysis, mesh optimization, and engineering automation.
+      My goal is to grow into technical leadership roles where deep engineering meets real-world execution.
+    </p>
+
+    <div class="btns">
+      <a class="btn primary" href="projects.html">View Projects</a>
+      <a class="btn" href="contact.html">Get in Touch</a>
+      <!-- later: add CV PDF -->
+      <!-- <a class="btn" href="assets/Muhammet-Ali-Yavuz-CV.pdf">Download CV</a> -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid two">
+      <div class="card">
+        <div class="kicker">Focus</div>
+        <div class="title">CFD & Hydrodynamics</div>
+        <p class="p">URANS workflows, mesh quality, prism layers, resistance prediction, verification mindset.</p>
+        <div class="badges">
+          <span class="badge">STAR-CCM+</span><span class="badge">Turbulence</span><span class="badge">Meshing</span>
         </div>
       </div>
 
-      <div class="cta">
-        <a class="btn" href="#projects">Projects</a>
-        <a class="btn ghost" href="#skills">Skills</a>
-        <a class="btn ghost" href="#contact">Contact</a>
+      <div class="card">
+        <div class="kicker">Also</div>
+        <div class="title">Engineering Automation</div>
+        <p class="p">Python tools that improve testing, logging, and repeatability (GUI + data pipelines).</p>
+        <div class="badges">
+          <span class="badge">Python</span><span class="badge">Data logging</span><span class="badge">GUI</span>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="links">
-      <!-- Replace # with your real links -->
-      <a href="https://www.linkedin.com/in/yavuzitu" target="_blank" rel="noreferrer">LinkedIn</a>
-      <span>·</span>
-      <a href="https://github.com/muhali-itu" target="_blank" rel="noreferrer">GitHub</a>
-      <span>·</span>
-      <a href="cv.pdf" target="_blank" rel="noreferrer">1-page CV (PDF)</a>
-      <span>·</span>
-      <a href="mailto:yourmail@example.com">Email</a>
+  <section class="section">
+    <div class="card">
+      <div class="kicker">Quick Links</div>
+      <div class="title">Where to go next</div>
+      <p class="p">
+        → See <a href="projects.html" style="color:var(--accent)">Projects</a> for the proof.  
+        → Check <a href="skills.html" style="color:var(--accent)">Skills</a> for the full stack.  
+        → Use <a href="contact.html" style="color:var(--accent)">Contact</a> for collaboration.
+      </p>
     </div>
-  </header>
+  </section>
+</main>
 
-  <main class="container">
-    <section class="card" id="about">
-      <h2>About</h2>
-      <p>
-        I’m a Naval Architecture student at Istanbul Technical University, focused on CFD workflows, ship hydrodynamics,
-        and engineering automation with Python. I build practical tools (GUIs, post-processing scripts, automation)
-        and run simulation studies (RANS/VOF, resistance, wake, free-surface effects).
-      </p>
-    </section>
+<footer class="footer">
+  <div class="container small">
+    © <span id="y"></span> Muhammet Ali Yavuz — Built with GitHub Pages.
+  </div>
+</footer>
 
-    <section class="grid" id="skills">
-      <section class="card">
-        <h2>Skills</h2>
-        <ul class="bullets">
-          <li><b>CFD:</b> STAR-CCM+, ANSYS Fluent, RANS, k-ω SST, VOF</li>
-          <li><b>Programming:</b> Python (pandas, openpyxl), MATLAB</li>
-          <li><b>Post/Tools:</b> Tecplot, Rhino, Maxsurf</li>
-          <li><b>Rules/Refs:</b> ITTC, DNV (rule-based calculations)</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h2>What I do</h2>
-        <ul class="bullets">
-          <li>Turn messy data into clean plots + reports</li>
-          <li>Build repeatable pipelines (inputs → run → post-process)</li>
-          <li>Debug performance issues and improve UX for tools</li>
-        </ul>
-      </section>
-    </section>
-
-    <section class="card" id="projects">
-      <h2>Projects</h2>
-
-      <div class="project">
-        <div class="project-head">
-          <h3>Alicat Flow Controller GUI (Python)</h3>
-          <div class="pill">Desktop App</div>
-        </div>
-        <p class="muted">
-          GUI for controlling/monitoring an Alicat flow controller with real-time polling, logging, and Excel outputs.
-          Focus on responsive layout and clean UX.
-        </p>
-        <ul class="mini">
-          <li>Serial comms (RS-232/USB) + robust reconnect logic</li>
-          <li>Live metrics + logging pipeline</li>
-          <li>Excel export with formatting</li>
-        </ul>
-        <div class="proj-links">
-          <a href="#" target="_blank" rel="noreferrer">Repo</a>
-          <a href="#" target="_blank" rel="noreferrer">Screens</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-head">
-          <h3>Resistance Prediction (Holtrop–Mennen in Python)</h3>
-          <div class="pill">Hydrodynamics</div>
-        </div>
-        <p class="muted">
-          Implementation to generate total resistance–speed curves from hull parameters, producing consistent outputs
-          for comparison and reporting.
-        </p>
-        <ul class="mini">
-          <li>Organized calculations and clear intermediate values</li>
-          <li>Automated plotting and tabulated results</li>
-        </ul>
-        <div class="proj-links">
-          <a href="#" target="_blank" rel="noreferrer">Code</a>
-          <a href="#" target="_blank" rel="noreferrer">Report</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-head">
-          <h3>KCS CFD Post-Processing</h3>
-          <div class="pill">CFD</div>
-        </div>
-        <p class="muted">
-          Wake fraction visualization and 2D heatmaps, contouring, and consistent plotting pipeline with Python/Tecplot.
-        </p>
-        <ul class="mini">
-          <li>2D heatmaps and contour plots for wake distribution</li>
-          <li>Reusable plotting scripts for fast iteration</li>
-        </ul>
-        <div class="proj-links">
-          <a href="#" target="_blank" rel="noreferrer">Plots</a>
-          <a href="#" target="_blank" rel="noreferrer">Notes</a>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="card" id="contact">
-      <h2>Contact</h2>
-      <ul class="bullets">
-        <li><b>Email:</b> <a href="mailto:yourmail@example.com">yourmail@example.com</a></li>
-        <li><b>LinkedIn:</b>    <a href="https://www.linkedin.com/in/yavuzitu" target="_blank" rel="noreferrer">     linkedin.com/in/yavuzitu   </a> </li>
-        <li><b>GitHub:</b> <a href="https://github.com/muhali-itu" target="_blank" rel="noreferrer">github.com/muhali-itu</a></li>
-      </ul>
-      <p class="muted">
-        Tip: Upload your PDF as <b>cv.pdf</b> in the repo root so the “1-page CV” button works.
-      </p>
-    </section>
-  </main>
-
-  <footer class="container footer">
-    <span>© <span id="y"></span> Muhammet Ali Yavuz</span>
-  </footer>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
