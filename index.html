@@ -1,90 +1,423 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Muhammet Ali Yavuz</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammet Ali Yavuz | Naval Architect • CFD</title>
+  <meta name="description" content="Naval Architecture portfolio — CFD, hydrodynamics, engineering automation, and ship design." />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
-
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="index.html">
-      <span class="dot"></span>
-      <span>Muhammet Ali Yavuz</span>
-    </a>
-
-    <nav class="links">
-      <a class="active" href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="skills.html">Skills</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- Background: subtle “wave grid” + moving particles handled in CSS/JS -->
+  <div class="bg">
+    <div class="bg-grid"></div>
+    <div class="bg-waves" aria-hidden="true"></div>
+    <canvas id="stars" aria-hidden="true"></canvas>
   </div>
-</header>
 
-<main class="container">
-  <section class="hero">
-    <div class="kicker">Naval Architect • CFD Engineer • Future Engineering Leader</div>
-    <h1 class="h1">Building high-impact maritime engineering solutions.</h1>
-    <p class="sub">
-      I work on hydrodynamics and CFD-based performance analysis, mesh optimization, and engineering automation.
-      My goal is to grow into technical leadership roles where deep engineering meets real-world execution.
-    </p>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Muhammet Ali Yavuz</span>
+          <span class="brand-tag">Naval • CFD • Systems</span>
+        </span>
+      </a>
 
-    <div class="btns">
-      <a class="btn primary" href="projects.html">View Projects</a>
-      <a class="btn" href="contact.html">Get in Touch</a>
-      <!-- later: add CV PDF -->
-      <!-- <a class="btn" href="assets/Muhammet-Ali-Yavuz-CV.pdf">Download CV</a> -->
+      <nav class="links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#work">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#writing">Notes</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle theme">
+          <span class="theme-dot" aria-hidden="true"></span>
+        </button>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </section>
 
-  <section class="section">
-    <div class="grid two">
-      <div class="card">
-        <div class="kicker">Focus</div>
-        <div class="title">CFD & Hydrodynamics</div>
-        <p class="p">URANS workflows, mesh quality, prism layers, resistance prediction, verification mindset.</p>
-        <div class="badges">
-          <span class="badge">STAR-CCM+</span><span class="badge">Turbulence</span><span class="badge">Meshing</span>
+    <div class="mobile" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#writing">Notes</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero-left">
+        <div class="kicker reveal">
+          <span class="pill">Naval Architecture</span>
+          <span class="pill">CFD & Hydrodynamics</span>
+          <span class="pill">Engineering Automation</span>
+        </div>
+
+        <h1 class="h1 reveal">
+          I build <span class="accent">high-performance</span> maritime engineering solutions —
+          from <span class="accent">CAD → mesh → converged results</span>.
+        </h1>
+
+        <p class="sub reveal">
+          I work on hydrodynamics and CFD workflows (mesh strategy, prism layers, resistance prediction),
+          and I also build engineering tools in Python that improve repeatability and speed.
+          My goal is to grow into technical leadership roles where deep engineering meets real-world execution.
+        </p>
+
+        <div class="cta reveal">
+          <a class="btn primary" href="#work">View Projects</a>
+          <a class="btn" href="#contact">Get in Touch</a>
+          <!-- Later: add PDF to assets and enable this -->
+          <!-- <a class="btn ghost" href="assets/Muhammet-Ali-Yavuz-CV.pdf">Download CV</a> -->
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat">
+            <div class="stat-num">10M+</div>
+            <div class="stat-label">cells in production cases</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">CFD</div>
+            <div class="stat-label">URANS workflows, mesh, verification</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">Python</div>
+            <div class="stat-label">automation & test tooling</div>
+          </div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="kicker">Also</div>
-        <div class="title">Engineering Automation</div>
-        <p class="p">Python tools that improve testing, logging, and repeatability (GUI + data pipelines).</p>
-        <div class="badges">
-          <span class="badge">Python</span><span class="badge">Data logging</span><span class="badge">GUI</span>
+      <div class="hero-right reveal">
+        <div class="card glass radar">
+          <div class="radar-top">
+            <div class="radar-title">Hydrodynamics Radar</div>
+            <div class="radar-sub">signal: stable convergence</div>
+          </div>
+          <div class="radar-screen" aria-hidden="true">
+            <div class="sweep"></div>
+            <div class="blip b1"></div>
+            <div class="blip b2"></div>
+            <div class="blip b3"></div>
+            <div class="ring r1"></div>
+            <div class="ring r2"></div>
+            <div class="ring r3"></div>
+            <div class="ring r4"></div>
+          </div>
+          <div class="radar-bottom">
+            <div class="chip">Mesh quality</div>
+            <div class="chip">Prism layers</div>
+            <div class="chip">Resistance</div>
+            <div class="chip">VOF</div>
+          </div>
+        </div>
+
+        <div class="card glass mini">
+          <div class="mini-row">
+            <div class="mini-title">Currently</div>
+            <div class="mini-value">CFD & portfolio build</div>
+          </div>
+          <div class="mini-row">
+            <div class="mini-title">Location</div>
+            <div class="mini-value">Istanbul • Europe</div>
+          </div>
+          <div class="mini-row">
+            <div class="mini-title">Open to</div>
+            <div class="mini-value">Internships • Projects • Teams</div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container">
+      <div class="section-head reveal">
+        <h2 class="h2">About</h2>
+        <p class="lead">
+          Naval Architecture student at Istanbul Technical University. I like problems where physics,
+          computation, and engineering decisions meet — and I document everything cleanly.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <div class="card reveal">
+          <div class="card-kicker">Positioning</div>
+          <div class="card-title">Technical depth, leadership mindset.</div>
+          <p class="card-text">
+            I aim to become a technical leader: the person who understands the details (CFD, structures,
+            hydrodynamics) and can still drive execution, communicate clearly, and ship results.
+          </p>
+          <div class="badges">
+            <span class="badge">Systems thinking</span>
+            <span class="badge">Documentation</span>
+            <span class="badge">Decision-making</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-kicker">What I deliver</div>
+          <div class="card-title">Reusable workflows & clean outputs.</div>
+          <p class="card-text">
+            Not only “a simulation ran.” I deliver mesh strategy, verification notes, plots, reproducible scripts,
+            and a clear story (what changed, why it matters).
+          </p>
+          <div class="badges">
+            <span class="badge">CFD workflow</span>
+            <span class="badge">Automation</span>
+            <span class="badge">Results storytelling</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="work" class="section container">
+      <div class="section-head reveal">
+        <h2 class="h2">Projects</h2>
+        <p class="lead">A selection of work. Click a card for details (same page).</p>
+      </div>
+
+      <div class="filters reveal" role="tablist" aria-label="Project filters">
+        <button class="filter active" data-filter="all" type="button">All</button>
+        <button class="filter" data-filter="cfd" type="button">CFD</button>
+        <button class="filter" data-filter="mesh" type="button">Meshing</button>
+        <button class="filter" data-filter="python" type="button">Python</button>
+        <button class="filter" data-filter="design" type="button">Design</button>
+      </div>
+
+      <div class="grid three projects" id="projectGrid">
+        <!-- PROJECT 1 -->
+        <article class="card proj reveal" data-tags="cfd mesh">
+          <div class="proj-top">
+            <div class="proj-title">KCS Resistance CFD Workflow</div>
+            <div class="proj-meta">URANS • Verification mindset</div>
+          </div>
+          <p class="card-text">
+            Domain setup, prism layer strategy, convergence tracking, drag monitoring, and sanity checks.
+          </p>
+          <div class="badges">
+            <span class="badge">STAR-CCM+</span><span class="badge">y+</span><span class="badge">Drag</span>
+          </div>
+          <button class="proj-open" type="button"
+            data-modal="m1">Open details</button>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="card proj reveal" data-tags="mesh cfd">
+          <div class="proj-top">
+            <div class="proj-title">Prism Layer Stability Playbook</div>
+            <div class="proj-meta">Curvature • Min thickness • Growth</div>
+          </div>
+          <p class="card-text">
+            Practical rules to prevent prism collapse around leading edges, fillets, and tight radii.
+          </p>
+          <div class="badges">
+            <span class="badge">Quality</span><span class="badge">Curvature</span><span class="badge">Control</span>
+          </div>
+          <button class="proj-open" type="button"
+            data-modal="m2">Open details</button>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="card proj reveal" data-tags="python">
+          <div class="proj-top">
+            <div class="proj-title">Engineering Control GUI (Alicat)</div>
+            <div class="proj-meta">Serial • Logging • Automation</div>
+          </div>
+          <p class="card-text">
+            Python GUI to control and log mass flow controller data reliably; Excel-driven test matrices.
+          </p>
+          <div class="badges">
+            <span class="badge">Python</span><span class="badge">Async</span><span class="badge">Excel</span>
+          </div>
+          <button class="proj-open" type="button"
+            data-modal="m3">Open details</button>
+        </article>
+
+        <!-- PROJECT 4 -->
+        <article class="card proj reveal" data-tags="design">
+          <div class="proj-top">
+            <div class="proj-title">Vessel Concept & Scantling Studies</div>
+            <div class="proj-meta">Rules • Structure • Weight</div>
+          </div>
+          <p class="card-text">
+            Structural reasoning, classification-rule aware thinking, and clean design documentation.
+          </p>
+          <div class="badges">
+            <span class="badge">DNV</span><span class="badge">Structure</span><span class="badge">GA</span>
+          </div>
+          <button class="proj-open" type="button"
+            data-modal="m4">Open details</button>
+        </article>
+
+        <!-- PROJECT 5 -->
+        <article class="card proj reveal" data-tags="cfd">
+          <div class="proj-top">
+            <div class="proj-title">Free-Surface (VOF) Study Notes</div>
+            <div class="proj-meta">Time-step • Stability • Waves</div>
+          </div>
+          <p class="card-text">
+            Choosing Δt, monitoring surface deformation, and preventing non-physical oscillations.
+          </p>
+          <div class="badges">
+            <span class="badge">VOF</span><span class="badge">URANS</span><span class="badge">Δt</span>
+          </div>
+          <button class="proj-open" type="button"
+            data-modal="m5">Open details</button>
+        </article>
+
+        <!-- PROJECT 6 -->
+        <article class="card proj reveal" data-tags="python mesh">
+          <div class="proj-top">
+            <div class="proj-title">Post-processing & Plot Automation</div>
+            <div class="proj-meta">Repeatable plots • Reports</div>
+          </div>
+          <p class="card-text">
+            Scripts to generate consistent plots (residuals, forces, y+ maps) and export clean tables.
+          </p>
+          <div class="badges">
+            <span class="badge">Python</span><span class="badge">Pandas</span><span class="badge">Automation</span>
+          </div>
+          <button class="proj-open" type="button"
+            data-modal="m6">Open details</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section container">
+      <div class="section-head reveal">
+        <h2 class="h2">Skills</h2>
+        <p class="lead">Tooling + methods. This is the “stack” behind the results.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card reveal">
+          <div class="card-title">CFD & Hydrodynamics</div>
+          <div class="skill-list">
+            <div class="skill"><span>URANS workflows</span><span class="lvl">Advanced</span></div>
+            <div class="skill"><span>Meshing strategy (prism layers)</span><span class="lvl">Advanced</span></div>
+            <div class="skill"><span>Resistance / force monitoring</span><span class="lvl">Advanced</span></div>
+            <div class="skill"><span>Free-surface (VOF) basics</span><span class="lvl">Intermediate</span></div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-title">Engineering Automation</div>
+          <div class="skill-list">
+            <div class="skill"><span>Python (automation, data, GUIs)</span><span class="lvl">Advanced</span></div>
+            <div class="skill"><span>Excel pipelines (openpyxl / pandas)</span><span class="lvl">Advanced</span></div>
+            <div class="skill"><span>Packaging (PyInstaller)</span><span class="lvl">Intermediate</span></div>
+            <div class="skill"><span>Reporting workflows</span><span class="lvl">Advanced</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-title">Software & Tools</div>
+        <div class="badges big">
+          <span class="badge">STAR-CCM+</span>
+          <span class="badge">ANSYS (concept)</span>
+          <span class="badge">Rhino / CAD</span>
+          <span class="badge">Tecplot</span>
+          <span class="badge">Git / GitHub</span>
+          <span class="badge">DNV rules mindset</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section id="writing" class="section container">
+      <div class="section-head reveal">
+        <h2 class="h2">Technical Notes</h2>
+        <p class="lead">Short, practical explanations — like a playbook. (We’ll expand this later.)</p>
+      </div>
+
+      <div class="grid three">
+        <div class="card reveal note">
+          <div class="card-title">Why negative drag happens early</div>
+          <p class="card-text">Initial transients, reference direction, under-developed pressure field, and stabilization effects.</p>
+          <a class="note-link" href="#work">→ related projects</a>
+        </div>
+        <div class="card reveal note">
+          <div class="card-title">Prism layers fail at leading edges</div>
+          <p class="card-text">Too many layers in too little space, min thickness limits, curvature & surface mesh mismatch.</p>
+          <a class="note-link" href="#work">→ related projects</a>
+        </div>
+        <div class="card reveal note">
+          <div class="card-title">How to look at y+</div>
+          <p class="card-text">Don’t chase one number—use maps + area-weighted stats by surface group and flow regime.</p>
+          <a class="note-link" href="#skills">→ skills</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container">
+      <div class="section-head reveal">
+        <h2 class="h2">Contact</h2>
+        <p class="lead">If you want to collaborate, recruit, or just talk engineering — reach out.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card reveal">
+          <div class="card-title">Quick message</div>
+          <p class="card-text">
+            Email: <a class="inline" href="mailto:muhammetaliyavuz@itu.edu.tr">muhammetaliyavuz@itu.edu.tr</a><br/>
+            LinkedIn: <a class="inline" href="#" id="liLink">add your link</a><br/>
+            GitHub: <a class="inline" href="https://github.com/muhammetaliyavuz-itu">muhammetaliyavuz-itu</a>
+          </p>
+          <div class="badges">
+            <span class="badge">Open to internships</span>
+            <span class="badge">Project collaboration</span>
+            <span class="badge">CFD discussions</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-title">Leadership statement</div>
+          <p class="card-text">
+            I’m building toward roles where I can lead engineering execution:
+            defining the problem, choosing the right tools, validating results, and delivering impact.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#work">See Projects</a>
+            <a class="btn" href="#top">Back to top</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
+    <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-backdrop" data-close="1"></div>
+      <div class="modal-box" role="document">
+        <button class="modal-x" type="button" data-close="1" aria-label="Close">✕</button>
+        <div class="modal-content" id="modalContent"></div>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <section class="section">
-    <div class="card">
-      <div class="kicker">Quick Links</div>
-      <div class="title">Where to go next</div>
-      <p class="p">
-        → See <a href="projects.html" style="color:var(--accent)">Projects</a> for the proof.  
-        → Check <a href="skills.html" style="color:var(--accent)">Skills</a> for the full stack.  
-        → Use <a href="contact.html" style="color:var(--accent)">Contact</a> for collaboration.
-      </p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="foot-left">
+        <div class="foot-title">Built like a ship: stable, efficient, and ready to scale.</div>
+        <div class="foot-sub">© <span id="year"></span> Muhammet Ali Yavuz • GitHub Pages</div>
+      </div>
+      <div class="foot-right">
+        <a href="#top">Top</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer class="footer">
-  <div class="container small">
-    © <span id="y"></span> Muhammet Ali Yavuz — Built with GitHub Pages.
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
