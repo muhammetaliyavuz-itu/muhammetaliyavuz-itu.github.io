@@ -1,852 +1,495 @@
-:root {
-    --navy-deep: #001f3f;
-    --navy-primary: #0077B6;
-    --cyan-bright: #00B4D8;
-    --cyan-light: #90E0EF;
-    --orange-accent: #FF6B35;
-    --gray-dark: #1a1a2e;
-    --gray-light: #f8f9fa;
-    --white: #ffffff;
-    --gradient-ocean: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 50%, var(--cyan-bright) 100%);
-    --gradient-wave: linear-gradient(90deg, rgba(0,119,182,0.1) 0%, rgba(0,180,216,0.2) 50%, rgba(0,119,182,0.1) 100%);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--gray-dark);
-    background: var(--white);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* Navigation */
-.nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0, 119, 182, 0.1);
-    transition: all 0.3s ease;
-}
-
-.nav-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--navy-primary);
-    text-decoration: none;
-    letter-spacing: 2px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--gray-dark);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--navy-primary);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--orange-accent);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* Hero Section */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding: 6rem 2rem 4rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.wave-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    animation: wave-flow 15s ease-in-out infinite;
-}
-
-@keyframes wave-flow {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-50px); }
-}
-
-.wave {
-    width: 100%;
-    height: auto;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    max-width: 900px;
-}
-
-.hero-label {
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    background: rgba(0, 119, 182, 0.1);
-    border: 1px solid var(--navy-primary);
-    border-radius: 50px;
-    color: var(--navy-primary);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    margin-bottom: 2rem;
-    animation: fade-in-up 0.8s ease 0.2s both;
-}
-
-.hero-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-}
-
-.title-line {
-    display: block;
-    animation: fade-in-up 0.8s ease both;
-}
-
-.title-line:first-child {
-    animation-delay: 0.3s;
-    color: var(--gray-dark);
-}
-
-.title-line.highlight {
-    animation-delay: 0.4s;
-    background: var(--gradient-ocean);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem;
-    color: var(--navy-primary);
-    margin-bottom: 3rem;
-    font-weight: 300;
-    animation: fade-in-up 0.8s ease 0.5s both;
-}
-
-.hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    margin-bottom: 3rem;
-    animation: fade-in-up 0.8s ease 0.6s both;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat-number {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--navy-primary);
-    line-height: 1;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: var(--gray-dark);
-    opacity: 0.7;
-    margin-top: 0.5rem;
-}
-
-.cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2.5rem;
-    background: var(--navy-primary);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    animation: fade-in-up 0.8s ease 0.7s both;
-}
-
-.cta-button:hover {
-    background: var(--orange-accent);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-}
-
-.arrow {
-    transition: transform 0.3s ease;
-}
-
-.cta-button:hover .arrow {
-    transform: translateX(5px);
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    animation: fade-in 1s ease 1s both;
-}
-
-.mouse {
-    width: 24px;
-    height: 40px;
-    border: 2px solid var(--navy-primary);
-    border-radius: 15px;
-    position: relative;
-}
-
-.wheel {
-    width: 3px;
-    height: 8px;
-    background: var(--navy-primary);
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-    animation: scroll-wheel 1.5s ease infinite;
-}
-
-@keyframes scroll-wheel {
-    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(12px); }
-}
-
-.scroll-text {
-    font-size: 0.75rem;
-    color: var(--navy-primary);
-    opacity: 0.7;
-}
-
-/* Animations */
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Section Styling */
-section {
-    padding: 6rem 0;
-}
-
-.section-header {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-.section-number {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
-    color: var(--cyan-light);
-    opacity: 0.3;
-}
-
-.section-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--navy-deep);
-}
-
-/* About Section */
-.about {
-    background: var(--white);
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
-    color: var(--gray-dark);
-    opacity: 0.9;
-}
-
-.about-text .lead {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--navy-primary);
-    line-height: 1.8;
-}
-
-.about-skills {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.skill-category h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    color: var(--navy-primary);
-    margin-bottom: 1rem;
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tag {
-    padding: 0.5rem 1rem;
-    background: rgba(0, 119, 182, 0.1);
-    border: 1px solid rgba(0, 119, 182, 0.2);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    color: var(--navy-primary);
-    font-weight: 500;
-}
-
-/* Experience Section */
-.experience {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-}
-
-.timeline {
-    position: relative;
-    padding-left: 3rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--navy-primary), var(--cyan-bright));
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 3rem;
-    animation: fade-in-up 0.6s ease both;
-}
-
-.timeline-marker {
-    position: absolute;
-    left: -3.5rem;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background: var(--orange-accent);
-    border: 3px solid var(--white);
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.2);
-}
-
-.timeline-content {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timeline-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 119, 182, 0.15);
-}
-
-.timeline-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-}
-
-.timeline-header h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.3rem;
-    color: var(--navy-deep);
-    margin-bottom: 0.25rem;
-}
-
-.company {
-    color: var(--navy-primary);
-    font-weight: 500;
-}
-
-.timeline-date {
-    color: var(--gray-dark);
-    opacity: 0.7;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-.vessels {
-    margin: 1rem 0;
-    padding: 0.75rem 1rem;
-    background: rgba(0, 119, 182, 0.05);
-    border-left: 3px solid var(--navy-primary);
-    font-size: 0.9rem;
-}
-
-.timeline-details {
-    list-style: none;
-    margin-top: 1rem;
-}
-
-.timeline-details li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
-    color: var(--gray-dark);
-    opacity: 0.9;
-}
-
-.timeline-details li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--orange-accent);
-}
-
-/* Projects Section */
-.projects {
-    background: var(--white);
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fade-in-up 0.6s ease both;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 119, 182, 0.2);
-}
-
-.project-image {
-    height: 200px;
-    background: var(--gradient-ocean);
-    position: relative;
-    overflow: hidden;
-}
-
-.project-overlay {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-}
-
-.project-type {
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--navy-primary);
-}
-
-.project-content {
-    padding: 2rem;
-}
-
-.project-content h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.3rem;
-    color: var(--navy-deep);
-    margin-bottom: 1rem;
-}
-
-.project-content p {
-    font-size: 0.95rem;
-    color: var(--gray-dark);
-    opacity: 0.9;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.project-tech span {
-    padding: 0.4rem 0.8rem;
-    background: rgba(0, 119, 182, 0.1);
-    border-radius: 15px;
-    font-size: 0.75rem;
-    color: var(--navy-primary);
-    font-weight: 500;
-}
-
-.project-stats {
-    display: flex;
-    gap: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(0, 119, 182, 0.1);
-}
-
-.stat-mini {
-    font-size: 0.85rem;
-    color: var(--gray-dark);
-}
-
-.stat-mini strong {
-    color: var(--orange-accent);
-    font-family: 'Orbitron', sans-serif;
-}
-
-/* Education Section */
-.education {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-}
-
-.education-card {
-    background: var(--white);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-}
-
-.education-header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 2rem;
-    align-items: start;
-    margin-bottom: 1.5rem;
-}
-
-.education-icon {
-    font-size: 3rem;
-}
-
-.education-header h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.3rem;
-    color: var(--navy-deep);
-    margin-bottom: 0.5rem;
-}
-
-.education-school {
-    color: var(--navy-primary);
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-}
-
-.education-date {
-    color: var(--gray-dark);
-    opacity: 0.7;
-    font-size: 0.9rem;
-}
-
-.education-gpa {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    color: var(--orange-accent);
-    font-weight: 700;
-}
-
-.education-activities {
-    padding: 1.5rem;
-    background: rgba(0, 119, 182, 0.05);
-    border-radius: 8px;
-}
-
-.education-activities strong {
-    color: var(--navy-primary);
-    display: block;
-    margin-bottom: 0.75rem;
-}
-
-.education-activities ul {
-    list-style: none;
-}
-
-.education-activities li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--gray-dark);
-}
-
-.education-activities li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--orange-accent);
-    font-weight: bold;
-}
-
-/* Contact Section */
-.contact {
-    background: var(--navy-deep);
-    color: var(--white);
-}
-
-.contact .section-number {
-    color: rgba(255, 255, 255, 0.1);
-}
-
-.contact .section-title {
-    color: var(--white);
-}
-
-.contact-content {
-    max-width: 800px;
-}
-
-.contact-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 3rem;
-    opacity: 0.9;
-}
-
-.contact-methods {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.contact-method {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    text-decoration: none;
-    color: var(--white);
-    transition: all 0.3s ease;
-}
-
-.contact-method:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-5px);
-}
-
-.contact-method svg {
-    flex-shrink: 0;
-    color: var(--orange-accent);
-}
-
-.method-label {
-    font-size: 0.85rem;
-    opacity: 0.7;
-    margin-bottom: 0.25rem;
-}
-
-.method-value {
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-/* Footer */
-.footer {
-    background: var(--gray-dark);
-    padding: 2rem 0;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-text {
-    color: var(--white);
-    opacity: 0.7;
-    font-size: 0.9rem;
-}
-
-.footer-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.footer-links a {
-    color: var(--white);
-    text-decoration: none;
-    opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-.footer-links a:hover {
-    opacity: 1;
-    color: var(--orange-accent);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-links a {
-        font-size: 0.85rem;
-    }
-
-    .hero {
-        padding: 5rem 1rem 3rem;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-stats {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .section-number {
-        font-size: 2.5rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .timeline {
-        padding-left: 2rem;
-    }
-
-    .timeline-marker {
-        left: -2.4rem;
-    }
-
-    .timeline-header {
-        flex-direction: column;
-    }
-
-    .timeline-date {
-        margin-top: 0.5rem;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .education-header {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .contact-methods {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammet Ali Yavuz - Naval Architecture & Ocean Engineering Portfolio">
+    <meta name="author" content="Muhammet Ali Yavuz">
+    <title>Muhammet Ali Yavuz - Naval Architecture Engineer</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">[</span>
+                MAY
+                <span class="logo-bracket">]</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about" data-text="About">About</a>
+                <a href="#experience" data-text="Experience">Experience</a>
+                <a href="#projects" data-text="Projects">Projects</a>
+                <a href="#contact" data-text="Contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="grid-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-label">
+                <span class="label-dot"></span>
+                Naval Architecture & Ocean Engineering
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Muhammet Ali</span>
+                <span class="title-line highlight">Yavuz</span>
+            </h1>
+            <div class="hero-roles">
+                <span class="role">CFD Engineer</span>
+                <span class="separator">•</span>
+                <span class="role">Hydrodynamics</span>
+                <span class="separator">•</span>
+                <span class="role">Ship Design</span>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number" data-value="3.26">3.26</div>
+                    <div class="stat-label">GPA / 4.0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-value="5">5+</div>
+                    <div class="stat-label">CFD Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-value="0.5">0.5%</div>
+                    <div class="stat-label">Deviation</div>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View Projects</span>
+                    <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <a href="docs/CV_Muhammet_Ali_Yavuz.pdf" class="btn btn-secondary" download>
+                    <span>Download CV</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 3V13M10 13L6 9M10 13L14 9M3 17H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <div>
+                    <h2 class="section-title">Profile</h2>
+                    <p class="section-subtitle">Technical foundation meets practical experience</p>
+                </div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lead">
+                        Final-year Naval Architecture student at Istanbul Technical University with a strong theoretical foundation in hydrodynamics, structural mechanics, and marine systems.
+                    </p>
+                    <p>
+                        My engineering profile is built on the integration of theory, design reasoning, computational analysis, and hands-on field experience. I have worked in shipyard environments, participated in experimental studies, and conducted high-accuracy numerical investigations, developing the ability to approach problems from both practical and analytical perspectives.
+                    </p>
+                    <p>
+                        I combine coding, engineering analysis, and design methodology with solid theoretical understanding to deliver technically grounded and system-oriented solutions.
+                    </p>
+                </div>
+                <div class="about-skills">
+                    <div class="skill-group">
+                        <h3 class="skill-title">
+                            <span class="skill-icon">⚡</span>
+                            CFD & Analysis
+                        </h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">ANSYS Fluent</span>
+                            <span class="skill-tag">STAR-CCM+</span>
+                            <span class="skill-tag">Maxsurf</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">MATLAB</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-title">
+                            <span class="skill-icon">🎯</span>
+                            Design & Modeling
+                        </h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">SolidWorks</span>
+                            <span class="skill-tag">Rhinoceros 3D</span>
+                            <span class="skill-tag">AutoCAD</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 class="skill-title">
+                            <span class="skill-icon">💻</span>
+                            Programming
+                        </h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Arduino</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <div>
+                    <h2 class="section-title">Experience</h2>
+                    <p class="section-subtitle">From shipyards to CFD simulations</p>
+                </div>
+            </div>
+            <div class="timeline">
+                <!-- ITUKAT -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>CFD Engineer</h3>
+                                <span class="company">ITUKAT</span>
+                            </div>
+                            <div class="experience-period">
+                                <span class="period-badge">Current</span>
+                                <span class="period-text">Aug 2025 - Present</span>
+                            </div>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Prepared geometries of underwater attack systems for CFD analysis and ran simulations using ANSYS Fluent</li>
+                            <li>Developed User-Defined Functions (UDFs) in C for ANSYS simulations</li>
+                            <li>Automated extraction of ANSYS report outputs into Excel using Python</li>
+                            <li>Participated in towing tank experiment for aircraft carrier appendage resistance</li>
+                            <li>Contributed to scaled model construction of TF-2000-class destroyer</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span>ANSYS</span>
+                            <span>C</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Besiktas Shipyard -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>Production Engineer</h3>
+                                <span class="company">Besiktas Shipyard</span>
+                            </div>
+                            <div class="experience-period">
+                                <span class="period-text">Aug 2024 - Sep 2024</span>
+                            </div>
+                        </div>
+                        <div class="vessels-info">
+                            <strong>Vessels:</strong> TENDUA (IMO: 9299862), MARAN POSEIDON (IMO: 9402926), ALRAR (IMO: 9284013)
+                        </div>
+                        <ul class="experience-list">
+                            <li>Assisted in inspection and maintenance of main engines, hydraulic systems, and generators</li>
+                            <li>Involved in air compressor overhaul including testing and repair of cooling systems</li>
+                            <li>Maintained marine pumps including ballast water treatment and cargo line testing</li>
+                            <li>Gained hands-on experience with welding, pipe installation, and surface coating techniques</li>
+                            <li>Performed quality checks on mechanical systems including valves, piping, and hydraulic components</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MENSA Makina -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>Mechanical Subcontractor</h3>
+                                <span class="company">MENSA MAKİNA</span>
+                            </div>
+                            <div class="experience-period">
+                                <span class="period-text">Aug 2023 - Sep 2023</span>
+                            </div>
+                        </div>
+                        <ul class="experience-list">
+                            <li>Designed and installed ventilation system for sheet metal processing line</li>
+                            <li>Prepared and bent sheet metal pipes, mounted flanges for ventilation ducts</li>
+                            <li>Designed and manufactured air filter system for ventilation unit</li>
+                            <li>Conducted system testing and performance validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <div>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">High-fidelity CFD analysis & naval architecture</p>
+                </div>
+            </div>
+            <div class="projects-grid">
+                <!-- DARPA SUBOFF Project -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- Buraya images/projects/suboff.jpg ekleyeceksin -->
+                        <img src="images/projects/suboff-streamlines.jpg" alt="DARPA SUBOFF Streamlines" onerror="this.style.display='none'">
+                        <div class="project-overlay">
+                            <span class="project-badge">CFD Analysis</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">DARPA SUBOFF Appendage Resistance</h3>
+                        <p class="project-description">
+                            High-fidelity CFD simulations achieving 0.5% deviation from experimental data. Analyzed bare hull, hull+rudder, and hull+sail+rudder configurations across multiple speeds using STAR-CCM+.
+                        </p>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-label">Deviation</span>
+                                <span class="highlight-value">0.5%</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-label">Configurations</span>
+                                <span class="highlight-value">3</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-label">Speed Range</span>
+                                <span class="highlight-value">3-9.15 m/s</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span>STAR-CCM+</span>
+                            <span>RANS</span>
+                            <span>ITTC Guidelines</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KCS Hull Project -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- Buraya images/projects/kcs.jpg ekleyeceksin -->
+                        <img src="images/projects/kcs-wave.jpg" alt="KCS Wave Pattern" onerror="this.style.display='none'">
+                        <div class="project-overlay">
+                            <span class="project-badge">CFD Analysis</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">KCS Hull Resistance Prediction</h3>
+                        <p class="project-description">
+                            Container ship CFD simulation with free surface modeling. Conducted unsteady RANS simulations with mesh refinement studies and comprehensive wave pattern analysis using VOF method.
+                        </p>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-label">Deviation</span>
+                                <span class="highlight-value">0.75%</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-label">Mesh Levels</span>
+                                <span class="highlight-value">3</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-label">Method</span>
+                                <span class="highlight-value">Unsteady RANS</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span>STAR-CCM+</span>
+                            <span>VOF</span>
+                            <span>Free Surface</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offshore Platform Project -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- Buraya images/projects/offshore.jpg ekleyeceksin -->
+                        <img src="images/projects/offshore-pressure.jpg" alt="Offshore Platform Pressure" onerror="this.style.display='none'">
+                        <div class="project-overlay">
+                            <span class="project-badge">Design & Analysis</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Offshore Platform Design</h3>
+                        <p class="project-description">
+                            Complete offshore platform modeling including resistance and stability analysis. Integrated 3D modeling in Rhinoceros, hydrodynamic analysis in Maxsurf, and CFD validation in ANSYS Fluent.
+                        </p>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-label">Dimensions</span>
+                                <span class="highlight-value">70×40 m</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-label">Derrick Height</span>
+                                <span class="highlight-value">25 m</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-label">Analysis Type</span>
+                                <span class="highlight-value">Multi-tool</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span>Rhinoceros 3D</span>
+                            <span>Maxsurf</span>
+                            <span>ANSYS Fluent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <div>
+                    <h2 class="section-title">Education</h2>
+                    <p class="section-subtitle">Academic foundation in naval architecture</p>
+                </div>
+            </div>
+            <div class="education-card">
+                <div class="education-header">
+                    <div class="education-icon">🎓</div>
+                    <div class="education-info">
+                        <h3>Bachelor of Science</h3>
+                        <p class="education-major">Shipbuilding and Ocean Engineering</p>
+                        <p class="education-school">Istanbul Technical University</p>
+                        <p class="education-period">Sep 2021 - Present (Expected Jun 2026)</p>
+                    </div>
+                    <div class="education-gpa">
+                        <div class="gpa-number">3.26</div>
+                        <div class="gpa-label">/ 4.0</div>
+                    </div>
+                </div>
+                <div class="education-activities">
+                    <div class="activity-item">
+                        <span class="activity-icon">⚓</span>
+                        <span>ITU Shipbuilding Engineering Club</span>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">🛡️</span>
+                        <span>ITU SAVTEK (Defense Technologies)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <div>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Open to opportunities in maritime engineering</p>
+                </div>
+            </div>
+            <div class="contact-content">
+                <p class="contact-intro">
+                    I'm currently open to opportunities in maritime engineering, CFD analysis, and ship design. 
+                    Let's discuss how I can contribute to your projects.
+                </p>
+                <div class="contact-grid">
+                    <a href="mailto:yavuzmu21@itu.edu.tr" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">yavuzmu21@itu.edu.tr</span>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com/in/yavuzitu" target="_blank" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">in/yavuzitu</span>
+                        </div>
+                    </a>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">+90 551 092 9667</span>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Istanbul, Turkey</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <span class="logo-bracket">[</span>MAY<span class="logo-bracket">]</span>
+                    </div>
+                    <p class="footer-tagline">Engineering the future of maritime technology</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/muhammetaliyavuz-itu" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/yavuzitu" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Muhammet Ali Yavuz. All rights reserved.</p>
+                <p>Last updated: February 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
