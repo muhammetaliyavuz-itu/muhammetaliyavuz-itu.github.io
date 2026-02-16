@@ -1,363 +1,384 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Muhammet Ali Yavuz | Naval Architect</title>
-    <meta
-      name="description"
-      content="Final-year Naval Architecture student at ITU. Engineering portfolio combining theory, design reasoning, coding, and hands-on field experience."
-    />
-    <link rel="stylesheet" href="styles.css" />
-
-    <!-- Chart.js for interactive charts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-
-    <!-- Simple icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body>
-    <header class="topbar">
-      <a class="brand" href="#top">MAY</a>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#domains">Domains</a>
-        <a href="#work">Selected Work</a>
-        <a href="#charts">Interactive</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="btn btn-primary" href="files/Muhammet_Ali_Yavuz_Resume.pdf" target="_blank" rel="noreferrer">
-        Download CV
-      </a>
-    </header>
-
-    <main id="top">
-      <!-- HERO -->
-      <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-grid">
-          <div class="hero-text">
-            <p class="kicker">Final-Year BSc • Istanbul Technical University</p>
-            <h1>Muhammet Ali Yavuz</h1>
-            <p class="subtitle">
-              Naval Architect • Engineering Analysis • Design Reasoning • Coding
-            </p>
-
-            <p class="summary">
-              Final-year Naval Architecture student at Istanbul Technical University with a strong theoretical foundation in hydrodynamics,
-              structural mechanics, and marine systems.
-              My engineering profile is built on the integration of theory, design reasoning, computational analysis,
-              and hands-on field experience. I have worked in shipyard environments, participated in experimental studies,
-              and conducted high-accuracy numerical investigations, developing the ability to approach problems from both practical
-              and analytical perspectives. I combine coding, engineering analysis, and design methodology with solid theoretical understanding
-              to deliver technically grounded and system-oriented solutions.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-secondary" href="#work">View Selected Work</a>
-              <a class="btn btn-ghost" href="#charts">See Interactive Results</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammet Ali Yavuz - Naval Architecture Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">MAY</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
-
-            <div class="chips">
-              <span class="chip">Hydrodynamics</span>
-              <span class="chip">Marine Systems</span>
-              <span class="chip">Structures</span>
-              <span class="chip">Python / C</span>
-              <span class="chip">Experimental Exposure</span>
-            </div>
-          </div>
-
-          <div class="hero-card">
-            <img
-              class="hero-img"
-              src="assets/images/hero.jpg"
-              alt="Engineering visual"
-              loading="lazy"
-            />
-            <div class="hero-card-meta">
-              <div>
-                <p class="meta-title">Focus</p>
-                <p class="meta-text">Engineering judgement + validated analysis</p>
-              </div>
-              <div>
-                <p class="meta-title">Location</p>
-                <p class="meta-text">Istanbul, Türkiye</p>
-              </div>
-            </div>
-          </div>
         </div>
+    </nav>
 
-        <div class="wave"></div>
-      </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="wave-container">
+                <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="rgba(0, 119, 182, 0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-label">Naval Architecture & Ocean Engineering</div>
+            <h1 class="hero-title">
+                <span class="title-line">Muhammet Ali</span>
+                <span class="title-line highlight">Yavuz</span>
+            </h1>
+            <p class="hero-subtitle">CFD Engineer · Hydrodynamics Specialist · Ship Designer</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">3.26</div>
+                    <div class="stat-label">GPA</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">0.5%</div>
+                    <div class="stat-label">CFD Deviation</div>
+                </div>
+            </div>
+            <a href="#about" class="cta-button">
+                Explore Work
+                <svg class="arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="scroll-text">Scroll to explore</div>
+        </div>
+    </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="section">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-          <div class="section-head">
-            <h2>About</h2>
-            <p>
-              A profile that blends academic rigor, field experience, and engineering implementation.
-            </p>
-          </div>
-
-          <div class="grid-2">
-            <div class="card">
-              <h3>What I bring</h3>
-              <ul class="list">
-                <li><b>Strong theoretical base</b> (hydrodynamics, structures, marine systems)</li>
-                <li><b>Field internships</b> with mechanical systems inspection & maintenance exposure</li>
-                <li><b>Experimental exposure</b> including towing-tank participation</li>
-                <li><b>Coding + analysis</b> to automate, validate, and communicate engineering results</li>
-              </ul>
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Profile</h2>
             </div>
-
-            <div class="card">
-              <h3>Quick facts</h3>
-              <div class="facts">
-                <div class="fact">
-                  <p class="fact-k">Education</p>
-                  <p class="fact-v">BSc Shipbuilding & Ocean Engineering, ITU</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        Final-year Naval Architecture student at Istanbul Technical University with a strong theoretical foundation in hydrodynamics, structural mechanics, and marine systems.
+                    </p>
+                    <p>
+                        My engineering profile is built on the integration of theory, design reasoning, computational analysis, and hands-on field experience. I have worked in shipyard environments, participated in experimental studies, and conducted high-accuracy numerical investigations, developing the ability to approach problems from both practical and analytical perspectives.
+                    </p>
+                    <p>
+                        I combine coding, engineering analysis, and design methodology with solid theoretical understanding to deliver technically grounded and system-oriented solutions.
+                    </p>
                 </div>
-                <div class="fact">
-                  <p class="fact-k">Core tools</p>
-                  <p class="fact-v">STAR-CCM+, ANSYS Fluent, Rhino, Maxsurf</p>
+                <div class="about-skills">
+                    <div class="skill-category">
+                        <h3>CFD & Analysis</h3>
+                        <div class="skill-tags">
+                            <span class="tag">ANSYS Fluent</span>
+                            <span class="tag">STAR-CCM+</span>
+                            <span class="tag">Maxsurf</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">MATLAB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Design & Modeling</h3>
+                        <div class="skill-tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">Rhinoceros 3D</span>
+                            <span class="tag">AutoCAD</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <div class="skill-tags">
+                            <span class="tag">C/C++</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Arduino</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="fact">
-                  <p class="fact-k">Programming</p>
-                  <p class="fact-v">Python, C (UDF), MATLAB</p>
-                </div>
-                <div class="fact">
-                  <p class="fact-k">Languages</p>
-                  <p class="fact-v">English (Advanced), German (Intermediate)</p>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- DOMAINS -->
-      <section id="domains" class="section">
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
         <div class="container">
-          <div class="section-head">
-            <h2>Engineering Domains</h2>
-            <p>Capability-driven, not tool-driven.</p>
-          </div>
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" style="animation-delay: 0.1s">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>CFD Engineer</h3>
+                                <div class="company">ITUKAT</div>
+                            </div>
+                            <div class="timeline-date">Aug 2025 - Present</div>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Prepared geometries of underwater attack systems for CFD analysis</li>
+                            <li>Developed User-Defined Functions (UDFs) in C for ANSYS simulations</li>
+                            <li>Automated ANSYS report extraction using Python</li>
+                            <li>Participated in towing tank experiments for aircraft carrier appendage resistance</li>
+                            <li>Contributed to scaled model construction of TF-2000-class destroyer</li>
+                        </ul>
+                    </div>
+                </div>
 
-          <div class="grid-3">
-            <div class="card">
-              <h3>Hydrodynamics</h3>
-              <p class="muted">Resistance prediction, appendage interaction, free-surface effects, validation thinking.</p>
-              <div class="tags">
-                <span class="tag">Resistance</span><span class="tag">Appendages</span><span class="tag">Free surface</span>
-              </div>
+                <div class="timeline-item" style="animation-delay: 0.2s">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Production Engineer</h3>
+                                <div class="company">Besiktas Shipyard</div>
+                            </div>
+                            <div class="timeline-date">Aug 2024 - Sep 2024</div>
+                        </div>
+                        <div class="vessels">
+                            <strong>Vessels:</strong> TENDUA (IMO: 9299862), MARAN POSEIDON (IMO: 9402926), ALRAR (IMO: 9284013)
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Assisted in inspection and maintenance of main engines, hydraulic systems, and generators</li>
+                            <li>Involved in air compressor overhaul and cooling system repair</li>
+                            <li>Maintained marine pumps including ballast water treatment systems</li>
+                            <li>Gained hands-on experience with welding, pipe installation, and surface coating</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item" style="animation-delay: 0.3s">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Mechanical Subcontractor</h3>
+                                <div class="company">MENSA MAKİNA</div>
+                            </div>
+                            <div class="timeline-date">Aug 2023 - Sep 2023</div>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Designed and installed ventilation system for sheet metal processing line</li>
+                            <li>Manufactured air filter system for ventilation unit</li>
+                            <li>Conducted system testing and performance validation</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-              <h3>Structures & Systems</h3>
-              <p class="muted">Practical understanding from shipyard work: engines, compressors, pumps, piping, QA.</p>
-              <div class="tags">
-                <span class="tag">Machinery</span><span class="tag">Piping</span><span class="tag">QA</span>
-              </div>
-            </div>
-            <div class="card">
-              <h3>Coding + Engineering Analysis</h3>
-              <p class="muted">Automation, post-processing, report extraction, engineering computation and presentation.</p>
-              <div class="tags">
-                <span class="tag">Python</span><span class="tag">C</span><span class="tag">Automation</span>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- WORK -->
-      <section id="work" class="section">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
-          <div class="section-head">
-            <h2>Selected Engineering Work</h2>
-            <p>Pick 3–4 strongest. Clean, high-impact presentation.</p>
-          </div>
-
-          <div class="work-grid">
-            <article class="work card">
-              <div class="work-media">
-                <img src="assets/images/suboff_streamlines.jpg" alt="DARPA SUBOFF streamlines" loading="lazy" />
-              </div>
-              <div class="work-body">
-                <h3>DARPA SUBOFF — Appendage Resistance Study</h3>
-                <p class="muted">
-                  Configuration-based resistance decomposition and flow-field evaluation for AFF1/AFF3/AFF8.
-                </p>
-                <ul class="list compact">
-                  <li>Part-by-part contributions (hull/sail/rudder)</li>
-                  <li>Mesh sensitivity + uncertainty mindset</li>
-                  <li>y⁺ evaluation & boundary-layer strategy</li>
-                </ul>
-                <div class="work-links">
-                  <button class="btn btn-ghost" data-open="modal-suboff">Details</button>
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" style="animation-delay: 0.1s">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-type">CFD Analysis</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>DARPA SUBOFF Appendage Resistance</h3>
+                        <p>High-fidelity CFD simulations achieving 0.5% deviation from experimental data. Analyzed bare hull, hull+rudder, and hull+sail+rudder configurations across multiple speeds.</p>
+                        <div class="project-tech">
+                            <span>STAR-CCM+</span>
+                            <span>RANS</span>
+                            <span>ITTC Guidelines</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-mini">
+                                <strong>0.5%</strong> Deviation
+                            </div>
+                            <div class="stat-mini">
+                                <strong>3</strong> Configurations
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </article>
 
-            <article class="work card">
-              <div class="work-media">
-                <img src="assets/images/kcs_wave.jpg" alt="KCS free surface wave pattern" loading="lazy" />
-              </div>
-              <div class="work-body">
-                <h3>KCS Hull + Rudder — Validation-Oriented Resistance</h3>
-                <p class="muted">
-                  Free-surface simulations with mesh & time-step studies and comparison against experimental benchmarks.
-                </p>
-                <ul class="list compact">
-                  <li>Pressure vs viscous contributions</li>
-                  <li>Time-step sensitivity thinking</li>
-                  <li>Clear reporting & presentation</li>
-                </ul>
-                <div class="work-links">
-                  <button class="btn btn-ghost" data-open="modal-kcs">Details</button>
+                <div class="project-card" style="animation-delay: 0.2s">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-type">CFD Analysis</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>KCS Hull Resistance Prediction</h3>
+                        <p>Container ship CFD simulation with free surface modeling. Conducted unsteady RANS simulations with mesh refinement studies and comprehensive wave pattern analysis.</p>
+                        <div class="project-tech">
+                            <span>STAR-CCM+</span>
+                            <span>VOF</span>
+                            <span>Unsteady RANS</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-mini">
+                                <strong>0.75%</strong> Deviation
+                            </div>
+                            <div class="stat-mini">
+                                <strong>3</strong> Mesh Levels
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </article>
 
-            <article class="work card">
-              <div class="work-media">
-                <img src="assets/images/resistance_curve.jpg" alt="Resistance vs speed curve" loading="lazy" />
-              </div>
-              <div class="work-body">
-                <h3>Offshore Platform — Analysis & Design Workflow</h3>
-                <p class="muted">
-                  Geometry modeling + resistance/stability reasoning + flow analysis to support engineering decisions.
-                </p>
-                <ul class="list compact">
-                  <li>Rhino modeling + Maxsurf analysis</li>
-                  <li>Engineering interpretation of results</li>
-                  <li>Communication with plots & visuals</li>
-                </ul>
-                <div class="work-links">
-                  <button class="btn btn-ghost" data-open="modal-platform">Details</button>
+                <div class="project-card" style="animation-delay: 0.3s">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-type">Design & Analysis</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Offshore Platform Design</h3>
+                        <p>Complete offshore platform modeling including resistance and stability analysis. Integrated 3D modeling, hydrodynamic analysis, and CFD validation.</p>
+                        <div class="project-tech">
+                            <span>Rhinoceros 3D</span>
+                            <span>Maxsurf</span>
+                            <span>ANSYS Fluent</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-mini">
+                                <strong>70×40</strong> m Platform
+                            </div>
+                            <div class="stat-mini">
+                                <strong>25m</strong> Derrick
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </article>
-          </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <!-- INTERACTIVE CHARTS -->
-      <section id="charts" class="section">
+    <!-- Education Section -->
+    <section id="education" class="education">
         <div class="container">
-          <div class="section-head">
-            <h2>Interactive Results</h2>
-            <p>Hover, zoom, compare. Replace sample data with your real values anytime.</p>
-          </div>
-
-          <div class="grid-2">
-            <div class="card">
-              <div class="card-head">
-                <h3>Resistance vs Speed (Configurations)</h3>
-                <div class="toolbar">
-                  <button class="btn btn-small btn-ghost" id="toggleAff">Toggle AFF3</button>
-                  <button class="btn btn-small btn-ghost" id="randomize">Demo: Randomize</button>
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-content">
+                <div class="education-card">
+                    <div class="education-header">
+                        <div class="education-icon">🎓</div>
+                        <div>
+                            <h3>Bachelor of Science in Shipbuilding and Ocean Engineering</h3>
+                            <div class="education-school">Istanbul Technical University</div>
+                            <div class="education-date">Sep 2021 - Present</div>
+                        </div>
+                        <div class="education-gpa">GPA: 3.26/4.0</div>
+                    </div>
+                    <div class="education-activities">
+                        <strong>Activities:</strong>
+                        <ul>
+                            <li>ITU Shipbuilding Engineering Club</li>
+                            <li>ITU SAVTEK (Defense Technologies)</li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-              <canvas id="chartResistance" height="180"></canvas>
-              <p class="hint">Tip: Replace arrays in <code>main.js</code> with your ITTC/exp values.</p>
             </div>
+        </div>
+    </section>
 
-            <div class="card">
-              <div class="card-head">
-                <h3>Mesh/Time-Step Sensitivity (Example)</h3>
-                <div class="toolbar">
-                  <button class="btn btn-small btn-ghost" id="switchMetric">Switch Metric</button>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-text">
+                        I'm currently open to opportunities in maritime engineering, CFD analysis, and ship design. 
+                        Let's discuss how I can contribute to your projects.
+                    </p>
+                    <div class="contact-methods">
+                        <a href="mailto:yavuzmu21@itu.edu.tr" class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <div>
+                                <div class="method-label">Email</div>
+                                <div class="method-value">yavuzmu21@itu.edu.tr</div>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/yavuzitu" target="_blank" class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            <div>
+                                <div class="method-label">LinkedIn</div>
+                                <div class="method-value">in/yavuzitu</div>
+                            </div>
+                        </a>
+                        <div class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <div>
+                                <div class="method-label">Phone</div>
+                                <div class="method-value">+90 551 092 9667</div>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <div>
+                                <div class="method-label">Location</div>
+                                <div class="method-value">Istanbul, Turkey</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <canvas id="chartSensitivity" height="180"></canvas>
-              <p class="hint">Use this to show decision-making (not just plots).</p>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="section">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-          <div class="section-head">
-            <h2>Contact</h2>
-            <p>Keep it simple and professional.</p>
-          </div>
-
-          <div class="card contact">
-            <div>
-              <p class="contact-k">Email</p>
-              <a class="contact-v" href="mailto:yavuzmu21@itu.edu.tr">yavuzmu21@itu.edu.tr</a>
+            <div class="footer-content">
+                <div class="footer-text">
+                    © 2025 Muhammet Ali Yavuz. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/muhammetaliyavuz-itu" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/yavuzitu" target="_blank">LinkedIn</a>
+                </div>
             </div>
-            <div>
-              <p class="contact-k">LinkedIn</p>
-              <a class="contact-v" href="https://www.linkedin.com/in/yavuzitu" target="_blank" rel="noreferrer">
-                in/yavuzitu
-              </a>
-            </div>
-            <div>
-              <p class="contact-k">Location</p>
-              <p class="contact-v">Istanbul, Türkiye</p>
-            </div>
-          </div>
         </div>
-      </section>
+    </footer>
 
-      <footer class="footer">
-        <div class="container">
-          <p>© <span id="year"></span> Muhammet Ali Yavuz — Engineering Portfolio</p>
-        </div>
-      </footer>
-    </main>
-
-    <!-- MODALS -->
-    <div class="modal" id="modal-suboff" aria-hidden="true">
-      <div class="modal-card">
-        <button class="modal-close" data-close>×</button>
-        <h3>DARPA SUBOFF — What’s emphasized here</h3>
-        <p class="muted">
-          The key is engineering judgement: how configuration changes affect resistance, what you validated,
-          and what decisions you made based on results.
-        </p>
-        <ul class="list">
-          <li>Configuration comparison: AFF1 vs AFF3 vs AFF8</li>
-          <li>Contribution breakdown (hull/sail/rudder)</li>
-          <li>Quality checks: y⁺, near-wall strategy, sensitivity mindset</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="modal" id="modal-kcs" aria-hidden="true">
-      <div class="modal-card">
-        <button class="modal-close" data-close>×</button>
-        <h3>KCS Hull + Rudder — What’s emphasized here</h3>
-        <ul class="list">
-          <li>Validation-based reporting (comparison logic)</li>
-          <li>Mesh + time-step sensitivity (decision reasoning)</li>
-          <li>Free-surface understanding (wave pattern interpretation)</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="modal" id="modal-platform" aria-hidden="true">
-      <div class="modal-card">
-        <button class="modal-close" data-close>×</button>
-        <h3>Offshore Platform — What’s emphasized here</h3>
-        <ul class="list">
-          <li>Geometry → analysis → engineering conclusion pipeline</li>
-          <li>Resistance curve interpretation for towing/powering context</li>
-          <li>Communicating results with clean plots and visuals</li>
-        </ul>
-      </div>
-    </div>
-
-    <script src="main.js"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
