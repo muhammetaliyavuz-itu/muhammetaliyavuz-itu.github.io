@@ -43,4 +43,42 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', next);
 });
 
+// Scroll to Top Button
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+});
+
+// Sonar submarine tracking
+(function () {
+    const sub = document.getElementById('submarine');
+    const blip = document.getElementById('sonarBlip');
+    if (!sub || !blip) return;
+
+    function trackSub() {
+        const rect = sub.getBoundingClientRect();
+        const vw = window.innerWidth;
+        const subCenterX = rect.left + rect.width / 2;
+        const subCenterY = rect.top + rect.height / 2;
+
+        // Submarine is in the right 40% of screen
+        if (subCenterX > vw * 0.55 && subCenterX < vw * 0.95) {
+            // Map submarine position to sonar coordinates
+            const sonarEl = document.querySelector('.sonar-wrapper');
+            if (sonarEl) {
+                const sonarRect = sonarEl.getBoundingClientRect();
+                const relX = ((subCenterX - sonarRect.left) / sonarRect.width) * 100;
+                const relY = ((subCenterY - sonarRect.top) / sonarRect.height) * 100;
+                blip.style.left = Math.max(10, Math.min(90, relX)) + '%';
+                blip.style.top = Math.max(10, Math.min(90, relY)) + '%';
+                blip.classList.add('active');
+            }
+        } else {
+            blip.classList.remove('active');
+        }
+        requestAnimationFrame(trackSub);
+    }
+    requestAnimationFrame(trackSub);
+})();
+
 console.log('%c[MAY] 🚢', 'color:#06b6d4;font-weight:bold');

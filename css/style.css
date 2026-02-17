@@ -172,33 +172,17 @@ body {
     overflow: hidden
 }
 
-/* SONAR ANIMATION (Attached to Submarine) */
+/* SONAR - Fixed on right side of hero */
 .sonar-wrapper {
     position: absolute;
+    right: 8%;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 280px;
     pointer-events: none;
-    z-index: -1;
-    /* Behind submarine */
-    opacity: 0;
-    animation: sonarFadeIn 6s ease-in-out infinite;
-}
-
-@keyframes sonarFadeIn {
-
-    0%,
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
-
-    50% {
-        opacity: 0.8;
-        transform: translate(-50%, -50%) scale(1);
-    }
+    z-index: 0;
+    opacity: 0.5;
 }
 
 .sonar-grid {
@@ -230,30 +214,20 @@ body {
     animation: sonarSpin 4s linear infinite;
 }
 
-.sonar-obj {
+.sonar-blip {
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     background: var(--cy);
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--cy);
+    box-shadow: 0 0 12px var(--cy), 0 0 24px rgba(34, 211, 238, 0.3);
     opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.sonar-obj.s1 {
-    top: 30%;
-    left: 60%;
-    animation: ping 4s linear infinite 1s;
-}
-
-.sonar-obj.s2 {
-    top: 70%;
-    left: 40%;
-    animation: ping 4s linear infinite 2.5s;
-}
-
-.sonar-sub {
-    display: none;
+.sonar-blip.active {
+    opacity: 1;
+    animation: blipPulse 1s ease-out;
 }
 
 @keyframes sonarSpin {
@@ -266,77 +240,70 @@ body {
     }
 }
 
-@keyframes ping {
+@keyframes blipPulse {
     0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-
-    10% {
+        transform: scale(2);
         opacity: 1;
-        transform: scale(1.5);
     }
 
     100% {
-        opacity: 0;
-        transform: scale(0.5);
+        transform: scale(1);
+        opacity: 0.8;
     }
 }
 
-/* FISH ANIMATION UPDATES */
+/* SUBMARINE - swims across */
+.submarine-wrapper {
+    position: absolute;
+    top: 40%;
+    left: -300px;
+    width: 220px;
+    opacity: 0.35;
+    animation: swim 40s linear infinite;
+    z-index: 1;
+}
+
+.submarine {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.3));
+}
+
+/* FISH - swim individually with color */
+.fish-school {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
 .fish {
     position: absolute;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.6));
-    transition: all var(--tr);
-    z-index: 3;
+    filter: drop-shadow(0 0 6px currentColor);
 }
 
 .f1 {
-    width: 60px;
+    width: 55px;
     top: 25%;
-    left: -100px;
-    animation: swim 22s linear infinite;
+    left: -80px;
+    animation: swim 20s linear infinite;
     color: #22d3ee;
-    /* Cyan */
 }
 
 .f2 {
-    width: 45px;
-    top: 65%;
-    left: -100px;
-    animation: swim 28s linear 1s infinite;
+    width: 40px;
+    top: 60%;
+    left: -60px;
+    animation: swim 26s linear 3s infinite;
     color: #3b82f6;
-    /* Blue */
 }
 
 .f3 {
-    width: 35px;
+    width: 30px;
     top: 45%;
-    left: -100px;
-    animation: swim 18s linear 4s infinite;
+    left: -50px;
+    animation: swim 17s linear 6s infinite;
     color: #f472b6;
-    /* Pink/Purple accent */
-}
-
-.submarine-wrapper {
-    position: absolute;
-    left: -200px;
-    width: 280px;
-    opacity: 0.15;
-    animation: swim 45s linear infinite;
-    z-index: -1
-}
-
-.fish-school {
-    position: absolute;
-    bottom: 15%;
-    right: -300px;
-    display: flex;
-    gap: 30px;
-    opacity: 0.1;
-    z-index: -1;
-    animation: swim-left 35s linear infinite 5s
 }
 
 .f1 {
@@ -1018,30 +985,8 @@ ul {
     display: flex;
     flex-direction: column;
     transition: border-color var(--tr), transform var(--tr), box-shadow var(--tr);
-    position: relative
-}
-
-.pc::before {
-    content: 'ID: ' attr(data-project);
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-family: var(--fm);
-    font-size: 0.7rem;
-    color: var(--t3);
-    border: 1px solid var(--bdr);
-    padding: 2px 6px;
-    border-radius: 4px;
-    z-index: 10;
-    opacity: 0.6;
-    transition: opacity var(--tr);
-    background: rgba(8, 12, 20, 0.8)
-}
-
-.pc:hover::before {
-    opacity: 1;
-    color: var(--cy);
-    border-color: var(--bdh)
+    position: relative;
+    cursor: pointer;
 }
 
 .pc:hover {
@@ -2200,4 +2145,169 @@ ul {
         height: 36px;
         font-size: 1.5rem
     }
+}
+
+/* TCSG Modal Styles */
+.modal-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--cyd);
+    color: var(--cy);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: var(--r);
+    font-family: var(--fm);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+}
+
+.modal-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    color: var(--t3);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.modal-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.modal-meta svg {
+    color: var(--cy);
+    flex-shrink: 0;
+}
+
+.modal-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.ms-item {
+    padding: 1.2rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--bdr);
+    border-radius: var(--r);
+}
+
+.ms-item h4 {
+    font-family: var(--fh);
+    font-size: 0.95rem;
+    color: var(--cy);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.ms-item p {
+    color: var(--t2);
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+.ms-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ms-list li {
+    padding: 0.35rem 0;
+    color: var(--t2);
+    font-size: 0.88rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.ms-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--cy);
+    font-weight: 700;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid var(--bdr);
+    border-radius: var(--r);
+}
+
+.dt {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.dt th,
+.dt td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--bdr);
+    text-align: left;
+}
+
+.dt th {
+    background: rgba(6, 182, 212, 0.06);
+    color: var(--cy);
+    font-weight: 600;
+    font-family: var(--fm);
+    font-size: 0.8rem;
+    white-space: nowrap;
+    width: 40%;
+}
+
+.dt td {
+    color: var(--t2);
+}
+
+.dt tr:last-child th,
+.dt tr:last-child td {
+    border-bottom: none;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--cy);
+    color: var(--bg);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.3s;
+    box-shadow: 0 4px 20px rgba(34, 211, 238, 0.3);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background: #06b6d4;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(34, 211, 238, 0.5);
+}
+
+[data-theme="light"] .scroll-top-btn {
+    box-shadow: 0 4px 20px rgba(8, 145, 178, 0.3);
+}
+
+[data-theme="light"] .sonar-wrapper {
+    opacity: 0.25;
 }
