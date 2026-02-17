@@ -1457,9 +1457,14 @@ ul {
     font-family: var(--fh);
     font-size: 1.15rem;
     color: var(--cy);
-    margin-bottom: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1.5px
+}
+
+.modal-section:first-child h3 {
+    margin-top: 0
 }
 
 .modal-section p {
