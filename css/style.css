@@ -608,9 +608,10 @@ ul {
 }
 
 .sec-label {
-    font-size: .8rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    font-family: var(--fh);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
     color: var(--cy);
     margin-bottom: 3rem;
     display: block
@@ -749,6 +750,43 @@ ul {
     font-size: .9rem;
     color: var(--cy);
     margin-top: .2rem
+}
+
+.co-link {
+    text-decoration: none;
+    transition: all var(--tr);
+}
+
+.co-link:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+.vessel-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dashed var(--cy);
+    padding-bottom: 1px;
+    transition: all var(--tr);
+}
+
+.vessel-link:hover {
+    color: var(--cy);
+    border-bottom-style: solid;
+}
+
+.vessel-link strong {
+    color: var(--t1);
+    font-weight: 600;
+}
+
+.vessel-link:hover strong {
+    color: var(--cy);
+}
+
+.vessel-link span {
+    font-size: .75rem;
+    opacity: 0.7;
 }
 
 .tlr {
