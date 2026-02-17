@@ -330,92 +330,113 @@
                 <h3>Project Overview</h3>
                 <p>This project involves comprehensive computational fluid dynamics (CFD) analysis of the KRISO
                     Container Ship (KCS) hull form with rudder. The study focuses on resistance prediction using
-                    unsteady
-                    Reynolds-Averaged Navier-Stokes (RANS) equations with Volume of Fluid (VOF) method for free surface
-                    modeling.</p>
+                    unsteady Reynolds-Averaged Navier-Stokes (RANS) equations with Volume of Fluid (VOF) method.</p>
                 <p>The simulation was conducted using STAR-CCM+ with three different mesh refinements and time step
-                    variations to ensure grid independence and validate results against experimental data.</p>
+                    variations to ensure grid independence.</p>
             </div>
             <div class="modal-section">
                 <h3>Technical Specifications</h3>
                 <div class="modal-specs">
-                    <div class="spec-item">
-                        <span class="spec-label">Software</span>
-                        <span class="spec-value">STAR-CCM+ 2024.1</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Turbulence Model</span>
-                        <span class="spec-value">k-ω SST</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Mesh Type</span>
-                        <span class="spec-value">Trimmed Hexahedral</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Cell Count</span>
-                        <span class="spec-value">2.8M - 8.5M cells</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Froude Number</span>
-                        <span class="spec-value">0.26</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Deviation</span>
-                        <span class="spec-value">0.75% from EFD</span>
-                    </div>
+                    <div class="spec-item"><span class="spec-label">Experimental Drag</span><span
+                            class="spec-value">83.852 N</span></div>
+                    <div class="spec-item"><span class="spec-label">Drag Coeff (Ct)</span><span
+                            class="spec-value">0.00365</span></div>
+                    <div class="spec-item"><span class="spec-label">Ship Velocity</span><span class="spec-value">2.196
+                            m/s</span></div>
+                    <div class="spec-item"><span class="spec-label">Froude Number</span><span
+                            class="spec-value">0.26</span></div>
+                    <div class="spec-item"><span class="spec-label">Wetted Area</span><span class="spec-value">9.55
+                            m²</span></div>
+                    <div class="spec-item"><span class="spec-label">Density (ρ)</span><span class="spec-value">997.56
+                            kg/m³</span></div>
                 </div>
             </div>
             <div class="modal-section">
-                <h3>Key Results</h3>
-                <ul class="modal-list">
-                    <li>Total resistance coefficient predicted with <strong>0.75% deviation</strong> from experimental
-                        data in the optimal configuration</li>
-                    <li>Free surface, wave pattern, pressure and shear drag components were analysed</li>
-                    <li>Unsteady RANS simulations were conducted to evaluate resistance with motion, and force/moment
-                        variations</li>
-                    <li>Grid convergence study demonstrated mesh independence at medium refinement level</li>
-                    <li>Wave pattern and free surface elevation matched experimental observations</li>
-                </ul>
-            </div>
-            <div class="modal-section">
-                <h3>Methodology</h3>
-                <ul class="modal-list">
-                    <li><strong>Geometry Preparation:</strong> KCS container ship with rudder CAD model prepared</li>
-                    <li><strong>Domain Setup:</strong> Computational domain sized according to ITTC recommendations</li>
-                    <li><strong>Mesh Generation:</strong> Three different mesh refinements and time step variations</li>
-                    <li><strong>Boundary Conditions:</strong> Velocity inlet, pressure outlet, symmetry plane, no-slip
-                        wall</li>
-                    <li><strong>Solver Settings:</strong> Unsteady RANS with VOF, implicit time stepping</li>
-                    <li><strong>Post-Processing:</strong> Resistance decomposition, wave pattern analysis, flow
-                        visualization</li>
-                </ul>
+                <h3>Simulation Results</h3>
+                <div class="mt-container">
+                    <table class="modal-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Turbulence</th>
+                                <th>Mesh Count</th>
+                                <th>Time Step</th>
+                                <th>Drag [N]</th>
+                                <th>Ct</th>
+                                <th>Diff [%]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>k-ε</td>
+                                <td class="mt-val">1.05 M</td>
+                                <td class="mt-val">0.04s</td>
+                                <td class="mt-val">83.668</td>
+                                <td class="mt-val">0.00364</td>
+                                <td class="mt-val" style="color:#10b981">-0.219%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>k-ε</td>
+                                <td class="mt-val">1.99 M</td>
+                                <td class="mt-val">0.04s</td>
+                                <td class="mt-val">84.483</td>
+                                <td class="mt-val">0.00368</td>
+                                <td class="mt-val" style="color:#ef4444">+0.752%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>k-ε</td>
+                                <td class="mt-val">2.03 M</td>
+                                <td class="mt-val">0.016s</td>
+                                <td class="mt-val">81.625</td>
+                                <td class="mt-val">0.00355</td>
+                                <td class="mt-val" style="color:#ef4444">-2.656%</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>k-ε</td>
+                                <td class="mt-val">1.05 M</td>
+                                <td class="mt-val">0.016s</td>
+                                <td class="mt-val">83.094</td>
+                                <td class="mt-val">0.00362</td>
+                                <td class="mt-val" style="color:#10b981">-0.904%</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>k-ω SST</td>
+                                <td class="mt-val">1.05 M</td>
+                                <td class="mt-val">0.04s</td>
+                                <td class="mt-val">83.046</td>
+                                <td class="mt-val">0.00361</td>
+                                <td class="mt-val" style="color:#10b981">-0.961%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="modal-section">
                 <h3>Visual Results</h3>
                 <div class="modal-gallery">
+                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/1.png" alt="Case 1">
+                        <figcaption>Case 1: k-ε, 1.05M cells, dt=0.04s (-0.22% deviation)</figcaption>
+                    </figure>
+                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/2.png" alt="Case 2">
+                        <figcaption>Case 2: k-ε, 1.99M cells, dt=0.04s (+0.75% deviation)</figcaption>
+                    </figure>
+                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/3.png" alt="Case 3">
+                        <figcaption>Case 3: k-ε, 2.03M cells, dt=0.016s (-2.66% deviation)</figcaption>
+                    </figure>
+                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/4.png" alt="Case 4">
+                        <figcaption>Case 4: k-ε, 1.05M cells, dt=0.016s (-0.90% deviation)</figcaption>
+                    </figure>
+                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/5.png" alt="Case 5">
+                        <figcaption>Case 5: k-ω SST, 1.05M cells, dt=0.04s (-0.96% deviation)</figcaption>
+                    </figure>
                     <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/3_free_surface.png"
-                            alt="Free Surface (VOF)">
-                        <figcaption>Free surface — Volume of Fluid visualization</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/1.png"
-                            alt="Wave Pattern — Coarse Mesh">
-                        <figcaption>Wave elevation contour — Coarse mesh</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/5.png"
-                            alt="Wave Pattern — Medium Mesh">
-                        <figcaption>Wave elevation contour — Medium mesh</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/2.png"
-                            alt="Wave Pattern — Fine Mesh">
-                        <figcaption>Wave elevation contour — Fine mesh</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/4.png"
-                            alt="Wave Pattern — Detailed">
-                        <figcaption>Wave pattern — Detailed view</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/kcs_hull_with_rudder/3.png"
-                            alt="Wave Pattern — High Resolution">
-                        <figcaption>Wave pattern — High resolution analysis</figcaption>
+                            alt="Free Surface">
+                        <figcaption>Free Surface Visualization (VOF Method)</figcaption>
                     </figure>
                 </div>
             </div>
