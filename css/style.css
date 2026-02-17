@@ -280,6 +280,7 @@ body {
 .fish {
     position: absolute;
     filter: drop-shadow(0 0 6px currentColor);
+    transform: scaleX(-1);
 }
 
 .f1 {
@@ -380,11 +381,11 @@ body {
 
 @keyframes swim {
     0% {
-        transform: translateX(0);
+        transform: translateX(0) scaleX(-1);
     }
 
     100% {
-        transform: translateX(calc(100vw + 300px));
+        transform: translateX(calc(100vw + 300px)) scaleX(-1);
     }
 }
 
@@ -2145,6 +2146,17 @@ ul {
         height: 36px;
         font-size: 1.5rem
     }
+}
+
+/* Modal Image */
+.modal-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: var(--r);
+    margin-bottom: 1.5rem;
+    background: rgba(15, 23, 42, 0.3);
+    border: 1px solid var(--bdr);
 }
 
 /* TCSG Modal Styles */
