@@ -5,4 +5,30 @@ const els=document.querySelectorAll('.tlc,.pc,.sb,.hs,.edu-card,.cc,.psec,.cdc,.
 els.forEach(e=>e.classList.add('rv'));
 const io=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*55);io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
 els.forEach(e=>io.observe(e));
+
+// Modal functionality
+function openModal(projectId){
+    const overlay=document.getElementById('modalOverlay');
+    const content=document.getElementById('modalContent');
+    const template=document.getElementById(projectId+'-template');
+    if(template){
+        content.innerHTML=template.innerHTML;
+        overlay.classList.add('active');
+        document.body.style.overflow='hidden';
+    }
+}
+
+function closeModal(){
+    const overlay=document.getElementById('modalOverlay');
+    overlay.classList.remove('active');
+    document.body.style.overflow='';
+}
+
+// Close modal on ESC key
+document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+        closeModal();
+    }
+});
+
 console.log('%c[MAY] 🚢','color:#06b6d4;font-weight:bold');

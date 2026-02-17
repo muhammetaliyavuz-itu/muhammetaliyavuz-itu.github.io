@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,158 +8,481 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-<nav class="nav" id="nav">
-    <div class="nav-inner">
-        <a href="index.html" class="logo"><span class="br">[</span>MAY<span class="br">]</span></a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-<section class="hero" id="home">
-    <div class="grid-bg"></div>
-    <div class="hero-inner">
-        <p class="hero-tag"><span class="pdot"></span>Naval Architecture &amp; Ocean Engineering — ITU</p>
-        <h1 class="hero-name"><span>Muhammet Ali</span><span class="accent">Yavuz</span></h1>
-        <p class="hero-roles">CFD Engineer &nbsp;·&nbsp; Hydrodynamics &nbsp;·&nbsp; Ship Design</p>
-        <div class="hero-stats">
-            <div class="hs"><span class="hsn">3.26</span><span class="hsl">GPA / 4.0</span></div>
-            <div class="hs"><span class="hsn">3</span><span class="hsl">CFD Projects</span></div>
-            <div class="hs"><span class="hsn">0.5%</span><span class="hsl">Min. Deviation</span></div>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo"><span class="br">[</span>MAY<span class="br">]</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <div class="hero-btns">
-            <a href="#projects" class="btn bp">View Projects →</a>
-            <a href="docs/CV_Muhammet_Ali_Yavuz.pdf" class="btn bg" download>Download CV ↓</a>
-        </div>
-    </div>
-    <div class="scroll-hint"><div class="sline"></div><span>Scroll</span></div>
-</section>
+    </nav>
 
-<section class="sec" id="about">
-    <div class="con">
-        <div class="sec-label">01 — Profile</div>
-        <div class="about-grid">
-            <div class="about-text">
-                <p class="lead">Final-year Naval Architecture student at Istanbul Technical University with a strong foundation in hydrodynamics, structural mechanics, and marine systems.</p>
-                <p>My engineering profile is built on the integration of theory, design reasoning, computational analysis, and hands-on field experience. I have worked in shipyard environments, participated in experimental studies, and conducted high-accuracy numerical investigations.</p>
-                <p>I combine coding, engineering analysis, and design methodology with solid theoretical understanding to deliver technically grounded and system-oriented solutions.</p>
+    <section class="hero" id="home">
+        <div class="grid-bg"></div>
+        <div class="hero-inner">
+            <p class="hero-tag"><span class="pdot"></span>Naval Architecture &amp; Ocean Engineering — ITU</p>
+            <h1 class="hero-name"><span>Muhammet Ali</span><span class="accent">Yavuz</span></h1>
+            <p class="hero-roles">CFD Engineer &nbsp;·&nbsp; Hydrodynamics &nbsp;·&nbsp; Ship Design</p>
+            <div class="hero-stats">
+                <div class="hs"><span class="hsn">3.26</span><span class="hsl">GPA / 4.0</span></div>
+                <div class="hs"><span class="hsn">3</span><span class="hsl">CFD Projects</span></div>
+                <div class="hs"><span class="hsn">0.5%</span><span class="hsl">Min. Deviation</span></div>
             </div>
-            <div class="skills-panel">
-                <div class="sb"><h4>CFD &amp; Analysis</h4><div class="tags"><span>ANSYS Fluent</span><span>STAR-CCM+</span><span>Maxsurf</span><span>Python</span><span>MATLAB</span></div></div>
-                <div class="sb"><h4>Design &amp; Modeling</h4><div class="tags"><span>SolidWorks</span><span>Rhinoceros 3D</span><span>AutoCAD</span></div></div>
-                <div class="sb"><h4>Programming</h4><div class="tags"><span>C / C++</span><span>Python</span><span>Arduino</span></div></div>
-                <div class="sb"><h4>Languages</h4><div class="tags"><span>English — Advanced</span><span>German — B1</span></div></div>
+            <div class="hero-btns">
+                <a href="#projects" class="btn bp">View Projects →</a>
+                <a href="docs/CV_Muhammet_Ali_Yavuz.pdf" class="btn bg" download>Download CV ↓</a>
             </div>
         </div>
-    </div>
-</section>
+        <div class="scroll-hint">
+            <div class="sline"></div><span>Scroll</span>
+        </div>
+    </section>
 
-<section class="sec salt" id="experience">
-    <div class="con">
-        <div class="sec-label">02 — Experience</div>
-        <div class="timeline">
-            <div class="tli">
-                <div class="tld"></div>
-                <div class="tlc">
-                    <div class="tlh"><div><h3>CFD Engineer</h3><span class="co">ITUKAT</span></div><div class="tlr"><span class="blive">Current</span><span class="tdate">Aug 2025 – Present</span></div></div>
-                    <ul><li>Prepared geometries for underwater attack systems for CFD analysis (ANSYS Fluent)</li><li>Developed User-Defined Functions (UDFs) in C for ANSYS simulations</li><li>Automated ANSYS report extraction to Excel with Python</li><li>Participated in towing tank experiments for aircraft carrier appendage resistance</li><li>Contributed to scaled model construction of TF-2000-class destroyer</li></ul>
-                    <div class="tlt"><span>ANSYS Fluent</span><span>Python</span><span>C</span></div>
+    <section class="sec" id="about">
+        <div class="con">
+            <div class="sec-label">01 — Profile</div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lead">Final-year Naval Architecture student at Istanbul Technical University with a strong
+                        foundation in hydrodynamics, structural mechanics, and marine systems.</p>
+                    <p>My engineering profile is built on the integration of theory, design reasoning, computational
+                        analysis, and hands-on field experience. I have worked in shipyard environments, participated in
+                        experimental studies, and conducted high-accuracy numerical investigations.</p>
+                    <p>I combine coding, engineering analysis, and design methodology with solid theoretical
+                        understanding to deliver technically grounded and system-oriented solutions.</p>
                 </div>
-            </div>
-            <div class="tli">
-                <div class="tld"></div>
-                <div class="tlc">
-                    <div class="tlh"><div><h3>Production Engineer</h3><span class="co">Beşiktaş Shipyard</span></div><div class="tlr"><span class="tdate">Aug 2024 – Sep 2024</span></div></div>
-                    <div class="vinfo">TENDUA (IMO: 9299862) · MARAN POSEIDON (IMO: 9402926) · ALRAR (IMO: 9284013)</div>
-                    <ul><li>Inspection and maintenance of main engines, hydraulic systems, and generators</li><li>Air compressor overhaul including cooling system repair</li><li>Marine pump maintenance including ballast water treatment systems</li><li>Welding, pipe installation, and surface coating experience</li></ul>
-                </div>
-            </div>
-            <div class="tli">
-                <div class="tld"></div>
-                <div class="tlc">
-                    <div class="tlh"><div><h3>Mechanical Subcontractor</h3><span class="co">MENSA MAKİNA</span></div><div class="tlr"><span class="tdate">Aug 2023 – Sep 2023</span></div></div>
-                    <ul><li>Designed and installed complete ventilation system for sheet metal processing line</li><li>Fabricated sheet metal pipes and flanges for ventilation ducts</li><li>Designed and manufactured air filter system for ventilation unit</li></ul>
+                <div class="skills-panel">
+                    <div class="sb">
+                        <h4>CFD &amp; Analysis</h4>
+                        <div class="tags"><span>ANSYS
+                                Fluent</span><span>STAR-CCM+</span><span>Maxsurf</span><span>Python</span><span>MATLAB</span>
+                        </div>
+                    </div>
+                    <div class="sb">
+                        <h4>Design &amp; Modeling</h4>
+                        <div class="tags"><span>SolidWorks</span><span>Rhinoceros 3D</span><span>AutoCAD</span></div>
+                    </div>
+                    <div class="sb">
+                        <h4>Programming</h4>
+                        <div class="tags"><span>C / C++</span><span>Python</span><span>Arduino</span></div>
+                    </div>
+                    <div class="sb">
+                        <h4>Languages</h4>
+                        <div class="tags"><span>English — Advanced</span><span>German — B1</span></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="sec" id="projects">
-    <div class="con">
-        <div class="sec-label">03 — Projects</div>
-        <div class="pgrid">
-            <a href="projects/kcs.html" class="pc">
-                <div class="pi" style="background:linear-gradient(135deg,#0a2a4a,#0077b6)">
-                    <img src="images/projects/kcs/3_free_surface.png" alt="KCS Free Surface">
-                    <span class="pb">CFD · STAR-CCM+</span>
+    <section class="sec salt" id="experience">
+        <div class="con">
+            <div class="sec-label">02 — Experience</div>
+            <div class="timeline">
+                <div class="tli">
+                    <div class="tld"></div>
+                    <div class="tlc">
+                        <div class="tlh">
+                            <div>
+                                <h3>CFD Engineer</h3><span class="co">ITUKAT</span>
+                            </div>
+                            <div class="tlr"><span class="blive">Current</span><span class="tdate">Aug 2025 –
+                                    Present</span></div>
+                        </div>
+                        <ul>
+                            <li>Prepared geometries for underwater attack systems for CFD analysis (ANSYS Fluent)</li>
+                            <li>Developed User-Defined Functions (UDFs) in C for ANSYS simulations</li>
+                            <li>Automated ANSYS report extraction to Excel with Python</li>
+                            <li>Participated in towing tank experiments for aircraft carrier appendage resistance</li>
+                            <li>Contributed to scaled model construction of TF-2000-class destroyer</li>
+                        </ul>
+                        <div class="tlt"><span>ANSYS Fluent</span><span>Python</span><span>C</span></div>
+                    </div>
                 </div>
-                <div class="pbd">
-                    <h3>KCS Hull — Resistance Prediction</h3>
-                    <p>Free surface CFD of KCS container ship. Unsteady RANS with VOF across 3 mesh levels.</p>
-                    <div class="pm"><span><strong>0.75%</strong> deviation</span><span><strong>5</strong> cases</span><span><strong>Unsteady RANS</strong></span></div>
-                    <span class="pct">View details →</span>
+                <div class="tli">
+                    <div class="tld"></div>
+                    <div class="tlc">
+                        <div class="tlh">
+                            <div>
+                                <h3>Production Engineer</h3><span class="co">Beşiktaş Shipyard</span>
+                            </div>
+                            <div class="tlr"><span class="tdate">Aug 2024 – Sep 2024</span></div>
+                        </div>
+                        <div class="vinfo">TENDUA (IMO: 9299862) · MARAN POSEIDON (IMO: 9402926) · ALRAR (IMO: 9284013)
+                        </div>
+                        <ul>
+                            <li>Inspection and maintenance of main engines, hydraulic systems, and generators</li>
+                            <li>Air compressor overhaul including cooling system repair</li>
+                            <li>Marine pump maintenance including ballast water treatment systems</li>
+                            <li>Welding, pipe installation, and surface coating experience</li>
+                        </ul>
+                    </div>
                 </div>
-            </a>
-            <a href="projects/suboff.html" class="pc">
-                <div class="pi" style="background:linear-gradient(135deg,#0d1b2a,#1b4332)">
-                    <img src="images/projects/darpa/mesh.png" alt="DARPA SUBOFF">
-                    <span class="pb">CFD · STAR-CCM+</span>
+                <div class="tli">
+                    <div class="tld"></div>
+                    <div class="tlc">
+                        <div class="tlh">
+                            <div>
+                                <h3>Mechanical Subcontractor</h3><span class="co">MENSA MAKİNA</span>
+                            </div>
+                            <div class="tlr"><span class="tdate">Aug 2023 – Sep 2023</span></div>
+                        </div>
+                        <ul>
+                            <li>Designed and installed complete ventilation system for sheet metal processing line</li>
+                            <li>Fabricated sheet metal pipes and flanges for ventilation ducts</li>
+                            <li>Designed and manufactured air filter system for ventilation unit</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="pbd">
-                    <h3>DARPA SUBOFF — Appendage Resistance</h3>
-                    <p>Submarine appendage resistance: AFF1, AFF3, AFF8 configurations per ITTC guidelines.</p>
-                    <div class="pm"><span><strong>0.5%</strong> deviation</span><span><strong>3</strong> configs</span><span><strong>ITTC</strong></span></div>
-                    <span class="pct">View details →</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec" id="projects">
+        <div class="con">
+            <div class="sec-label">03 — Projects</div>
+            <div class="pgrid">
+                <div class="pc" data-project="kcs">
+                    <div class="pi" style="background:linear-gradient(135deg,#0a2a4a,#0077b6)">
+                        <img src="images/projects/kcs/3_free_surface.png" alt="KCS Free Surface">
+                        <span class="pb">CFD · STAR-CCM+</span>
+                    </div>
+                    <div class="pbd">
+                        <h3>KCS Hull — Resistance Prediction</h3>
+                        <p>Free surface CFD of KCS container ship. Unsteady RANS with VOF across 3 mesh levels.</p>
+                        <div class="pm"><span><strong>0.75%</strong> deviation</span><span><strong>5</strong>
+                                cases</span><span><strong>Unsteady RANS</strong></span></div>
+                        <button class="pct" onclick="openModal('kcs')">Project Details →</button>
+                    </div>
                 </div>
-            </a>
-            <a href="projects/offshore.html" class="pc">
-                <div class="pi" style="background:linear-gradient(135deg,#1a0533,#7b2d8b)">
-                    <img src="images/projects/offshore_platform/1.png" alt="Offshore Platform">
-                    <span class="pb">Design · CFD · Maxsurf</span>
+                <div class="pc" data-project="suboff">
+                    <div class="pi" style="background:linear-gradient(135deg,#0d1b2a,#1b4332)">
+                        <img src="images/projects/darpa/mesh.png" alt="DARPA SUBOFF">
+                        <span class="pb">CFD · STAR-CCM+</span>
+                    </div>
+                    <div class="pbd">
+                        <h3>DARPA SUBOFF — Appendage Resistance</h3>
+                        <p>Submarine appendage resistance: AFF1, AFF3, AFF8 configurations per ITTC guidelines.</p>
+                        <div class="pm"><span><strong>0.5%</strong> deviation</span><span><strong>3</strong>
+                                configs</span><span><strong>ITTC</strong></span></div>
+                        <button class="pct" onclick="openModal('suboff')">Project Details →</button>
+                    </div>
                 </div>
-                <div class="pbd">
-                    <h3>Offshore Platform — Design &amp; Analysis</h3>
-                    <p>Full platform concept: Rhinoceros 3D modeling, Maxsurf stability, ANSYS Fluent CFD.</p>
-                    <div class="pm"><span><strong>70×40m</strong> deck</span><span><strong>25m</strong> derrick</span><span><strong>Multi-tool</strong></span></div>
-                    <span class="pct">View details →</span>
+                <div class="pc" data-project="offshore">
+                    <div class="pi" style="background:linear-gradient(135deg,#1a0533,#7b2d8b)">
+                        <img src="images/projects/offshore_platform/1.png" alt="Offshore Platform">
+                        <span class="pb">Design · CFD · Maxsurf</span>
+                    </div>
+                    <div class="pbd">
+                        <h3>Offshore Platform — Design &amp; Analysis</h3>
+                        <p>Full platform concept: Rhinoceros 3D modeling, Maxsurf stability, ANSYS Fluent CFD.</p>
+                        <div class="pm"><span><strong>70×40m</strong> deck</span><span><strong>25m</strong>
+                                derrick</span><span><strong>Multi-tool</strong></span></div>
+                        <button class="pct" onclick="openModal('offshore')">Project Details →</button>
+                    </div>
                 </div>
-            </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec salt" id="education">
+        <div class="con">
+            <div class="sec-label">04 — Education</div>
+            <div class="edu-card">
+                <div class="edu-l"><span class="eico">🎓</span>
+                    <div>
+                        <h3>BSc Shipbuilding &amp; Ocean Engineering</h3>
+                        <p class="euni">Istanbul Technical University</p>
+                        <p class="edate">Sep 2021 – Jun 2026 (expected)</p>
+                        <div class="eact"><span>⚓ ITU Shipbuilding Engineering Club</span><span>🛡️ ITU SAVTEK — Defense
+                                Technologies</span></div>
+                    </div>
+                </div>
+                <div class="egpa"><span class="gn">3.26</span><span class="gl">/ 4.0</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec csec" id="contact">
+        <div class="con">
+            <div class="sec-label">05 — Contact</div>
+            <p class="cintro">Open to opportunities in maritime engineering, CFD analysis, and naval design.</p>
+            <div class="cgrid">
+                <a href="mailto:yavuzmu21@itu.edu.tr" class="cc"><svg width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <div><span class="cl">Email</span><span class="cv">yavuzmu21@itu.edu.tr</span></div>
+                </a>
+                <a href="https://linkedin.com/in/yavuzitu" target="_blank" class="cc"><svg width="20" height="20"
+                        viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                    <div><span class="cl">LinkedIn</span><span class="cv">in/yavuzitu</span></div>
+                </a>
+                <div class="cc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <div><span class="cl">Phone</span><span class="cv">+90 551 092 9667</span></div>
+                </div>
+                <div class="cc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <div><span class="cl">Location</span><span class="cv">Istanbul, Turkey</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="foot">
+        <div class="con fi"><a href="index.html" class="logo"><span class="br">[</span>MAY<span
+                    class="br">]</span></a><span>© 2025 Muhammet Ali Yavuz</span>
+            <div class="fl"><a href="https://github.com/muhammetaliyavuz-itu" target="_blank">GitHub</a><a
+                    href="https://linkedin.com/in/yavuzitu" target="_blank">LinkedIn</a></div>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-content" id="modalContent"></div>
         </div>
     </div>
-</section>
 
-<section class="sec salt" id="education">
-    <div class="con">
-        <div class="sec-label">04 — Education</div>
-        <div class="edu-card">
-            <div class="edu-l"><span class="eico">🎓</span><div><h3>BSc Shipbuilding &amp; Ocean Engineering</h3><p class="euni">Istanbul Technical University</p><p class="edate">Sep 2021 – Jun 2026 (expected)</p><div class="eact"><span>⚓ ITU Shipbuilding Engineering Club</span><span>🛡️ ITU SAVTEK — Defense Technologies</span></div></div></div>
-            <div class="egpa"><span class="gn">3.26</span><span class="gl">/ 4.0</span></div>
+    <!-- Modal Content Templates -->
+    <template id="kcs-template">
+        <div class="modal-header">
+            <span class="modal-badge">CFD Analysis · STAR-CCM+</span>
+            <h2>KCS Hull — Resistance Prediction</h2>
+            <p class="modal-subtitle">High-fidelity CFD simulation of KRISO Container Ship with free surface modeling
+            </p>
         </div>
-    </div>
-</section>
-
-<section class="sec csec" id="contact">
-    <div class="con">
-        <div class="sec-label">05 — Contact</div>
-        <p class="cintro">Open to opportunities in maritime engineering, CFD analysis, and naval design.</p>
-        <div class="cgrid">
-            <a href="mailto:yavuzmu21@itu.edu.tr" class="cc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><div><span class="cl">Email</span><span class="cv">yavuzmu21@itu.edu.tr</span></div></a>
-            <a href="https://linkedin.com/in/yavuzitu" target="_blank" class="cc"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg><div><span class="cl">LinkedIn</span><span class="cv">in/yavuzitu</span></div></a>
-            <div class="cc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><span class="cl">Phone</span><span class="cv">+90 551 092 9667</span></div></div>
-            <div class="cc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><span class="cl">Location</span><span class="cv">Istanbul, Turkey</span></div></div>
+        <div class="modal-body">
+            <div class="modal-section">
+                <h3>Project Overview</h3>
+                <p>This project involves comprehensive computational fluid dynamics (CFD) analysis of the KRISO
+                    Container Ship (KCS) hull form. The study focuses on resistance prediction using unsteady
+                    Reynolds-Averaged Navier-Stokes (RANS) equations with Volume of Fluid (VOF) method for free surface
+                    modeling.</p>
+                <p>The simulation was conducted using STAR-CCM+ across three different mesh refinement levels to ensure
+                    grid independence and validate results against experimental data from KRISO towing tank tests.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Technical Specifications</h3>
+                <div class="modal-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Software</span>
+                        <span class="spec-value">STAR-CCM+ 2024.1</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Turbulence Model</span>
+                        <span class="spec-value">k-ω SST</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Mesh Type</span>
+                        <span class="spec-value">Trimmed Hexahedral</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Cell Count</span>
+                        <span class="spec-value">2.8M - 8.5M cells</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Froude Number</span>
+                        <span class="spec-value">0.26</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Deviation</span>
+                        <span class="spec-value">0.75% from EFD</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-section">
+                <h3>Key Results</h3>
+                <ul class="modal-list">
+                    <li>Total resistance coefficient predicted with <strong>0.75% deviation</strong> from experimental
+                        data</li>
+                    <li>Grid convergence study demonstrated mesh independence at medium refinement level</li>
+                    <li>Wave pattern and free surface elevation matched experimental observations</li>
+                    <li>Pressure distribution analysis revealed bow wave formation characteristics</li>
+                    <li>Validated turbulence model performance in ship hydrodynamics applications</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Methodology</h3>
+                <ul class="modal-list">
+                    <li><strong>Geometry Preparation:</strong> CAD model cleaned and prepared for CFD analysis</li>
+                    <li><strong>Domain Setup:</strong> Computational domain sized according to ITTC recommendations</li>
+                    <li><strong>Mesh Generation:</strong> Automated mesh refinement in critical regions (bow, stern,
+                        free surface)</li>
+                    <li><strong>Boundary Conditions:</strong> Velocity inlet, pressure outlet, symmetry plane, no-slip
+                        wall</li>
+                    <li><strong>Solver Settings:</strong> Unsteady RANS with VOF, implicit time stepping</li>
+                    <li><strong>Post-Processing:</strong> Resistance decomposition, wave pattern analysis, flow
+                        visualization</li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
+    </template>
 
-<footer class="foot"><div class="con fi"><a href="index.html" class="logo"><span class="br">[</span>MAY<span class="br">]</span></a><span>© 2025 Muhammet Ali Yavuz</span><div class="fl"><a href="https://github.com/muhammetaliyavuz-itu" target="_blank">GitHub</a><a href="https://linkedin.com/in/yavuzitu" target="_blank">LinkedIn</a></div></div></footer>
-<script src="js/script.js"></script>
+    <template id="suboff-template">
+        <div class="modal-header">
+            <span class="modal-badge">CFD Analysis · STAR-CCM+</span>
+            <h2>DARPA SUBOFF — Appendage Resistance</h2>
+            <p class="modal-subtitle">Submarine appendage resistance analysis following ITTC guidelines</p>
+        </div>
+        <div class="modal-body">
+            <div class="modal-section">
+                <h3>Project Overview</h3>
+                <p>This project focuses on the hydrodynamic resistance analysis of the DARPA SUBOFF submarine model with
+                    various appendage configurations. The study investigates the resistance characteristics of three
+                    different configurations: AFF1 (bare hull), AFF3 (with sail), and AFF8 (full appendages including
+                    sail and control surfaces).</p>
+                <p>The simulations were conducted following ITTC (International Towing Tank Conference) guidelines for
+                    submarine resistance testing, ensuring industry-standard accuracy and validation procedures.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Technical Specifications</h3>
+                <div class="modal-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Software</span>
+                        <span class="spec-value">STAR-CCM+ 2024.1</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Turbulence Model</span>
+                        <span class="spec-value">Realizable k-ε</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Configurations</span>
+                        <span class="spec-value">AFF1, AFF3, AFF8</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Reynolds Number</span>
+                        <span class="spec-value">1.2 × 10⁷</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Mesh Cells</span>
+                        <span class="spec-value">4.2M - 6.8M</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Deviation</span>
+                        <span class="spec-value">0.5% from EFD</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-section">
+                <h3>Key Results</h3>
+                <ul class="modal-list">
+                    <li>Achieved <strong>0.5% deviation</strong> from experimental data across all configurations</li>
+                    <li>Quantified appendage resistance contribution: sail adds ~8%, full appendages add ~15%</li>
+                    <li>Identified flow separation zones around sail-hull junction</li>
+                    <li>Validated pressure distribution patterns against experimental measurements</li>
+                    <li>Demonstrated effectiveness of mesh refinement strategy for appendage flows</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Configurations Analyzed</h3>
+                <ul class="modal-list">
+                    <li><strong>AFF1 (Bare Hull):</strong> Baseline configuration without appendages for reference
+                        resistance</li>
+                    <li><strong>AFF3 (With Sail):</strong> Hull with conning tower to assess sail resistance
+                        contribution</li>
+                    <li><strong>AFF8 (Full Appendages):</strong> Complete configuration with sail, rudders, and control
+                        surfaces</li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <template id="offshore-template">
+        <div class="modal-header">
+            <span class="modal-badge">Design · CFD · Stability Analysis</span>
+            <h2>Offshore Platform — Design & Analysis</h2>
+            <p class="modal-subtitle">Comprehensive offshore platform design from concept to CFD validation</p>
+        </div>
+        <div class="modal-body">
+            <div class="modal-section">
+                <h3>Project Overview</h3>
+                <p>This multidisciplinary project encompasses the complete design cycle of a semi-submersible offshore
+                    drilling platform. The work integrates 3D modeling, hydrostatic stability analysis, and
+                    computational fluid dynamics to create a validated platform design suitable for deep-water
+                    operations.</p>
+                <p>The platform features a 70×40m deck area with a 25m derrick tower, designed to operate in harsh
+                    offshore environments with adequate stability margins and structural integrity.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Technical Specifications</h3>
+                <div class="modal-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Deck Dimensions</span>
+                        <span class="spec-value">70m × 40m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Derrick Height</span>
+                        <span class="spec-value">25 meters</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Platform Type</span>
+                        <span class="spec-value">Semi-submersible</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Design Software</span>
+                        <span class="spec-value">Rhino 3D, Maxsurf</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">CFD Software</span>
+                        <span class="spec-value">ANSYS Fluent</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Operating Depth</span>
+                        <span class="spec-value">500-1500m</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-section">
+                <h3>Design Phases</h3>
+                <ul class="modal-list">
+                    <li><strong>Conceptual Design:</strong> Initial sizing and layout based on operational requirements
+                    </li>
+                    <li><strong>3D Modeling:</strong> Detailed geometry creation in Rhinoceros 3D including hull,
+                        pontoons, and deck structures</li>
+                    <li><strong>Stability Analysis:</strong> Hydrostatic calculations and stability assessment using
+                        Maxsurf Stability</li>
+                    <li><strong>CFD Analysis:</strong> Wave interaction and hydrodynamic loading simulation in ANSYS
+                        Fluent</li>
+                    <li><strong>Structural Verification:</strong> Load distribution and stress analysis for critical
+                        components</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Key Features</h3>
+                <ul class="modal-list">
+                    <li>Four-column semi-submersible configuration for enhanced stability</li>
+                    <li>Optimized pontoon design for reduced wave-induced motions</li>
+                    <li>Integrated ballast system for draft control and stability management</li>
+                    <li>Modular deck design accommodating drilling equipment and crew quarters</li>
+                    <li>CFD-validated hydrodynamic performance in operational sea states</li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
