@@ -157,8 +157,9 @@
                         <span class="pb">CFD · STAR-CCM+</span>
                     </div>
                     <div class="pbd">
-                        <h3>KCS Hull — Resistance Prediction</h3>
-                        <p>Free surface CFD of KCS container ship. Unsteady RANS with VOF across 3 mesh levels.</p>
+                        <h3>KCS Hull with Rudder — Resistance Prediction</h3>
+                        <p>Free surface CFD of KCS container ship with rudder. Unsteady RANS with VOF across 3 mesh
+                            levels.</p>
                         <div class="pm"><span><strong>0.75%</strong> deviation</span><span><strong>5</strong>
                                 cases</span><span><strong>Unsteady RANS</strong></span></div>
                         <button class="pct" onclick="openModal('kcs')">Project Details →</button>
@@ -212,9 +213,59 @@
         </div>
     </section>
 
-    <section class="sec csec" id="contact">
+    <section class="sec" id="certifications">
         <div class="con">
-            <div class="sec-label">05 — Contact</div>
+            <div class="sec-label">05 — Certifications</div>
+            <div class="cgrid" style="max-width:100%;grid-template-columns:repeat(3,1fr)">
+                <div class="cc">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <div><span class="cl">CAD</span><span class="cv">SolidWorks (CSWA)</span></div>
+                </div>
+                <div class="cc">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <div><span class="cl">CAD</span><span class="cv">AutoCAD Certificate</span></div>
+                </div>
+                <div class="cc">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <div><span class="cl">Programming</span><span class="cv">Python (freeCodeCamp)</span></div>
+                </div>
+                <div class="cc">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <div><span class="cl">Office</span><span class="cv">Microsoft Excel</span></div>
+                </div>
+                <div class="cc">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <div><span class="cl">Embedded</span><span class="cv">Arduino Certificate</span></div>
+                </div>
+                <div class="cc">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <div><span class="cl">Language</span><span class="cv">TELC Deutsch B1</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec salt csec" id="contact">
+        <div class="con">
+            <div class="sec-label">06 — Contact</div>
             <p class="cintro">Open to opportunities in maritime engineering, CFD analysis, and naval design.</p>
             <div class="cgrid">
                 <a href="mailto:yavuzmu21@itu.edu.tr" class="cc"><svg width="20" height="20" viewBox="0 0 24 24"
@@ -269,19 +320,21 @@
     <template id="kcs-template">
         <div class="modal-header">
             <span class="modal-badge">CFD Analysis · STAR-CCM+</span>
-            <h2>KCS Hull — Resistance Prediction</h2>
-            <p class="modal-subtitle">High-fidelity CFD simulation of KRISO Container Ship with free surface modeling
+            <h2>KCS Hull with Rudder — Resistance Prediction</h2>
+            <p class="modal-subtitle">High-fidelity CFD simulation of KRISO Container Ship with rudder and free surface
+                modeling
             </p>
         </div>
         <div class="modal-body">
             <div class="modal-section">
                 <h3>Project Overview</h3>
                 <p>This project involves comprehensive computational fluid dynamics (CFD) analysis of the KRISO
-                    Container Ship (KCS) hull form. The study focuses on resistance prediction using unsteady
+                    Container Ship (KCS) hull form with rudder. The study focuses on resistance prediction using
+                    unsteady
                     Reynolds-Averaged Navier-Stokes (RANS) equations with Volume of Fluid (VOF) method for free surface
                     modeling.</p>
-                <p>The simulation was conducted using STAR-CCM+ across three different mesh refinement levels to ensure
-                    grid independence and validate results against experimental data from KRISO towing tank tests.</p>
+                <p>The simulation was conducted using STAR-CCM+ with three different mesh refinements and time step
+                    variations to ensure grid independence and validate results against experimental data.</p>
             </div>
             <div class="modal-section">
                 <h3>Technical Specifications</h3>
@@ -316,20 +369,20 @@
                 <h3>Key Results</h3>
                 <ul class="modal-list">
                     <li>Total resistance coefficient predicted with <strong>0.75% deviation</strong> from experimental
-                        data</li>
+                        data in the optimal configuration</li>
+                    <li>Free surface, wave pattern, pressure and shear drag components were analysed</li>
+                    <li>Unsteady RANS simulations were conducted to evaluate resistance with motion, and force/moment
+                        variations</li>
                     <li>Grid convergence study demonstrated mesh independence at medium refinement level</li>
                     <li>Wave pattern and free surface elevation matched experimental observations</li>
-                    <li>Pressure distribution analysis revealed bow wave formation characteristics</li>
-                    <li>Validated turbulence model performance in ship hydrodynamics applications</li>
                 </ul>
             </div>
             <div class="modal-section">
                 <h3>Methodology</h3>
                 <ul class="modal-list">
-                    <li><strong>Geometry Preparation:</strong> CAD model cleaned and prepared for CFD analysis</li>
+                    <li><strong>Geometry Preparation:</strong> KCS container ship with rudder CAD model prepared</li>
                     <li><strong>Domain Setup:</strong> Computational domain sized according to ITTC recommendations</li>
-                    <li><strong>Mesh Generation:</strong> Automated mesh refinement in critical regions (bow, stern,
-                        free surface)</li>
+                    <li><strong>Mesh Generation:</strong> Three different mesh refinements and time step variations</li>
                     <li><strong>Boundary Conditions:</strong> Velocity inlet, pressure outlet, symmetry plane, no-slip
                         wall</li>
                     <li><strong>Solver Settings:</strong> Unsteady RANS with VOF, implicit time stepping</li>
@@ -351,10 +404,11 @@
                 <h3>Project Overview</h3>
                 <p>This project focuses on the hydrodynamic resistance analysis of the DARPA SUBOFF submarine model with
                     various appendage configurations. The study investigates the resistance characteristics of three
-                    different configurations: AFF1 (bare hull), AFF3 (with sail), and AFF8 (full appendages including
-                    sail and control surfaces).</p>
-                <p>The simulations were conducted following ITTC (International Towing Tank Conference) guidelines for
-                    submarine resistance testing, ensuring industry-standard accuracy and validation procedures.</p>
+                    different configurations: AFF1 (bare hull), AFF3 (hull + rudder), and AFF8 (hull + sail + rudder).
+                </p>
+                <p>Mesh refinement and uncertainty assessment were performed following ITTC guidelines. Velocity fields,
+                    static/total pressure contours, streamlines, and y⁺ distributions were evaluated for hydrodynamic
+                    performance insights.</p>
             </div>
             <div class="modal-section">
                 <h3>Technical Specifications</h3>
@@ -388,11 +442,13 @@
             <div class="modal-section">
                 <h3>Key Results</h3>
                 <ul class="modal-list">
-                    <li>Achieved <strong>0.5% deviation</strong> from experimental data across all configurations</li>
-                    <li>Quantified appendage resistance contribution: sail adds ~8%, full appendages add ~15%</li>
-                    <li>Identified flow separation zones around sail-hull junction</li>
-                    <li>Validated pressure distribution patterns against experimental measurements</li>
-                    <li>Demonstrated effectiveness of mesh refinement strategy for appendage flows</li>
+                    <li>Achieved deviations as low as <strong>0.5%</strong> from experimental data in optimal
+                        configurations</li>
+                    <li>Analysed resistance components (pressure and viscous) and part-by-part contributions (hull,
+                        sail, rudder) across multiple speeds</li>
+                    <li>Performed mesh refinement and uncertainty assessment following ITTC guidelines</li>
+                    <li>Evaluated velocity fields, static/total pressure contours, streamlines, and y⁺ distributions
+                    </li>
                 </ul>
             </div>
             <div class="modal-section">
@@ -400,10 +456,9 @@
                 <ul class="modal-list">
                     <li><strong>AFF1 (Bare Hull):</strong> Baseline configuration without appendages for reference
                         resistance</li>
-                    <li><strong>AFF3 (With Sail):</strong> Hull with conning tower to assess sail resistance
+                    <li><strong>AFF3 (Hull + Rudder):</strong> Hull with rudder to assess rudder resistance
                         contribution</li>
-                    <li><strong>AFF8 (Full Appendages):</strong> Complete configuration with sail, rudders, and control
-                        surfaces</li>
+                    <li><strong>AFF8 (Hull + Sail + Rudder):</strong> Complete configuration with sail and rudder</li>
                 </ul>
             </div>
         </div>
