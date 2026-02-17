@@ -23,6 +23,24 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg class="theme-icon moon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+            </button>
         </div>
     </nav>
 
@@ -44,11 +62,10 @@
         <div class="hero-inner">
             <p class="hero-tag"><span class="pdot"></span>Naval Architecture &amp; Ocean Engineering — ITU</p>
             <h1 class="hero-name"><span>Muhammet Ali</span><span class="accent">Yavuz</span></h1>
-            <p class="hero-roles">CFD Engineer &nbsp;·&nbsp; Hydrodynamics &nbsp;·&nbsp; Ship Design</p>
+            <p class="hero-roles">Naval Architect - CFD Engineer - Software Developer</p>
             <div class="hero-stats">
                 <div class="hs"><span class="hsn">3.26</span><span class="hsl">GPA / 4.0</span></div>
-                <div class="hs"><span class="hsn">3</span><span class="hsl">CFD Projects</span></div>
-                <div class="hs"><span class="hsn">0.5%</span><span class="hsl">Min. Deviation</span></div>
+                <div class="hs"><span class="hsn">5+</span><span class="hsl">CFD Projects</span></div>
             </div>
             <div class="hero-btns">
                 <a href="#projects" class="btn bp">View Projects →</a>
@@ -112,11 +129,7 @@
                                     Present</span></div>
                         </div>
                         <ul>
-                            <li>Prepared geometries for underwater attack systems for CFD analysis (ANSYS Fluent)</li>
-                            <li>Developed User-Defined Functions (UDFs) in C for ANSYS simulations</li>
-                            <li>Automated ANSYS report extraction to Excel with Python</li>
-                            <li>Participated in towing tank experiments for aircraft carrier appendage resistance</li>
-                            <li>Contributed to scaled model construction of TF-2000-class destroyer</li>
+                            <li>Focus Areas: Resistance and Moment Measurements, Propeller, Cavitation</li>
                         </ul>
                         <div class="tlt"><span>ANSYS Fluent</span><span>Python</span><span>C</span></div>
                     </div>
@@ -164,6 +177,21 @@
         <div class="con">
             <div class="sec-label">03 — Projects</div>
             <div class="pgrid">
+                <div class="pc" data-project="alicat">
+                    <div class="pi" style="background:linear-gradient(135deg,#0f172a,#334155)">
+                        <img src="images/projects/alicat_flowmeter/gui.png" alt="Alicat Control Interface">
+                        <span class="pb">Python · GUI · Automation</span>
+                    </div>
+                    <div class="pbd">
+                        <h3>Alicat Mass Flow Controller — Control Interface</h3>
+                        <p>Production-grade desktop app for real-time control, monitoring, and automated data logging.
+                        </p>
+                        <div class="pm">
+                            <span><strong>Python</strong></span><span><strong>AsyncIO</strong></span><span><strong>Serial</strong></span>
+                        </div>
+                        <button class="pct" onclick="openModal('alicat')">Project Details →</button>
+                    </div>
+                </div>
                 <div class="pc" data-project="kcs">
                     <div class="pi" style="background:linear-gradient(135deg,#0a2a4a,#0077b6)">
                         <img src="images/projects/kcs_hull_with_rudder/3_free_surface.png" alt="KCS Free Surface">
@@ -230,48 +258,44 @@
         <div class="con">
             <div class="sec-label">05 — Certifications</div>
             <div class="cgrid" style="max-width:100%;grid-template-columns:repeat(3,1fr)">
-                <div class="cc">
+                <a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9JG2FEML5U" target="_blank" class="cc">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                     <div><span class="cl">CAD</span><span class="cv">SolidWorks (CSWA)</span></div>
-                </div>
-                <div class="cc">
+                </a>
+                <a href="https://coursera.org/verify/LXRP49PG83TZ" target="_blank" class="cc">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                     <div><span class="cl">CAD</span><span class="cv">AutoCAD Certificate</span></div>
-                </div>
-                <div class="cc">
+                </a>
+                <a href="https://www.freecodecamp.org/certification/muhali-itu/scientific-computing-with-python-v7"
+                    target="_blank" class="cc">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                     <div><span class="cl">Programming</span><span class="cv">Python (freeCodeCamp)</span></div>
-                </div>
-                <div class="cc">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                        <polyline points="22 4 12 14.01 9 11.01" />
-                    </svg>
-                    <div><span class="cl">Office</span><span class="cv">Microsoft Excel</span></div>
-                </div>
-                <div class="cc">
+                </a>
+                <a href="https://www.udemy.com/certificate/UC-74396a11-d4a8-4924-947b-f6af469f287e/" target="_blank"
+                    class="cc">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                     <div><span class="cl">Embedded</span><span class="cv">Arduino Certificate</span></div>
-                </div>
-                <div class="cc">
+                </a>
+                <a href="https://results.telc.net/qr/JfgH5TJpT96WF1qbG0pVcwnzx5BYe0eNiHHrqN_Mq3Lnsl3NNCVKvam7jM_xm5zr"
+                    target="_blank" class="cc">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                     <div><span class="cl">Language</span><span class="cv">TELC Deutsch B1</span></div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -635,6 +659,84 @@
                     <figure class="ic"><img src="images/projects/offshore_platform/resistance_graph.png"
                             alt="Resistance Graph">
                         <figcaption>Resistance vs. speed curve — Maxsurf analysis</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="alicat-template">
+        <div class="modal-header">
+            <span class="modal-badge">Python Desktop App · Control Systems</span>
+            <h2>Alicat Mass Flow Controller — Control & Data Logging Interface</h2>
+            <p class="modal-subtitle">Production-style Windows desktop application for real-time monitoring and
+                automation</p>
+        </div>
+        <div class="modal-body">
+            <div class="modal-section">
+                <h3>Project Overview</h3>
+                <p>I built a production-style Windows desktop application to control an Alicat Mass Flow Controller via
+                    serial communication. The tool provides real-time monitoring, manual setpoint control, automated
+                    test sequences from Excel matrices, and clean Excel export for experiments and reporting.</p>
+                <p>This application bridges the gap between hardware control and data analysis, providing a robust
+                    interface for experimental setups.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Key Features</h3>
+                <ul class="modal-list">
+                    <li><strong>Real-time Telemetry:</strong> Parsing of pressure, temperature, mass/volumetric flow,
+                        setpoint readback, and valve position.</li>
+                    <li><strong>Non-blocking Architecture:</strong> Tkinter UI + asyncio worker loop in a dedicated
+                        thread for smooth performance.</li>
+                    <li><strong>Safe Serial I/O:</strong> Implementation of asyncio.Lock to avoid command/poll
+                        collisions.</li>
+                    <li><strong>Automated Sequences:</strong> Runner with Run / Reverse / Pause / Continue capabilities,
+                        including progress tracking and timers.</li>
+                    <li><strong>Excel Export Pipeline:</strong> Generates Matrix + Log + Setpoint Events sheets with
+                        professional formatting via openpyxl.</li>
+                    <li><strong>Matrix Editor:</strong> Built-in editor supporting paste from Excel, keyboard
+                        navigation, and bulk operations.</li>
+                    <li><strong>Voice Notifications:</strong> Optional Windows SAPI text-to-speech for state changes and
+                        setpoint alerts.</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Technical Stack</h3>
+                <div class="modal-specs">
+                    <div class="spec-item"><span class="spec-label">Language</span><span class="spec-value">Python
+                            3.10+</span></div>
+                    <div class="spec-item"><span class="spec-label">GUI Framework</span><span class="spec-value">Tkinter
+                            / ttkbootstrap</span></div>
+                    <div class="spec-item"><span class="spec-label">Concurrency</span><span class="spec-value">asyncio
+                            (threaded)</span></div>
+                    <div class="spec-item"><span class="spec-label">Hardware Comm</span><span
+                            class="spec-value">pyserial</span></div>
+                    <div class="spec-item"><span class="spec-label">Data Handling</span><span class="spec-value">pandas,
+                            openpyxl</span></div>
+                    <div class="spec-item"><span class="spec-label">System Integration</span><span
+                            class="spec-value">pywin32 (SAPI)</span></div>
+                </div>
+            </div>
+            <div class="modal-section">
+                <h3>Highlights</h3>
+                <ul class="modal-list">
+                    <li><strong>Asynchronous Architecture:</strong> Worker thread architecture ensures a non-blocking UI
+                        while maintaining stable serial communication at high polling rates.</li>
+                    <li><strong>Race Condition Handling:</strong> Lock-based serial I/O management prevents command/poll
+                        race conditions and data collisions common in mixed read/write operations.</li>
+                    <li><strong>Engineering-Grade Exports:</strong> Transforms raw log buffers into structured, styled,
+                        multi-sheet Excel files ready for immediate analysis.</li>
+                    <li><strong>User Experience:</strong> Features a smooth draggable UI, built-in Excel-like matrix
+                        editor, and robust error handling for disconnected devices.</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Visual Interface</h3>
+                <div class="modal-gallery">
+                    <figure class="ic"><img src="images/projects/alicat_flowmeter/gui.png"
+                            alt="Alicat Control Interface GUI">
+                        <figcaption>Main Interface: Real-time plotting, manual controls, and sequence running status.
+                        </figcaption>
                     </figure>
                 </div>
             </div>
