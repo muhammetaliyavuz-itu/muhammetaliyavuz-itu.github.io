@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KCS Resistance Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="project-header">
+  <a href="../index.html">← Back to Portfolio</a>
+  <h1>KCS CFD Resistance Validation</h1>
+</header>
+
+<section class="project-section">
+
+  <h2>Experimental Setup</h2>
+
+  <table class="data-table">
+    <tr><td>Experimental Drag</td><td>83.852 N</td></tr>
+    <tr><td>Experimental Cd</td><td>0.00365</td></tr>
+    <tr><td>ρ</td><td>997.561 kg/m³</td></tr>
+    <tr><td>Velocity</td><td>2.196 m/s</td></tr>
+  </table>
+
+</section>
+
+<section class="project-section">
+
+  <h2>CFD Results</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Model</th>
+        <th>Mesh</th>
+        <th>Δt</th>
+        <th>Drag</th>
+        <th>Deviation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>k-ε</td><td>1.0M</td><td>0.04</td><td>83.668</td><td>-0.219%</td></tr>
+      <tr><td>2</td><td>k-ε</td><td>1.99M</td><td>0.04</td><td>84.483</td><td>0.752%</td></tr>
+      <tr><td>3</td><td>k-ε</td><td>2.02M</td><td>0.016</td><td>81.625</td><td>-2.656%</td></tr>
+      <tr><td>4</td><td>k-ε</td><td>1.0M</td><td>0.016</td><td>83.094</td><td>-0.904%</td></tr>
+      <tr><td>5</td><td>k-ω SST</td><td>1.0M</td><td>0.04</td><td>83.046</td><td>-0.961%</td></tr>
+    </tbody>
+  </table>
+
+</section>
+
+<section class="project-section">
+
+  <h2>Flow Field Comparison</h2>
+
+  <img src="../images/projects/kcs/case1.png" class="project-img">
+  <img src="../images/projects/kcs/case2.png" class="project-img">
+  <img src="../images/projects/kcs/case3.png" class="project-img">
+  <img src="../images/projects/kcs/case4.png" class="project-img">
+  <img src="../images/projects/kcs/case5.png" class="project-img">
+
+</section>
+
+<section class="project-section">
+  <h2>Free Surface (VOF)</h2>
+  <img src="../images/projects/kcs/free_surface.png" class="project-img">
+</section>
+
+<section class="project-section">
+  <h2>Engineering Interpretation</h2>
+  <p>
+    The closest agreement with experimental measurements was obtained using the k-ε model with approximately 1.0M cells and Δt = 0.04 s. 
+    Mesh refinement beyond 2M cells did not significantly improve predictive accuracy. 
+    Reduced time-step introduced slight underprediction of total resistance.
+  </p>
+</section>
+
+</body>
+</html>
