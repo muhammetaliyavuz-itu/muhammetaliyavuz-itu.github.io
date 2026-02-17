@@ -49,37 +49,43 @@
             <div class="bubbles">
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
-            <div class="sonar-wrapper">
-                <div class="sonar-grid"></div>
-                <div class="sonar-sweep"></div>
-                <div class="sonar-obj s1"></div>
-                <div class="sonar-obj s2"></div>
-                <img src="images/theme/submarine.svg" class="sonar-sub" alt="Submarine">
+            <div class="ocean-bg">
+                <div class="bubbles">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="submarine-wrapper">
+                    <div class="sonar-wrapper">
+                        <div class="sonar-grid"></div>
+                        <div class="sonar-sweep"></div>
+                        <div class="sonar-obj s1"></div>
+                        <div class="sonar-obj s2"></div>
+                    </div>
+                    <img src="images/theme/submarine.svg" class="submarine" alt="Submarine">
+                </div>
+                <div class="fish-school">
+                    <img src="images/theme/fish.svg" class="fish f1" alt="">
+                    <img src="images/theme/fish.svg" class="fish f2" alt="">
+                    <img src="images/theme/fish.svg" class="fish f3" alt="">
+                </div>
             </div>
-            <div class="fish-school">
-                <img src="images/theme/fish.svg" class="fish f1" alt="">
-                <img src="images/theme/fish.svg" class="fish f2" alt="">
-                <img src="images/theme/fish.svg" class="fish f3" alt="">
+            <div class="grid-bg"></div>
+            <div class="hero-inner">
+                <p class="hero-tag"><span class="pdot"></span>Naval Architecture &amp; Ocean Engineering — ITU</p>
+                <h1 class="hero-name"><span>Muhammet Ali</span><span class="accent">Yavuz</span></h1>
+                <p class="hero-roles">Naval Architect - CFD Engineer - Software Developer</p>
+                <p class="hero-teammates">Teammates: ChatGPT+ · Gemini Pro · Claude</p>
+                <div class="hero-stats">
+                    <div class="hs"><span class="hsn">3.26</span><span class="hsl">GPA / 4.0</span></div>
+                    <div class="hs"><span class="hsn">5+</span><span class="hsl">CFD Projects</span></div>
+                </div>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn bp">View Projects →</a>
+                    <a href="docs/CV_Muhammet_Ali_Yavuz.pdf" class="btn bg" download>Download CV ↓</a>
+                </div>
             </div>
-        </div>
-        <div class="grid-bg"></div>
-        <div class="hero-inner">
-            <p class="hero-tag"><span class="pdot"></span>Naval Architecture &amp; Ocean Engineering — ITU</p>
-            <h1 class="hero-name"><span>Muhammet Ali</span><span class="accent">Yavuz</span></h1>
-            <p class="hero-roles">Naval Architect - CFD Engineer - Software Developer</p>
-            <p class="hero-teammates">Teammates: ChatGPT+ · Gemini Pro · Claude</p>
-            <div class="hero-stats">
-                <div class="hs"><span class="hsn">3.26</span><span class="hsl">GPA / 4.0</span></div>
-                <div class="hs"><span class="hsn">5+</span><span class="hsl">CFD Projects</span></div>
+            <div class="scroll-hint">
+                <div class="sline"></div><span>Scroll</span>
             </div>
-            <div class="hero-btns">
-                <a href="#projects" class="btn bp">View Projects →</a>
-                <a href="docs/CV_Muhammet_Ali_Yavuz.pdf" class="btn bg" download>Download CV ↓</a>
-            </div>
-        </div>
-        <div class="scroll-hint">
-            <div class="sline"></div><span>Scroll</span>
-        </div>
     </section>
 
     <section class="sec" id="about">
@@ -138,7 +144,13 @@
                                     Present</span></div>
                         </div>
                         <ul>
-                            <li>Focus Areas: Resistance and Moment Measurements, Propeller, Cavitation</li>
+                            <li>Focus Areas:
+                                <ul style="margin-top:0.5rem;padding-left:1rem;list-style-type:disc;color:var(--t2)">
+                                    <li>Resistance and Moment Measurements</li>
+                                    <li>Propeller</li>
+                                    <li>Cavitation</li>
+                                </ul>
+                            </li>
                         </ul>
                         <div class="tlt"><span>ANSYS Fluent</span><span>Python</span><span>C</span></div>
                     </div>
@@ -210,22 +222,22 @@
         <div class="con">
             <div class="sec-label">Projects</div>
             <div class="pgrid">
-                <div class="pc" data-project="tcsg">
+                <div class="pc" onclick="openModal('tcsg')">
                     <div class="pi" style="background:linear-gradient(135deg,#1e293b,#0f172a)">
                         <img src="images/projects/undergraduation/side_view.png" alt="TCSG FISILTI"
-                            style="object-fit:contain;padding:1rem">
+                            style="object-fit:contain;padding:0.5rem;width:100%;height:100%">
                         <span class="pb">Ship Design · Preliminary</span>
                     </div>
                     <div class="pbd">
                         <h3>TCSG FISILTI — Hybrid Coast Guard Vessel</h3>
-                        <p>68m Multi-Mission Hybrid Coast Guard Vessel designed for surveillance, environmental
-                            response, and special ops.</p>
+                        <p>Designed for surveillance, environmental response, and special ops, this 68m hybrid vessel
+                            features Azipod propulsion and extensive mission equipment.</p>
                         <div class="pm"><span><strong>68m</strong> LOA</span><span><strong>24 kn</strong>
                                 Speed</span><span><strong>Hybrid</strong></span></div>
                         <button class="pct" onclick="openModal('tcsg')">Project Details →</button>
                     </div>
                 </div>
-                <div class="pc" data-project="alicat">
+                <div class="pc" onclick="openModal('alicat')">
                     <div class="pi" style="background:linear-gradient(135deg,#0f172a,#334155)">
                         <img src="images/projects/alicat_flowmeter/gui.png" alt="Alicat Control Interface">
                         <span class="pb">Python · GUI · Automation</span>
@@ -240,7 +252,7 @@
                         <button class="pct" onclick="openModal('alicat')">Project Details →</button>
                     </div>
                 </div>
-                <div class="pc" data-project="kcs">
+                <div class="pc" onclick="openModal('kcs')">
                     <div class="pi" style="background:linear-gradient(135deg,#0a2a4a,#0077b6)">
                         <img src="images/projects/kcs_hull_with_rudder/3_free_surface.png" alt="KCS Free Surface">
                         <span class="pb">CFD · STAR-CCM+</span>
@@ -254,7 +266,7 @@
                         <button class="pct" onclick="openModal('kcs')">Project Details →</button>
                     </div>
                 </div>
-                <div class="pc" data-project="suboff">
+                <div class="pc" onclick="openModal('darpa')">
                     <div class="pi" style="background:linear-gradient(135deg,#0d1b2a,#1b4332)">
                         <img src="images/projects/darpa/mesh.png" alt="DARPA SUBOFF">
                         <span class="pb">CFD · STAR-CCM+</span>
@@ -264,10 +276,10 @@
                         <p>Submarine appendage resistance: AFF1, AFF3, AFF8 configurations per ITTC guidelines.</p>
                         <div class="pm"><span><strong>0.5%</strong> deviation</span><span><strong>3</strong>
                                 configs</span><span><strong>ITTC</strong></span></div>
-                        <button class="pct" onclick="openModal('suboff')">Project Details →</button>
+                        <button class="pct" onclick="openModal('darpa')">Project Details →</button>
                     </div>
                 </div>
-                <div class="pc" data-project="offshore">
+                <div class="pc" onclick="openModal('platform')">
                     <div class="pi" style="background:linear-gradient(135deg,#1a0533,#7b2d8b)">
                         <img src="images/projects/offshore_platform/1.png" alt="Offshore Platform">
                         <span class="pb">Design · CFD · Maxsurf</span>
