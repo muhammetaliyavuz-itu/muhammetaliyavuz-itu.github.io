@@ -1192,3 +1192,29 @@ section {
   color: inherit;
   display: block;
 }
+
+/* ===== Project Detail Button ===== */
+
+.project-cta {
+    margin-top: 18px;
+}
+
+.project-detail-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid var(--accent-cyan);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--accent-cyan);
+    transition: all var(--transition-base);
+    font-weight: 500;
+}
+
+.project-detail-btn:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+}
+
