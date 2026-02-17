@@ -1157,6 +1157,45 @@ ul {
     color: var(--cy)
 }
 
+/* HERO TEAMMATES */
+.hero-teammates {
+    font-family: var(--fm);
+    font-size: .78rem;
+    color: var(--t3);
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+    animation: fu .7s ease .35s both;
+    opacity: 0.7;
+}
+
+/* REFERENCES */
+.ref-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem 2.5rem;
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--bdr);
+    border-radius: 14px;
+    transition: border-color var(--tr);
+}
+
+.ref-card:hover {
+    border-color: var(--bdh);
+}
+
+.ref-text {
+    font-size: 1.05rem;
+    color: var(--t1);
+    margin-bottom: .4rem;
+}
+
+.ref-sub {
+    font-size: .85rem;
+    color: var(--t3);
+}
+
 /* ANIMATIONS */
 @keyframes fu {
     from {
