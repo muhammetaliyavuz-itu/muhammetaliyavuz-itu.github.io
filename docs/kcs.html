@@ -1,81 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>KCS Resistance Study</title>
-  <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCS Hull — Resistance Prediction | MAY</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 </head>
 <body>
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo"><span class="br">[</span>MAY<span class="br">]</span></a>
+        <ul class="nav-links"><li><a href="../index.html#projects">← All Projects</a></li></ul>
+    </div>
+</nav>
 
-<header class="project-header">
-  <a href="../index.html">← Back to Portfolio</a>
-  <h1>KCS CFD Resistance Validation</h1>
-</header>
-
-<section class="project-section">
-
-  <h2>Experimental Setup</h2>
-
-  <table class="data-table">
-    <tr><td>Experimental Drag</td><td>83.852 N</td></tr>
-    <tr><td>Experimental Cd</td><td>0.00365</td></tr>
-    <tr><td>ρ</td><td>997.561 kg/m³</td></tr>
-    <tr><td>Velocity</td><td>2.196 m/s</td></tr>
-  </table>
-
+<section class="ph">
+    <div class="phi">
+        <img src="../images/projects/kcs/3_free_surface.png" alt="KCS Free Surface">
+        <div class="pho">
+            <div class="con">
+                <a href="../index.html#projects" class="bk">← Back to Projects</a>
+                <div class="pbdg">CFD Analysis · STAR-CCM+</div>
+                <h1>KCS Hull with Rudder<br><span>Resistance Prediction</span></h1>
+                <p class="psub">Free surface CFD · Unsteady RANS · VOF method · 5 simulation cases</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="project-section">
+<div class="pcont">
+    <div class="con play">
+        <main>
 
-  <h2>CFD Results</h2>
+            <div class="psec">
+                <h2>Project Overview</h2>
+                <p>The KRISO Container Ship (KCS) hull form with rudder was simulated in STAR-CCM+ to predict calm water resistance. The Volume of Fluid (VOF) method captured free surface effects, with systematic mesh refinement and time step studies to quantify numerical uncertainty following ITTC guidelines.</p>
+                <p>Five cases were run across three mesh densities and two time steps to identify the optimal configuration.</p>
+            </div>
 
-  <table class="data-table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Model</th>
-        <th>Mesh</th>
-        <th>Δt</th>
-        <th>Drag</th>
-        <th>Deviation</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>1</td><td>k-ε</td><td>1.0M</td><td>0.04</td><td>83.668</td><td>-0.219%</td></tr>
-      <tr><td>2</td><td>k-ε</td><td>1.99M</td><td>0.04</td><td>84.483</td><td>0.752%</td></tr>
-      <tr><td>3</td><td>k-ε</td><td>2.02M</td><td>0.016</td><td>81.625</td><td>-2.656%</td></tr>
-      <tr><td>4</td><td>k-ε</td><td>1.0M</td><td>0.016</td><td>83.094</td><td>-0.904%</td></tr>
-      <tr><td>5</td><td>k-ω SST</td><td>1.0M</td><td>0.04</td><td>83.046</td><td>-0.961%</td></tr>
-    </tbody>
-  </table>
+            <div class="psec">
+                <h2>CFD Visualizations</h2>
+                <div class="igrid">
+                    <figure class="ic"><img src="../images/projects/kcs/3_free_surface.png" alt="Free surface wave"><figcaption>Free surface wave pattern — Kelvin wake</figcaption></figure>
+                    <figure class="ic"><img src="../images/projects/kcs/1.png" alt="KCS geometry"><figcaption>KCS hull with rudder geometry</figcaption></figure>
+                    <figure class="ic"><img src="../images/projects/kcs/2.png" alt="Mesh"><figcaption>Surface mesh detail</figcaption></figure>
+                    <figure class="ic"><img src="../images/projects/kcs/3.png" alt="Pressure"><figcaption>Pressure distribution on hull</figcaption></figure>
+                    <figure class="ic"><img src="../images/projects/kcs/4.png" alt="Velocity"><figcaption>Velocity field around hull</figcaption></figure>
+                    <figure class="ic"><img src="../images/projects/kcs/5.png" alt="Convergence"><figcaption>Resistance convergence history</figcaption></figure>
+                </div>
+            </div>
 
-</section>
+            <div class="psec">
+                <h2>Test Conditions</h2>
+                <div class="cgd">
+                    <div class="cdc"><span class="cdl">Exp. Total Drag</span><span class="cdv">83.852 N</span></div>
+                    <div class="cdc"><span class="cdl">Drag Coeff. C<sub>T</sub></span><span class="cdv">0.00365</span></div>
+                    <div class="cdc"><span class="cdl">Water Density ρ</span><span class="cdv">997.561 kg/m³</span></div>
+                    <div class="cdc"><span class="cdl">Ship Velocity</span><span class="cdv">2.196 m/s</span></div>
+                    <div class="cdc"><span class="cdl">Wetted Area</span><span class="cdv">9.55275 m²</span></div>
+                    <div class="cdc"><span class="cdl">Free Surface Method</span><span class="cdv">VOF</span></div>
+                </div>
+            </div>
 
-<section class="project-section">
+            <div class="psec">
+                <h2>CFD Results vs Experimental</h2>
+                <div style="margin-bottom:1.25rem;padding:.75rem 1rem;background:var(--cyd);border-left:3px solid var(--cy);border-radius:0 6px 6px 0;font-size:.875rem;color:var(--t2)">
+                    Reference: Exp. Total Drag = <strong style="color:var(--t1)">83.852 N</strong> &nbsp;·&nbsp; C<sub>T</sub> = <strong style="color:var(--t1)">0.00365</strong>
+                </div>
+                <div class="tw">
+                    <table class="dt">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Turbulence Model</th>
+                                <th>Mesh Count</th>
+                                <th>Time Step [s]</th>
+                                <th>Total Drag [N]</th>
+                                <th>C<sub>T</sub></th>
+                                <th>Deviation [%]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td><td>k-ε</td><td>1,046,322</td><td>0.04</td><td>83.668</td><td>0.00364</td>
+                                <td class="dv g">−0.219</td>
+                            </tr>
+                            <tr class="br2">
+                                <td>2</td><td>k-ε</td><td>1,994,618</td><td>0.04</td><td>84.483</td><td>0.00368</td>
+                                <td class="dv b">+0.752 ⭐</td>
+                            </tr>
+                            <tr>
+                                <td>3</td><td>k-ε</td><td>2,029,506</td><td>0.016</td><td>81.625</td><td>0.00355</td>
+                                <td class="dv w">−2.656</td>
+                            </tr>
+                            <tr>
+                                <td>4</td><td>k-ε</td><td>1,046,322</td><td>0.016</td><td>83.094</td><td>0.00362</td>
+                                <td class="dv g">−0.904</td>
+                            </tr>
+                            <tr>
+                                <td>5</td><td>k-ω SST</td><td>1,046,322</td><td>0.04</td><td>83.046</td><td>0.00361</td>
+                                <td class="dv g">−0.961</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="tn">⭐ Optimal: Case 2 — k-ε, 1,994,618 cells, Δt = 0.04 s → <strong>0.752% deviation</strong></p>
+            </div>
 
-  <h2>Flow Field Comparison</h2>
+            <div class="psec">
+                <h2>Key Findings</h2>
+                <ul class="fl2">
+                    <li>Best accuracy: <strong>0.752% deviation</strong> with k-ε model, ~2M cells, Δt = 0.04 s.</li>
+                    <li>Free surface wave pattern captured accurately — Kelvin wake clearly visible in VOF solution.</li>
+                    <li>Finer mesh (Case 3) with smaller time step increased error, demonstrating time step sensitivity.</li>
+                    <li>k-ω SST produced comparable results to k-ε at the same mesh density.</li>
+                    <li>Pressure and shear drag components decomposed to isolate hull vs. rudder contributions.</li>
+                </ul>
+            </div>
 
-  <img src="../images/projects/kcs/case1.png" class="project-img">
-  <img src="../images/projects/kcs/case2.png" class="project-img">
-  <img src="../images/projects/kcs/case3.png" class="project-img">
-  <img src="../images/projects/kcs/case4.png" class="project-img">
-  <img src="../images/projects/kcs/case5.png" class="project-img">
+        </main>
 
-</section>
+        <aside class="psb">
+            <div class="sbc"><h4>Tools Used</h4><div class="tags"><span>STAR-CCM+</span><span>Unsteady RANS</span><span>VOF</span><span>k-ε</span><span>k-ω SST</span></div></div>
+            <div class="sbc"><h4>Key Metrics</h4><div class="ml">
+                <div class="mi"><span class="mn">0.75%</span><span class="mla">Best deviation</span></div>
+                <div class="mi"><span class="mn">5</span><span class="mla">Cases run</span></div>
+                <div class="mi"><span class="mn">~2M</span><span class="mla">Max mesh cells</span></div>
+            </div></div>
+            <div class="snav">
+                <a href="suboff.html" class="sl">DARPA SUBOFF →</a>
+                <a href="offshore.html" class="sl">Offshore Platform →</a>
+            </div>
+        </aside>
+    </div>
+</div>
 
-<section class="project-section">
-  <h2>Free Surface (VOF)</h2>
-  <img src="../images/projects/kcs/free_surface.png" class="project-img">
-</section>
-
-<section class="project-section">
-  <h2>Engineering Interpretation</h2>
-  <p>
-    The closest agreement with experimental measurements was obtained using the k-ε model with approximately 1.0M cells and Δt = 0.04 s. 
-    Mesh refinement beyond 2M cells did not significantly improve predictive accuracy. 
-    Reduced time-step introduced slight underprediction of total resistance.
-  </p>
-</section>
-
+<footer class="foot"><div class="con fi"><a href="../index.html" class="logo"><span class="br">[</span>MAY<span class="br">]</span></a><span>© 2025 Muhammet Ali Yavuz</span><a href="../index.html#projects" style="color:var(--cy);font-size:.9rem">← All Projects</a></div></footer>
+<script src="../js/script.js"></script>
 </body>
 </html>

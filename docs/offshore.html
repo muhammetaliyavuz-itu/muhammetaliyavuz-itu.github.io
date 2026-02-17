@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offshore Platform — Design & Analysis | MAY</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo"><span class="br">[</span>MAY<span class="br">]</span></a>
+        <ul class="nav-links"><li><a href="../index.html#projects">← All Projects</a></li></ul>
+    </div>
+</nav>
+
+<section class="ph">
+    <div class="phi">
+        <img src="../images/projects/offshore_platform/1.png" alt="Offshore Platform">
+        <div class="pho">
+            <div class="con">
+                <a href="../index.html#projects" class="bk">← Back to Projects</a>
+                <div class="pbdg">Design · CFD · Stability Analysis</div>
+                <h1>Offshore Platform<br><span>Design &amp; Multi-Tool Analysis</span></h1>
+                <p class="psub">Rhinoceros 3D · Maxsurf · ANSYS Fluent · Complete pipeline</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="pcont">
+    <div class="con play">
+        <main>
+            <div class="psec">
+                <h2>Project Overview</h2>
+                <p>A semi-submersible offshore platform was conceptually designed and analyzed using an integrated multi-tool pipeline: 3D solid modeling in Rhinoceros, resistance and stability analysis in Maxsurf, and flow visualization in ANSYS Fluent.</p>
+            </div>
+
+            <div class="psec">
+                <h2>CFD Visualizations</h2>
+                <div class="igrid">
+                    <figure class="ic"><img src="../images/projects/offshore_platform/1.png" alt="Pressure distribution"><figcaption>Total pressure distribution — ANSYS Fluent, 3 m/s inflow</figcaption></figure>
+                    <figure class="ic"><img src="../images/projects/offshore_platform/2.png" alt="Resistance chart"><figcaption>Resistance vs Speed — Maxsurf KR Bange Method</figcaption></figure>
+                </div>
+            </div>
+
+            <div class="psec">
+                <h2>Platform Geometry</h2>
+                <div class="cgd">
+                    <div class="cdc"><span class="cdl">Hull Dimensions</span><span class="cdv">70 × 40 × 30 m</span></div>
+                    <div class="cdc"><span class="cdl">Superstructure</span><span class="cdv">60 × 40 m</span></div>
+                    <div class="cdc"><span class="cdl">Derrick Height</span><span class="cdv">25 m</span></div>
+                    <div class="cdc"><span class="cdl">Modeling Tool</span><span class="cdv">Rhinoceros 3D</span></div>
+                    <div class="cdc"><span class="cdl">Max Resistance</span><span class="cdv">1019.7 kN</span></div>
+                    <div class="cdc"><span class="cdl">Max Speed</span><span class="cdv">10 knots</span></div>
+                </div>
+            </div>
+
+            <div class="psec">
+                <h2>Analysis Workflow</h2>
+                <div class="wfs">
+                    <div class="wfi"><span class="wfn">01</span><div><h4>3D Modeling — Rhinoceros</h4><p>Platform modeled as solid structure: hulls, columns, superstructure, and 25 m derrick.</p></div></div>
+                    <div class="wfi"><span class="wfn">02</span><div><h4>Resistance &amp; Stability — Maxsurf</h4><p>KR Bange method up to 10 knots. Maximum resistance 1019.7 kN. Stability analysis for safe operating conditions.</p></div></div>
+                    <div class="wfi"><span class="wfn">03</span><div><h4>CFD Analysis — ANSYS Fluent</h4><p>Flow structure simulated at 3 m/s inflow. Pressure contours used for mooring point selection and structural load assessment.</p></div></div>
+                </div>
+            </div>
+
+            <div class="psec">
+                <h2>Key Findings</h2>
+                <ul class="fl2">
+                    <li>Maximum towing resistance of <strong>1019.7 kN at 10 knots</strong> determines propulsion requirements.</li>
+                    <li>Pressure distribution from ANSYS identifies critical hull zones for mooring design.</li>
+                    <li>Complete Rhinoceros → Maxsurf → ANSYS pipeline validated for offshore concept design.</li>
+                </ul>
+            </div>
+        </main>
+
+        <aside class="psb">
+            <div class="sbc"><h4>Tools Used</h4><div class="tags"><span>Rhinoceros 3D</span><span>Maxsurf</span><span>ANSYS Fluent</span><span>KR Bange</span></div></div>
+            <div class="sbc"><h4>Scale</h4><div class="ml">
+                <div class="mi"><span class="mn">70m</span><span class="mla">Hull length</span></div>
+                <div class="mi"><span class="mn">25m</span><span class="mla">Derrick height</span></div>
+                <div class="mi"><span class="mn">1020kN</span><span class="mla">Max resistance</span></div>
+            </div></div>
+            <div class="snav">
+                <a href="kcs.html" class="sl">← KCS Hull</a>
+                <a href="suboff.html" class="sl">← DARPA SUBOFF</a>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<footer class="foot"><div class="con fi"><a href="../index.html" class="logo"><span class="br">[</span>MAY<span class="br">]</span></a><span>© 2025 Muhammet Ali Yavuz</span><a href="../index.html#projects" style="color:var(--cy);font-size:.9rem">← All Projects</a></div></footer>
+<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARPA SUBOFF — Appendage Resistance | MAY</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="../index.html" class="logo"><span class="br">[</span>MAY<span class="br">]</span></a>
+        <ul class="nav-links"><li><a href="../index.html#projects">← All Projects</a></li></ul>
+    </div>
+</nav>
+
+<section class="ph">
+    <div class="phi">
+        <img src="../images/projects/darpa/mesh.png" alt="DARPA SUBOFF Mesh">
+        <div class="pho">
+            <div class="con">
+                <a href="../index.html#projects" class="bk">← Back to Projects</a>
+                <div class="pbdg">CFD Analysis · STAR-CCM+</div>
+                <h1>DARPA SUBOFF<br><span>Appendage Resistance Prediction</span></h1>
+                <p class="psub">AFF1 · AFF3 · AFF8 configurations · ITTC uncertainty assessment</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="pcont">
+    <div class="con play">
+        <main>
+            <div class="psec">
+                <h2>Project Overview</h2>
+                <p>The DARPA SUBOFF submarine geometry was simulated in STAR-CCM+ to investigate appendage resistance contributions across three configurations: bare hull (AFF1), hull+rudder (AFF3), and hull+sail+rudder (AFF8).</p>
+                <p>Simulations spanned speeds from 2 to 9.15 m/s. Mesh refinement studies and uncertainty analysis followed ITTC 2017 guidelines. Resistance components (pressure and viscous) were decomposed part-by-part.</p>
+            </div>
+
+            <div class="psec">
+                <h2>CFD Visualizations</h2>
+                <div class="igrid">
+                    <figure class="ic"><img src="../images/projects/darpa/parts_darpa.png" alt="Configurations"><figcaption>AFF1 / AFF3 / AFF8 configuration parts</figcaption></figure>
+                    <figure class="ic"><img src="../images/projects/darpa/domain_dimensions.png" alt="Domain"><figcaption>Computational domain dimensions</figcaption></figure>
+                    <figure class="ic"><img src="../images/projects/darpa/mesh.png" alt="Mesh"><figcaption>Surface mesh — DARPA SUBOFF hull</figcaption></figure>
+                    <figure class="ic"><img src="../images/projects/darpa/boundary_types.png" alt="BCs"><figcaption>Boundary conditions setup</figcaption></figure>
+                </div>
+            </div>
+
+            <div class="psec">
+                <h2>Configuration Definitions</h2>
+                <div class="cgd">
+                    <div class="cdc"><span class="cdl">AFF1</span><span class="cdv">Bare Hull</span></div>
+                    <div class="cdc"><span class="cdl">AFF3</span><span class="cdv">Hull + Rudder</span></div>
+                    <div class="cdc"><span class="cdl">AFF8</span><span class="cdv">Hull + Sail + Rudder</span></div>
+                    <div class="cdc"><span class="cdl">Speed Range</span><span class="cdv">2 – 9.15 m/s</span></div>
+                    <div class="cdc"><span class="cdl">Min. Deviation</span><span class="cdv">0.5%</span></div>
+                    <div class="cdc"><span class="cdl">Guidelines</span><span class="cdv">ITTC 2017</span></div>
+                </div>
+            </div>
+
+            <div class="psec">
+                <h2>Key Findings</h2>
+                <ul class="fl2">
+                    <li>Minimum deviation of <strong>0.5%</strong> from experimental data in optimal mesh configuration.</li>
+                    <li>Sail (AFF1→AFF8) contributes significantly more resistance than rudder alone (AFF1→AFF3).</li>
+                    <li>Viscous resistance dominates at low speeds; pressure resistance increases with speed.</li>
+                    <li>Velocity fields, pressure contours, streamlines, and y⁺ distributions analyzed for all configurations.</li>
+                    <li>ITTC mesh refinement ratio and uncertainty quantification methodology strictly applied.</li>
+                </ul>
+            </div>
+        </main>
+
+        <aside class="psb">
+            <div class="sbc"><h4>Tools Used</h4><div class="tags"><span>STAR-CCM+</span><span>RANS</span><span>k-ε</span><span>k-ω SST</span><span>ITTC</span></div></div>
+            <div class="sbc"><h4>Key Metrics</h4><div class="ml">
+                <div class="mi"><span class="mn">0.5%</span><span class="mla">Min. deviation</span></div>
+                <div class="mi"><span class="mn">3</span><span class="mla">Configurations</span></div>
+                <div class="mi"><span class="mn">5+</span><span class="mla">Speed points</span></div>
+            </div></div>
+            <div class="snav">
+                <a href="kcs.html" class="sl">← KCS Hull</a>
+                <a href="offshore.html" class="sl">Offshore Platform →</a>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<footer class="foot"><div class="con fi"><a href="../index.html" class="logo"><span class="br">[</span>MAY<span class="br">]</span></a><span>© 2025 Muhammet Ali Yavuz</span><a href="../index.html#projects" style="color:var(--cy);font-size:.9rem">← All Projects</a></div></footer>
+<script src="../js/script.js"></script>
+</body>
+</html>
