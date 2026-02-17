@@ -1455,12 +1455,11 @@ ul {
 
 .modal-section h3 {
     font-family: var(--fh);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--cy);
-    margin-bottom: 1rem;
+    margin-bottom: 1.75rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: .9rem
+    letter-spacing: 1.5px
 }
 
 .modal-section p {
