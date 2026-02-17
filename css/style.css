@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 :root {
     --bg: #020617;
     --bg2: #0f172a;
@@ -13,7 +15,7 @@
     --t1: #f1f5f9;
     --t2: #94a3b8;
     --t3: #64748b;
-    --fh: 'Syne', sans-serif;
+    --fh: 'Manrope', sans-serif;
     --fm: 'IBM Plex Mono', monospace;
     --fb: 'Inter', sans-serif;
     --r: 4px;
@@ -68,6 +70,10 @@
 
 [data-theme="light"] .fish-school {
     opacity: 0.06;
+}
+
+[data-theme="light"] .sonar-wrapper {
+    opacity: 0.3;
 }
 
 [data-theme="light"] .pb {
@@ -166,6 +172,139 @@ body {
     overflow: hidden
 }
 
+/* SONAR ANIMATION */
+.sonar-wrapper {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.sonar-grid {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(34, 211, 238, 0.15);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.05);
+}
+
+.sonar-grid::before,
+.sonar-grid::after {
+    content: '';
+    position: absolute;
+    inset: 50px;
+    border: 1px solid rgba(34, 211, 238, 0.1);
+    border-radius: 50%;
+}
+
+.sonar-grid::after {
+    inset: 100px;
+}
+
+.sonar-sweep {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, transparent 0deg, rgba(34, 211, 238, 0) 60deg, rgba(34, 211, 238, 0.15) 180deg, transparent 180deg);
+    animation: sonarSpin 4s linear infinite;
+}
+
+.sonar-obj {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--cy);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--cy);
+    opacity: 0;
+}
+
+.sonar-obj.s1 {
+    top: 30%;
+    left: 60%;
+    animation: ping 4s linear infinite 1s;
+}
+
+.sonar-obj.s2 {
+    top: 70%;
+    left: 40%;
+    animation: ping 4s linear infinite 2.5s;
+}
+
+.sonar-sub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.4));
+}
+
+@keyframes sonarSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ping {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* FISH ANIMATION UPDATES */
+.fish {
+    position: absolute;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.3));
+    transition: all var(--tr);
+}
+
+.f1 {
+    width: 50px;
+    top: 20%;
+    left: -100px;
+    animation: swim 25s linear infinite;
+    color: var(--cy);
+}
+
+.f2 {
+    width: 35px;
+    top: 60%;
+    left: -100px;
+    animation: swim 32s linear 2s infinite;
+    color: var(--bl);
+}
+
+.f3 {
+    width: 25px;
+    top: 40%;
+    left: -100px;
+    animation: swim 20s linear 5s infinite;
+    color: var(--t2);
+}
+
 .submarine-wrapper {
     position: absolute;
     top: 20%;
@@ -185,11 +324,6 @@ body {
     opacity: 0.1;
     z-index: -1;
     animation: swim-left 35s linear infinite 5s
-}
-
-.fish {
-    width: 60px;
-    height: auto
 }
 
 .f1 {

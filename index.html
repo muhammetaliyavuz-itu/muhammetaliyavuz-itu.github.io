@@ -49,8 +49,12 @@
             <div class="bubbles">
                 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
-            <div class="submarine-wrapper">
-                <img src="images/theme/submarine.svg" class="submarine" alt="Submarine">
+            <div class="sonar-wrapper">
+                <div class="sonar-grid"></div>
+                <div class="sonar-sweep"></div>
+                <div class="sonar-obj s1"></div>
+                <div class="sonar-obj s2"></div>
+                <img src="images/theme/submarine.svg" class="sonar-sub" alt="Submarine">
             </div>
             <div class="fish-school">
                 <img src="images/theme/fish.svg" class="fish f1" alt="">
@@ -108,7 +112,10 @@
                     </div>
                     <div class="sb">
                         <h4>Languages</h4>
-                        <div class="tags"><span>English — Advanced</span><span>German — B1</span></div>
+                        <div class="tags"><span>English — Advanced</span><a
+                                href="https://results.telc.net/qr/JfgH5TJpT96WF1qbG0pVcwnzx5BYe0eNiHHrqN_Mq3Lnsl3NNCVKvam7jM_xm5zr"
+                                target="_blank" style="text-decoration:none;color:inherit"><span>German — Intermediate
+                                    (TELC B1)</span></a></div>
                     </div>
                 </div>
             </div>
@@ -203,6 +210,21 @@
         <div class="con">
             <div class="sec-label">Projects</div>
             <div class="pgrid">
+                <div class="pc" data-project="tcsg">
+                    <div class="pi" style="background:linear-gradient(135deg,#1e293b,#0f172a)">
+                        <img src="images/projects/undergraduation/side_view.png" alt="TCSG FISILTI"
+                            style="object-fit:contain;padding:1rem">
+                        <span class="pb">Ship Design · Preliminary</span>
+                    </div>
+                    <div class="pbd">
+                        <h3>TCSG FISILTI — Hybrid Coast Guard Vessel</h3>
+                        <p>68m Multi-Mission Hybrid Coast Guard Vessel designed for surveillance, environmental
+                            response, and special ops.</p>
+                        <div class="pm"><span><strong>68m</strong> LOA</span><span><strong>24 kn</strong>
+                                Speed</span><span><strong>Hybrid</strong></span></div>
+                        <button class="pct" onclick="openModal('tcsg')">Project Details →</button>
+                    </div>
+                </div>
                 <div class="pc" data-project="alicat">
                     <div class="pi" style="background:linear-gradient(135deg,#0f172a,#334155)">
                         <img src="images/projects/alicat_flowmeter/gui.png" alt="Alicat Control Interface">
@@ -384,21 +406,237 @@
 
     <footer class="foot">
         <div class="con fi"><a href="index.html" class="logo"><span class="br">[</span>MAY<span
-                    class="br">]</span></a><span>© 2025 Muhammet Ali Yavuz</span>
+                    class="br">]</span></a><span>© 2025 Muhammet Ali Yavuz — Last Updated: February 2026</span>
             <div class="fl"><a href="https://github.com/muhammetaliyavuz-itu" target="_blank">GitHub</a><a
                     href="https://linkedin.com/in/yavuzitu" target="_blank">LinkedIn</a></div>
         </div>
     </footer>
 
-    <!-- Project Modals -->
     <div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
         <div class="modal-container" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div class="modal-content" id="modalContent"></div>
+            <div class="modal-content" id="modalContent">
+                <!-- Projects go here -->
+            </div>
         </div>
     </div>
 
-    <!-- Modal Content Templates -->
+    <!-- TEMPLATES -->
+    <template id="tcsg-template">
+        <div class="modal-header">
+            <span class="modal-tag">Ship Design · Preliminary</span>
+            <h2>TCSG FISILTI — Hybrid Coast Guard Vessel</h2>
+            <div class="modal-meta">
+                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg> Dec 2025</span>
+                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg> Preliminary Design</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <img src="images/projects/undergraduation/side_view.png" alt="TCSG FISILTI Side View" class="modal-img">
+
+            <div class="modal-section">
+                <h3>Dark Night off Hatay — The Design Story</h3>
+                <p><strong>05.10.2025 — Iskenderun:</strong> A bulk carrier hijacked by terrorists leaks heavy fuel oil
+                    into the sea after deviating from its course. TCSG FISILTI, a 68-meter Multi-Mission Hybrid Coast
+                    Guard Vessel, responds. Designed for covert surveillance, environmental response, and special
+                    operations, she executes a successful operation: DCS commandos neutralize the threat, hostages are
+                    rescued via RHIB, and the vessel deploys 600m of boom to recover 10m³ of oil, averting an
+                    environmental disaster.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Mission Capabilities</h3>
+                <div class="modal-specs">
+                    <div class="ms-item">
+                        <h4>Primary Missions</h4>
+                        <ul class="ms-list">
+                            <li>Search and Rescue (SAR)</li>
+                            <li>Law Enforcement & Maritime Interdiction</li>
+                            <li>Environmental Protection (Oil Spill Response)</li>
+                            <li>Prevention of Drug Trafficking</li>
+                            <li>Ports, Waterways & Coastal Security</li>
+                        </ul>
+                    </div>
+                    <div class="ms-item">
+                        <h4>Secondary Missions</h4>
+                        <ul class="ms-list">
+                            <li>Counterterrorism & Special Ops Support</li>
+                            <li>Anti-Piracy Operations</li>
+                            <li>Surface and Air Surveillance (VTOL UAV)</li>
+                            <li>Intelligence Gathering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>General Specifications</h3>
+                <div class="table-container">
+                    <table class="dt">
+                        <tr>
+                            <th>LOA</th>
+                            <td>69.50 m</td>
+                        </tr>
+                        <tr>
+                            <th>LWL</th>
+                            <td>67.50 m</td>
+                        </tr>
+                        <tr>
+                            <th>Beam</th>
+                            <td>12.50 m</td>
+                        </tr>
+                        <tr>
+                            <th>Draft</th>
+                            <td>3.50 m</td>
+                        </tr>
+                        <tr>
+                            <th>Depth</th>
+                            <td>7.00 m</td>
+                        </tr>
+                        <tr>
+                            <th>Displacement</th>
+                            <td>1306 t</td>
+                        </tr>
+                        <tr>
+                            <th>Speed (Max/Service)</th>
+                            <td>24 kn / 17 kn</td>
+                        </tr>
+                        <tr>
+                            <th>Range</th>
+                            <td>3000 nm @ 17 kn</td>
+                        </tr>
+                        <tr>
+                            <th>Endurance</th>
+                            <td>20 days</td>
+                        </tr>
+                        <tr>
+                            <th>Crew</th>
+                            <td>63 (7 Officers, 26 Petty Officers, 30 Ratings)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>Propulsion & Power</h3>
+                <ul class="tech-stack">
+                    <li>2 × Counter Rotating AZIPOD</li>
+                    <li>Total Brake Power: 8,562 kW</li>
+                    <li>Bow Thruster: 250 kW (40 kN thrust)</li>
+                    <li>Gensets: 4 × MAN 20V175D-MEM (3072 kWe each)</li>
+                    <li>Total Electrical Output: 12,451 kWe</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Equipment & Payload</h3>
+                <div class="modal-specs">
+                    <div class="ms-item">
+                        <h4>Deck & Rescue</h4>
+                        <p>2 × Rescue Boats (Merlin-615 R MKI)<br>
+                            1 × RHIB (ASIS Aluminium 11.5m, >50 kn)<br>
+                            2 × VTOL UAV (Insitu Integrator)<br>
+                            Oil Recovery: DESMI RO-BOOM 1000 (600m)</p>
+                    </div>
+                    <div class="ms-item">
+                        <h4>Armament</h4>
+                        <p>1 × RAFAEL Typhoon Mk 30-c (30/40mm)<br>
+                            2 × ASELSAN STAMP (12.7mm RCWS)<br>
+                            Fire Control: EO Director integrated with CMS</p>
+                    </div>
+                    <div class="ms-item">
+                        <h4>Sonar</h4>
+                        <p>Hull-mounted Sonar: ASELSAN FERSAH<br>
+                            Diver Detection Sonar: ARIS Explorer 3000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>Tank Capacities</h3>
+                <ul class="tech-stack">
+                    <li>Fuel Oil: 355 t</li>
+                    <li>Fresh Water: 64 t</li>
+                    <li>Recovered Oil: 20 t</li>
+                    <li>Waste: 14 t</li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <template id="alicat-template">
+        <div class="modal-header">
+            <span class="modal-badge">Python · GUI · Automation</span>
+            <h2>Alicat Mass Flow Controller — Control Interface</h2>
+            <p class="modal-subtitle">Production-grade desktop app for real-time control, monitoring, and automated data
+                logging.
+            </p>
+        </div>
+        <div class="modal-body">
+            <img src="images/projects/alicat_flowmeter/gui.png" alt="Alicat Control Interface" class="modal-img">
+            <div class="modal-section">
+                <h3>Project Overview</h3>
+                <p>Developed a robust desktop application for real-time control and monitoring of Alicat Mass Flow
+                    Controllers (MFCs). This Python-based GUI application provides a user-friendly interface for setting
+                    flow rates, reading sensor data, and logging experimental results automatically.</p>
+                <p>The application leverages asynchronous I/O for responsive communication with multiple devices and
+                    ensures data integrity through automated logging features, making it suitable for production
+                    environments and research laboratories.</p>
+            </div>
+            <div class="modal-section">
+                <h3>Technical Features</h3>
+                <ul class="modal-list">
+                    <li><strong>Real-time Control:</strong> Set and adjust flow rates, pressure, and temperature in
+                        real-time.</li>
+                    <li><strong>Data Visualization:</strong> Live plotting of sensor data (flow, pressure, temperature)
+                        for immediate feedback.</li>
+                    <li><strong>Automated Data Logging:</strong> Configurable logging intervals and formats (CSV, Excel)
+                        for experimental data.</li>
+                    <li><strong>Multi-device Support:</strong> Seamlessly connect and manage multiple Alicat MFCs
+                        simultaneously.</li>
+                    <li><strong>Error Handling:</strong> Robust error detection and reporting for reliable operation.
+                    </li>
+                    <li><strong>User-friendly Interface:</strong> Intuitive GUI designed for ease of use in laboratory
+                        and production settings.</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Technologies Used</h3>
+                <ul class="tech-stack">
+                    <li><strong>Python:</strong> Core programming language.</li>
+                    <li><strong>PyQt/Tkinter:</strong> For building the graphical user interface.</li>
+                    <li><strong>AsyncIO:</strong> For asynchronous serial communication and responsive UI.</li>
+                    <li><strong>PySerial:</strong> For serial communication with Alicat MFC devices.</li>
+                    <li><strong>Matplotlib:</strong> For real-time data plotting and visualization.</li>
+                    <li><strong>Pandas:</strong> For data manipulation and export to various formats.</li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Application Screenshots</h3>
+                <div class="modal-gallery">
+                    <figure class="ic"><img src="images/projects/alicat_flowmeter/gui.png" alt="Main Control Interface">
+                        <figcaption>Main Control Interface with live data display</figcaption>
+                    </figure>
+                    <figure class="ic"><img src="images/projects/alicat_flowmeter/plot.png" alt="Real-time Plotting">
+                        <figcaption>Real-time plotting of flow rate and pressure</figcaption>
+                    </figure>
+                    <figure class="ic"><img src="images/projects/alicat_flowmeter/settings.png" alt="Settings Panel">
+                        <figcaption>Settings panel for device configuration and logging options</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </template>
+
     <template id="kcs-template">
         <div class="modal-header">
             <span class="modal-badge">CFD Analysis · STAR-CCM+</span>
