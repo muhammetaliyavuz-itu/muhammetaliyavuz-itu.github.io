@@ -1885,17 +1885,26 @@ ul {
     line-height: 1.6
 }
 
+/* =========================================
+   MODAL ICERIK DUZENI (Genel Yapi)
+   Burasi tum projelerin ortak stilidir.
+   Sol taraf: Yazi ve Tablolar
+   Sag taraf: Teknik Ozellikler (Kisa Liste)
+   ========================================= */
 .modal-body {
     display: grid;
     grid-template-columns: 1fr 380px;
+    /* Sol genis, sag 380px sabit */
     gap: 0 2.5rem;
+    /* Iki kolon arasi bosluk (Sag/Sol) */
     padding: 3rem
+        /* Kenarlardan iceri bosluk */
 }
 
 .modal-main {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1.5rem;
     padding-right: 3rem;
     border-right: 1px solid var(--bdr)
 }
@@ -1907,20 +1916,29 @@ ul {
     gap: 2rem
 }
 
+/* =========================================
+   MODAL BASLIKLARI (Project Overview vb.)
+   ========================================= */
 .modal-section h3 {
     font-family: var(--fh);
     font-size: 1.15rem;
     color: var(--cy);
     margin-top: 1rem;
+    /* Basligin ustundeki bosluk */
     margin-bottom: 0.8rem;
+    /* Basligin altindaki bosluk */
     text-transform: uppercase;
     letter-spacing: 1.5px
 }
 
+/* Ilk basligin ustunde bosluk olmasin */
 .modal-section:first-child h3 {
     margin-top: 0
 }
 
+/* =========================================
+   MODAL PARAGRAFLARI (Yazilar)
+   ========================================= */
 .modal-section p {
     color: var(--t2);
     font-size: .95rem;
