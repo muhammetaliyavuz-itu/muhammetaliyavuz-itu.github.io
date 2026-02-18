@@ -1893,11 +1893,11 @@ ul {
    ========================================= */
 .modal-body {
     display: grid;
-    grid-template-columns: 1fr 320px;
-    /* Sol genis, sag 380px sabit */
+    grid-template-columns: 1fr 280px;
+    /* Sol genis, sag 280px sabit */
     gap: 0 1rem;
     /* Iki kolon arasi bosluk (Sag/Sol) */
-    padding: 3rem
+    padding: 1.5rem
         /* Kenarlardan iceri bosluk */
 }
 
