@@ -1906,7 +1906,12 @@ ul {
     flex-direction: column;
     gap: 0.5rem;
     padding-right: 1.5rem;
+    min-width: 0;
     /* border-right removed */
+}
+
+.modal-main .table-container {
+    overflow-x: auto;
 }
 
 .modal-sidebar {
