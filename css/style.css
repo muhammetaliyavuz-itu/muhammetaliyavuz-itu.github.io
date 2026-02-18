@@ -1905,12 +1905,12 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding-right: 3rem;
-    border-right: 1px solid var(--bdr)
+    padding-right: 1.5rem;
+    /* border-right removed */
 }
 
 .modal-sidebar {
-    padding-left: 3rem;
+    padding-left: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem

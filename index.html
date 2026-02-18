@@ -279,7 +279,7 @@
                         <button class="pct" onclick="openModal('darpa')">Project Details →</button>
                     </div>
                 </div>
-                <div class="pc" onclick="openModal('platform')">
+                <div class="pc" onclick="openModal('offshore')">
                     <div class="pi" style="background:linear-gradient(135deg,#1a0533,#7b2d8b)">
                         <img src="images/projects/offshore_platform/1.png" alt="Offshore Platform">
                         <span class="pb">Design · CFD · Maxsurf</span>
@@ -752,16 +752,71 @@
             <p class="modal-subtitle">Submarine appendage resistance analysis following ITTC guidelines</p>
         </div>
         <div class="modal-body">
-            <div class="modal-section">
-                <h3>Project Overview</h3>
-                <p>This project focuses on the hydrodynamic resistance analysis of the DARPA SUBOFF submarine model with
-                    various appendage configurations. The study investigates the resistance characteristics of three
-                    different configurations: AFF1 (bare hull), AFF3 (hull + rudder), and AFF8 (hull + sail + rudder).
-                </p>
-                <p>Mesh refinement and uncertainty assessment were performed following ITTC guidelines. Velocity fields,
-                    static/total pressure contours, streamlines, and y⁺ distributions were evaluated for hydrodynamic
-                    performance insights.</p>
+            <div class="modal-main">
+                <div class="modal-section">
+                    <h3>Project Overview</h3>
+                    <p>This project focuses on the hydrodynamic resistance analysis of the DARPA SUBOFF submarine model
+                        with
+                        various appendage configurations. The study investigates the resistance characteristics of three
+                        different configurations: AFF1 (bare hull), AFF3 (hull + rudder), and AFF8 (hull + sail +
+                        rudder).
+                    </p>
+                    <p>Mesh refinement and uncertainty assessment were performed following ITTC guidelines. Velocity
+                        fields,
+                        static/total pressure contours, streamlines, and y⁺ distributions were evaluated for
+                        hydrodynamic
+                        performance insights.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Key Results</h3>
+                    <ul class="modal-list">
+                        <li>Achieved deviations as low as <strong>0.5%</strong> from experimental data in optimal
+                            configurations</li>
+                        <li>Analysed resistance components (pressure and viscous) and part-by-part contributions (hull,
+                            sail, rudder) across multiple speeds</li>
+                        <li>Performed mesh refinement and uncertainty assessment following ITTC guidelines</li>
+                        <li>Evaluated velocity fields, static/total pressure contours, streamlines, and y⁺ distributions
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Configurations Analyzed</h3>
+                    <ul class="modal-list">
+                        <li><strong>AFF1 (Bare Hull):</strong> Baseline configuration without appendages for reference
+                            resistance</li>
+                        <li><strong>AFF3 (Hull + Rudder):</strong> Hull with rudder to assess rudder resistance
+                            contribution</li>
+                        <li><strong>AFF8 (Hull + Sail + Rudder):</strong> Complete configuration with sail and rudder
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Visual Results</h3>
+                    <div class="modal-gallery">
+                        <figure class="ic"><img src="images/projects/darpa/parts_darpa.png" alt="SUBOFF Geometry Parts">
+                            <figcaption>DARPA SUBOFF geometry — Bare hull, fairwater, and ring wings</figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/darpa/domain_dimensions.png"
+                                alt="Computational Domain">
+                            <figcaption>Computational domain dimensions (LBP-based sizing)</figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/darpa/boundary_types.png"
+                                alt="Boundary Conditions">
+                            <figcaption>Boundary condition setup — Velocity inlet, pressure outlet, symmetry planes
+                            </figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/darpa/mesh.png" alt="Volume Mesh">
+                            <figcaption>Volume mesh refinement around hull and appendages</figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/darpa/darpa_graph.png" alt="Resistance Comparison">
+                            <figcaption>Resistance vs. speed — CFD vs. EFD comparison for AFF1, AFF3, AFF8</figcaption>
+                        </figure>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="modal-sidebar">
             <div class="modal-section">
                 <h3>Technical Specifications</h3>
                 <div class="modal-specs">
@@ -791,50 +846,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-section">
-                <h3>Key Results</h3>
-                <ul class="modal-list">
-                    <li>Achieved deviations as low as <strong>0.5%</strong> from experimental data in optimal
-                        configurations</li>
-                    <li>Analysed resistance components (pressure and viscous) and part-by-part contributions (hull,
-                        sail, rudder) across multiple speeds</li>
-                    <li>Performed mesh refinement and uncertainty assessment following ITTC guidelines</li>
-                    <li>Evaluated velocity fields, static/total pressure contours, streamlines, and y⁺ distributions
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-section">
-                <h3>Configurations Analyzed</h3>
-                <ul class="modal-list">
-                    <li><strong>AFF1 (Bare Hull):</strong> Baseline configuration without appendages for reference
-                        resistance</li>
-                    <li><strong>AFF3 (Hull + Rudder):</strong> Hull with rudder to assess rudder resistance
-                        contribution</li>
-                    <li><strong>AFF8 (Hull + Sail + Rudder):</strong> Complete configuration with sail and rudder</li>
-                </ul>
-            </div>
-            <div class="modal-section">
-                <h3>Visual Results</h3>
-                <div class="modal-gallery">
-                    <figure class="ic"><img src="images/projects/darpa/parts_darpa.png" alt="SUBOFF Geometry Parts">
-                        <figcaption>DARPA SUBOFF geometry — Bare hull, fairwater, and ring wings</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/darpa/domain_dimensions.png"
-                            alt="Computational Domain">
-                        <figcaption>Computational domain dimensions (LBP-based sizing)</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/darpa/boundary_types.png" alt="Boundary Conditions">
-                        <figcaption>Boundary condition setup — Velocity inlet, pressure outlet, symmetry planes
-                        </figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/darpa/mesh.png" alt="Volume Mesh">
-                        <figcaption>Volume mesh refinement around hull and appendages</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/darpa/darpa_graph.png" alt="Resistance Comparison">
-                        <figcaption>Resistance vs. speed — CFD vs. EFD comparison for AFF1, AFF3, AFF8</figcaption>
-                    </figure>
-                </div>
-            </div>
+        </div>
         </div>
     </template>
 
@@ -845,15 +857,68 @@
             <p class="modal-subtitle">Comprehensive offshore platform design from concept to CFD validation</p>
         </div>
         <div class="modal-body">
-            <div class="modal-section">
-                <h3>Project Overview</h3>
-                <p>This multidisciplinary project encompasses the complete design cycle of a semi-submersible offshore
-                    drilling platform. The work integrates 3D modeling, hydrostatic stability analysis, and
-                    computational fluid dynamics to create a validated platform design suitable for deep-water
-                    operations.</p>
-                <p>The platform features a 70×40m deck area with a 25m derrick tower, designed to operate in harsh
-                    offshore environments with adequate stability margins and structural integrity.</p>
+            <div class="modal-main">
+                <div class="modal-section">
+                    <h3>Project Overview</h3>
+                    <p>This multidisciplinary project encompasses the complete design cycle of a semi-submersible
+                        offshore
+                        drilling platform. The work integrates 3D modeling, hydrostatic stability analysis, and
+                        computational fluid dynamics to create a validated platform design suitable for deep-water
+                        operations.</p>
+                    <p>The platform features a 70×40m deck area with a 25m derrick tower, designed to operate in harsh
+                        offshore environments with adequate stability margins and structural integrity.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Design Phases</h3>
+                    <ul class="modal-list">
+                        <li><strong>Conceptual Design:</strong> Initial sizing and layout based on operational
+                            requirements
+                        </li>
+                        <li><strong>3D Modeling:</strong> Detailed geometry creation in Rhinoceros 3D including hull,
+                            pontoons, and deck structures</li>
+                        <li><strong>Stability Analysis:</strong> Hydrostatic calculations and stability assessment using
+                            Maxsurf Stability</li>
+                        <li><strong>CFD Analysis:</strong> Wave interaction and hydrodynamic loading simulation in ANSYS
+                            Fluent</li>
+                        <li><strong>Structural Verification:</strong> Load distribution and stress analysis for critical
+                            components</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Key Features</h3>
+                    <ul class="modal-list">
+                        <li>Four-column semi-submersible configuration for enhanced stability</li>
+                        <li>Optimized pontoon design for reduced wave-induced motions</li>
+                        <li>Integrated ballast system for draft control and stability management</li>
+                        <li>Modular deck design accommodating drilling equipment and crew quarters</li>
+                        <li>CFD-validated hydrodynamic performance in operational sea states</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3>Visual Results</h3>
+                    <div class="modal-gallery">
+                        <figure class="ic"><img src="images/projects/offshore_platform/1.png"
+                                alt="Platform 3D Model — Front">
+                            <figcaption>Semi-submersible platform — Rhinoceros 3D model (front view)</figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/offshore_platform/2.png"
+                                alt="Platform 3D Model — Rear">
+                            <figcaption>Platform 3D model — Rear perspective with helipad visible</figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/offshore_platform/pressure_distribution.png"
+                                alt="Pressure Distribution">
+                            <figcaption>CFD pressure distribution on pontoon hulls (ANSYS Fluent)</figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/offshore_platform/resistance_graph.png"
+                                alt="Resistance Graph">
+                            <figcaption>Resistance vs. speed curve — Maxsurf analysis</figcaption>
+                        </figure>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="modal-sidebar">
             <div class="modal-section">
                 <h3>Technical Specifications</h3>
                 <div class="modal-specs">
@@ -883,52 +948,7 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-section">
-                <h3>Design Phases</h3>
-                <ul class="modal-list">
-                    <li><strong>Conceptual Design:</strong> Initial sizing and layout based on operational requirements
-                    </li>
-                    <li><strong>3D Modeling:</strong> Detailed geometry creation in Rhinoceros 3D including hull,
-                        pontoons, and deck structures</li>
-                    <li><strong>Stability Analysis:</strong> Hydrostatic calculations and stability assessment using
-                        Maxsurf Stability</li>
-                    <li><strong>CFD Analysis:</strong> Wave interaction and hydrodynamic loading simulation in ANSYS
-                        Fluent</li>
-                    <li><strong>Structural Verification:</strong> Load distribution and stress analysis for critical
-                        components</li>
-                </ul>
-            </div>
-            <div class="modal-section">
-                <h3>Key Features</h3>
-                <ul class="modal-list">
-                    <li>Four-column semi-submersible configuration for enhanced stability</li>
-                    <li>Optimized pontoon design for reduced wave-induced motions</li>
-                    <li>Integrated ballast system for draft control and stability management</li>
-                    <li>Modular deck design accommodating drilling equipment and crew quarters</li>
-                    <li>CFD-validated hydrodynamic performance in operational sea states</li>
-                </ul>
-            </div>
-            <div class="modal-section">
-                <h3>Visual Results</h3>
-                <div class="modal-gallery">
-                    <figure class="ic"><img src="images/projects/offshore_platform/1.png"
-                            alt="Platform 3D Model — Front">
-                        <figcaption>Semi-submersible platform — Rhinoceros 3D model (front view)</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/offshore_platform/2.png"
-                            alt="Platform 3D Model — Rear">
-                        <figcaption>Platform 3D model — Rear perspective with helipad visible</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/offshore_platform/pressure_distribution.png"
-                            alt="Pressure Distribution">
-                        <figcaption>CFD pressure distribution on pontoon hulls (ANSYS Fluent)</figcaption>
-                    </figure>
-                    <figure class="ic"><img src="images/projects/offshore_platform/resistance_graph.png"
-                            alt="Resistance Graph">
-                        <figcaption>Resistance vs. speed curve — Maxsurf analysis</figcaption>
-                    </figure>
-                </div>
-            </div>
+        </div>
         </div>
     </template>
 
@@ -940,42 +960,52 @@
                 automation</p>
         </div>
         <div class="modal-body">
-            <div class="modal-section">
-                <h3>Project Overview</h3>
-                <p>I built a production-style Windows desktop application to control an Alicat Mass Flow Controller via
-                    serial communication. The tool provides real-time monitoring, manual setpoint control, automated
-                    test sequences from Excel matrices, and clean Excel export for experiments and reporting.</p>
-                <p>This application bridges the gap between hardware control and data analysis, providing a robust
-                    interface for experimental setups.</p>
-            </div>
-            <div class="modal-section">
-                <h3>Key Features</h3>
-                <ul class="modal-list">
-                    <li><strong>Real-time Telemetry:</strong> Parsing of pressure, temperature, mass/volumetric flow,
-                        setpoint readback, and valve position.</li>
-                    <li><strong>Non-blocking Architecture:</strong> Tkinter UI + asyncio worker loop in a dedicated
-                        thread for smooth performance.</li>
-                    <li><strong>Safe Serial I/O:</strong> Implementation of asyncio.Lock to avoid command/poll
-                        collisions.</li>
-                    <li><strong>Automated Sequences:</strong> Runner with Run / Reverse / Pause / Continue capabilities,
-                        including progress tracking and timers.</li>
-                    <li><strong>Excel Export Pipeline:</strong> Generates Matrix + Log + Setpoint Events sheets with
-                        professional formatting via openpyxl.</li>
-                    <li><strong>Matrix Editor:</strong> Built-in editor supporting paste from Excel, keyboard
-                        navigation, and bulk operations.</li>
-                    <li><strong>Voice Notifications:</strong> Optional Windows SAPI text-to-speech for state changes and
-                        setpoint alerts.</li>
-                </ul>
-            </div>
+            <div class="modal-main">
+                <div class="modal-section">
+                    <h3>Project Overview</h3>
+                    <p>I built a production-style Windows desktop application to control an Alicat Mass Flow Controller
+                        via
+                        serial communication. The tool provides real-time monitoring, manual setpoint control, automated
+                        test sequences from Excel matrices, and clean Excel export for experiments and reporting.</p>
+                    <p>This application bridges the gap between hardware control and data analysis, providing a robust
+                        interface for experimental setups.</p>
+                </div>
 
-            <div class="modal-section">
-                <h3>Visual Interface</h3>
-                <div class="modal-gallery">
-                    <figure class="ic"><img src="images/projects/alicat_flowmeter/gui.png"
-                            alt="Alicat Control Interface GUI">
-                        <figcaption>Main Interface: Real-time plotting, manual controls, and sequence running status.
-                        </figcaption>
-                    </figure>
+
+                <div class="modal-section">
+                    <h3>Visual Interface</h3>
+                    <div class="modal-gallery">
+                        <figure class="ic"><img src="images/projects/alicat_flowmeter/gui.png"
+                                alt="Alicat Control Interface GUI">
+                            <figcaption>Main Interface: Real-time plotting, manual controls, and sequence running
+                                status.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-sidebar">
+                <div class="modal-section">
+                    <h3>Key Features</h3>
+                    <ul class="modal-list">
+                        <li><strong>Real-time Telemetry:</strong> Parsing of pressure, temperature, mass/volumetric
+                            flow,
+                            setpoint readback, and valve position.</li>
+                        <li><strong>Non-blocking Architecture:</strong> Tkinter UI + asyncio worker loop in a dedicated
+                            thread for smooth performance.</li>
+                        <li><strong>Safe Serial I/O:</strong> Implementation of asyncio.Lock to avoid command/poll
+                            collisions.</li>
+                        <li><strong>Automated Sequences:</strong> Runner with Run / Reverse / Pause / Continue
+                            capabilities,
+                            including progress tracking and timers.</li>
+                        <li><strong>Excel Export Pipeline:</strong> Generates Matrix + Log + Setpoint Events sheets with
+                            professional formatting via openpyxl.</li>
+                        <li><strong>Matrix Editor:</strong> Built-in editor supporting paste from Excel, keyboard
+                            navigation, and bulk operations.</li>
+                        <li><strong>Voice Notifications:</strong> Optional Windows SAPI text-to-speech for state changes
+                            and
+                            setpoint alerts.</li>
+                    </ul>
                 </div>
             </div>
         </div>
