@@ -1904,7 +1904,7 @@ ul {
 .modal-main {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.5rem;
     padding-right: 3rem;
     border-right: 1px solid var(--bdr)
 }
@@ -1923,7 +1923,7 @@ ul {
     font-family: var(--fh);
     font-size: 1.15rem;
     color: var(--cy);
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     /* Basligin ustundeki bosluk */
     margin-bottom: 0.8rem;
     /* Basligin altindaki bosluk */
