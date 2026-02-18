@@ -1888,7 +1888,7 @@ ul {
 .modal-body {
     display: grid;
     grid-template-columns: 1fr 380px;
-    gap: 0;
+    gap: 0 2.5rem;
     padding: 3rem
 }
 
