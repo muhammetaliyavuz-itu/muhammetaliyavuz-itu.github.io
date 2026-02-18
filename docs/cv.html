@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV — Muhammet Ali Yavuz</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -16,54 +17,141 @@
 
         @page {
             size: A4;
-            margin: 12mm 14mm;
+            margin: 0;
         }
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
             font-size: 9pt;
-            line-height: 1.4;
+            line-height: 1.45;
             color: #1a1a2e;
-            background: #fff;
-            max-width: 210mm;
+            background: #f0f0f0;
+        }
+
+        .cv-page {
+            width: 210mm;
+            min-height: 297mm;
             margin: 0 auto;
-            padding: 12mm 14mm;
+            padding: 14mm 16mm 12mm 16mm;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+            display: flex;
+            flex-direction: column;
         }
 
         @media print {
             body {
-                padding: 0;
+                background: #fff;
             }
+
+            .cv-page {
+                box-shadow: none;
+                margin: 0;
+                padding: 14mm 16mm 12mm 16mm;
+                min-height: 100vh;
+            }
+
+            .download-bar {
+                display: none !important;
+            }
+        }
+
+        /* ── Download bar ── */
+        .download-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #0f4c75 0%, #1b262c 100%);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-bar span {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+        }
+
+        .dl-btn {
+            background: #22d3ee;
+            color: #0f172a;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .dl-btn:hover {
+            background: #67e8f9;
+            transform: translateY(-1px);
+        }
+
+        .dl-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
         }
 
         /* ── Header ── */
         .cv-header {
+            border-bottom: 2.5px solid #0f4c75;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            border-bottom: 2px solid #0f4c75;
-            padding-bottom: 8px;
-            margin-bottom: 10px;
         }
 
         .cv-header h1 {
-            font-size: 20pt;
+            font-size: 22pt;
             font-weight: 700;
             color: #0f4c75;
             letter-spacing: -0.5px;
+            line-height: 1.1;
         }
 
         .cv-header .subtitle {
-            font-size: 10pt;
-            color: #555;
-            margin-top: 2px;
+            font-size: 10.5pt;
+            color: #444;
+            margin-top: 3px;
+            font-weight: 400;
+        }
+
+        .website-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 6px;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, #0f4c75, #1b4f72);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .website-link .globe {
+            font-size: 11px;
         }
 
         .contact-info {
             text-align: right;
             font-size: 8pt;
             color: #444;
-            line-height: 1.6;
+            line-height: 1.7;
+            flex-shrink: 0;
         }
 
         .contact-info a {
@@ -71,26 +159,31 @@
             text-decoration: none;
         }
 
-        /* ── Sections ── */
-        .section {
-            margin-bottom: 8px;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 5px;
         }
 
-        .section-title {
-            font-size: 10pt;
-            font-weight: 700;
-            color: #0f4c75;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #d0d7de;
-            padding-bottom: 2px;
-            margin-bottom: 5px;
+        .ci {
+            font-size: 10px;
+            width: 14px;
+            text-align: center;
+        }
+
+        /* ── Content grows to fill page ── */
+        .cv-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         /* ── Two column layout ── */
         .two-col {
             display: flex;
-            gap: 16px;
+            gap: 20px;
+            flex: 1;
         }
 
         .col-main {
@@ -98,13 +191,29 @@
         }
 
         .col-side {
-            width: 170px;
+            width: 175px;
             flex-shrink: 0;
+        }
+
+        /* ── Sections ── */
+        .section {
+            margin-bottom: 11px;
+        }
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #0f4c75;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-bottom: 1.5px solid #d0d7de;
+            padding-bottom: 3px;
+            margin-bottom: 7px;
         }
 
         /* ── Experience items ── */
         .exp-item {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .exp-header {
@@ -120,7 +229,7 @@
         }
 
         .exp-company {
-            font-weight: 500;
+            font-weight: 600;
             color: #0f4c75;
         }
 
@@ -133,12 +242,21 @@
         .exp-desc {
             font-size: 8pt;
             color: #444;
-            margin-top: 1px;
-            padding-left: 8px;
+            margin-top: 2px;
+            padding-left: 10px;
+            list-style-type: "– ";
         }
 
         .exp-desc li {
             margin-bottom: 1px;
+        }
+
+        .exp-tools {
+            font-size: 7.5pt;
+            color: #0f4c75;
+            margin-top: 2px;
+            padding-left: 10px;
+            font-style: italic;
         }
 
         /* ── Education ── */
@@ -155,34 +273,37 @@
 
         .edu-uni {
             color: #0f4c75;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .edu-details {
             font-size: 8pt;
             color: #555;
-            margin-top: 1px;
+            margin-top: 2px;
+            line-height: 1.5;
         }
 
         /* ── Skills ── */
         .skill-group {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .skill-label {
             font-weight: 600;
-            font-size: 8pt;
+            font-size: 8.5pt;
             color: #1a1a2e;
+            margin-bottom: 1px;
         }
 
         .skill-items {
             font-size: 8pt;
             color: #444;
+            line-height: 1.5;
         }
 
         /* ── Projects ── */
         .proj-item {
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .proj-name {
@@ -200,242 +321,323 @@
         .cert-list {
             font-size: 8pt;
             color: #444;
+            padding-left: 14px;
         }
 
         .cert-list li {
-            margin-bottom: 1px;
+            margin-bottom: 2px;
+        }
+
+        /* ── Languages ── */
+        .lang-item {
+            font-size: 8pt;
+            color: #444;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .lang-flag {
+            font-size: 10px;
+        }
+
+        /* ── Interests ── */
+        .interest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+
+        .interest-tag {
+            font-size: 7pt;
+            color: #0f4c75;
+            background: #e8f4f8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 500;
         }
 
         /* ── Footer ── */
         .cv-footer {
-            margin-top: 8px;
-            padding-top: 5px;
+            margin-top: auto;
+            padding-top: 8px;
             border-top: 1px solid #d0d7de;
-            font-size: 7pt;
+            font-size: 7.5pt;
             color: #888;
             text-align: center;
+            line-height: 1.6;
         }
 
         .cv-footer a {
             color: #0f4c75;
             text-decoration: none;
-        }
-
-        /* Print button - hidden in print */
-        .print-btn {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background: #0f4c75;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(15, 76, 117, 0.4);
-            z-index: 100;
-        }
-
-        .print-btn:hover {
-            background: #0a3a5c;
-        }
-
-        @media print {
-            .print-btn {
-                display: none;
-            }
+            font-weight: 500;
         }
     </style>
 </head>
 
 <body>
 
-    <button class="print-btn" onclick="window.print()">📄 Save as PDF</button>
-
-    <!-- ═══════ HEADER ═══════ -->
-    <div class="cv-header">
-        <div>
-            <h1>Muhammet Ali Yavuz</h1>
-            <div class="subtitle">Naval Architect · CFD Engineer · Software Developer</div>
-        </div>
-        <div class="contact-info">
-            <div>📧 <a href="mailto:yavuzmu21@itu.edu.tr">yavuzmu21@itu.edu.tr</a></div>
-            <div>📞 +90 551 092 9667</div>
-            <div>🔗 <a href="https://linkedin.com/in/yavuzitu">linkedin.com/in/yavuzitu</a></div>
-            <div>💻 <a href="https://github.com/muhammetaliyavuz-itu">github.com/muhammetaliyavuz-itu</a></div>
-            <div>🌐 <a href="https://muhammetaliyavuz-itu.github.io">muhammetaliyavuz-itu.github.io</a></div>
-            <div>📍 Istanbul, Turkey</div>
-        </div>
+    <!-- Download bar (hidden in print) -->
+    <div class="download-bar">
+        <span>Muhammet Ali Yavuz — Curriculum Vitae</span>
+        <button class="dl-btn" id="downloadBtn" onclick="downloadPDF()">📄 Download PDF</button>
     </div>
 
-    <!-- ═══════ MAIN LAYOUT ═══════ -->
-    <div class="two-col">
-        <div class="col-main">
+    <div class="cv-page" id="cvPage">
 
-            <!-- ── EDUCATION ── -->
-            <div class="section">
-                <div class="section-title">Education</div>
-                <div class="edu-row">
-                    <div>
-                        <span class="edu-degree">BSc Shipbuilding & Ocean Engineering</span>
-                        <span class="edu-uni"> — Istanbul Technical University</span>
-                    </div>
-                    <span class="exp-date">Sep 2021 – Jun 2026 (exp.)</span>
+        <!-- ═══════ HEADER ═══════ -->
+        <div class="cv-header">
+            <div class="header-top">
+                <div>
+                    <h1>Muhammet Ali Yavuz</h1>
+                    <div class="subtitle">Naval Architect · CFD Engineer · Software Developer</div>
+                    <a href="https://muhammetaliyavuz-itu.github.io" class="website-link" target="_blank">
+                        <span class="globe">🌐</span> muhammetaliyavuz-itu.github.io
+                    </a>
                 </div>
-                <div class="edu-details">GPA: 3.26 / 4.0 · ITU Shipbuilding Engineering Club · ITU SAVTEK — Defense
-                    Technologies</div>
-            </div>
-
-            <!-- ── EXPERIENCE ── -->
-            <div class="section">
-                <div class="section-title">Experience</div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div><span class="exp-title">CFD Engineer & Software Developer</span> — <span
-                                class="exp-company">ITUKAT</span></div>
-                        <span class="exp-date">Aug 2025 – Present · Full-time</span>
-                    </div>
-                    <ul class="exp-desc">
-                        <li>Force & Moment Measurements, Propeller Analysis, Cavitation Research</li>
-                        <li>Tools: ANSYS Fluent, Python, C</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div><span class="exp-title">Curious Student</span> — <span class="exp-company">ITU Ata Nutku
-                                Towing Tank</span></div>
-                        <span class="exp-date">Sep 2024 – Present</span>
-                    </div>
-                    <ul class="exp-desc">
-                        <li>Resistance, propulsion, and seakeeping experiments; towing tank testing procedures</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div><span class="exp-title">Production Engineer Intern</span> — <span
-                                class="exp-company">Beşiktaş Shipyard</span></div>
-                        <span class="exp-date">Aug – Sep 2024</span>
-                    </div>
-                    <ul class="exp-desc">
-                        <li>Main engine, hydraulic systems, generators inspection; air compressor overhaul; marine pump
-                            maintenance</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <div><span class="exp-title">Mechanical Technician Intern</span> — <span
-                                class="exp-company">MENSA MAKİNA</span></div>
-                        <span class="exp-date">Aug – Sep 2023</span>
-                    </div>
-                    <ul class="exp-desc">
-                        <li>Designed ventilation system for sheet metal processing line; fabricated ducting and filters
-                        </li>
-                    </ul>
+                <div class="contact-info">
+                    <div class="contact-item"><span class="ci">✉</span> <a
+                            href="mailto:yavuzmu21@itu.edu.tr">yavuzmu21@itu.edu.tr</a></div>
+                    <div class="contact-item"><span class="ci">☎</span> +90 551 092 9667</div>
+                    <div class="contact-item"><span class="ci">🔗</span> <a
+                            href="https://linkedin.com/in/yavuzitu">linkedin.com/in/yavuzitu</a></div>
+                    <div class="contact-item"><span class="ci">💻</span> <a
+                            href="https://github.com/muhammetaliyavuz-itu">github.com/muhammetaliyavuz-itu</a></div>
+                    <div class="contact-item"><span class="ci">📍</span> Istanbul, Turkey</div>
                 </div>
             </div>
-
-            <!-- ── PROJECTS ── -->
-            <div class="section">
-                <div class="section-title">Key Projects</div>
-
-                <div class="proj-item">
-                    <span class="proj-name">TCSG FISILTI — Hybrid Coast Guard Vessel</span>
-                    <span class="proj-desc"> · Preliminary design of 68m hybrid vessel with Azipod propulsion, 24 kn max
-                        speed</span>
-                </div>
-
-                <div class="proj-item">
-                    <span class="proj-name">KCS Hull with Rudder — CFD Resistance Prediction</span>
-                    <span class="proj-desc"> · Unsteady RANS + VOF in STAR-CCM+, 0.22% deviation from experimental
-                        data</span>
-                </div>
-
-                <div class="proj-item">
-                    <span class="proj-name">DARPA SUBOFF — Appendage Resistance Analysis</span>
-                    <span class="proj-desc"> · AFF1/AFF3/AFF8 configurations, 0.5% deviation, ITTC guidelines</span>
-                </div>
-
-                <div class="proj-item">
-                    <span class="proj-name">Offshore Platform — Design & Analysis</span>
-                    <span class="proj-desc"> · Rhinoceros 3D + Maxsurf stability + ANSYS Fluent CFD, 70×40m deck</span>
-                </div>
-
-                <div class="proj-item">
-                    <span class="proj-name">Alicat Mass Flow Controller — Control Interface</span>
-                    <span class="proj-desc"> · Python desktop app with AsyncIO, real-time serial monitoring & automated
-                        data logging</span>
-                </div>
-            </div>
-
         </div>
 
-        <!-- ── SIDEBAR ── -->
-        <div class="col-side">
+        <!-- ═══════ CONTENT ═══════ -->
+        <div class="cv-content">
+            <div class="two-col">
+                <div class="col-main">
 
-            <!-- ── SKILLS ── -->
-            <div class="section">
-                <div class="section-title">Skills</div>
+                    <!-- ── EDUCATION ── -->
+                    <div class="section">
+                        <div class="section-title">Education</div>
+                        <div class="edu-row">
+                            <div>
+                                <span class="edu-degree">BSc Shipbuilding & Ocean Engineering</span>
+                                <span class="edu-uni"> — Istanbul Technical University</span>
+                            </div>
+                            <span class="exp-date">Sep 2021 – Jun 2026 (exp.)</span>
+                        </div>
+                        <div class="edu-details">
+                            GPA: 3.26 / 4.0<br>
+                            ⚓ ITU Shipbuilding Engineering Club · 🛡️ ITU SAVTEK — Defense Technologies
+                        </div>
+                    </div>
 
-                <div class="skill-group">
-                    <div class="skill-label">CFD & Analysis</div>
-                    <div class="skill-items">ANSYS Fluent, STAR-CCM+, Maxsurf, Python, MATLAB</div>
+                    <!-- ── EXPERIENCE ── -->
+                    <div class="section">
+                        <div class="section-title">Experience</div>
+
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div><span class="exp-title">CFD Engineer & Software Developer</span> — <span
+                                        class="exp-company">ITUKAT</span></div>
+                                <span class="exp-date">Aug 2025 – Present · Full-time</span>
+                            </div>
+                            <ul class="exp-desc">
+                                <li>Force & Moment Measurements, Propeller Analysis, Cavitation Research</li>
+                                <li>Developing in-house simulation and data processing tools</li>
+                            </ul>
+                            <div class="exp-tools">ANSYS Fluent · Python · C</div>
+                        </div>
+
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div><span class="exp-title">Curious Student</span> — <span class="exp-company">ITU Ata
+                                        Nutku Towing Tank</span></div>
+                                <span class="exp-date">Sep 2024 – Present</span>
+                            </div>
+                            <ul class="exp-desc">
+                                <li>Participated in resistance, propulsion, and seakeeping experiments</li>
+                                <li>Gained hands-on experience in towing tank testing procedures and maritime
+                                    experimental methods</li>
+                            </ul>
+                        </div>
+
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div><span class="exp-title">Production Engineer Intern</span> — <span
+                                        class="exp-company">Beşiktaş Shipyard</span></div>
+                                <span class="exp-date">Aug – Sep 2024</span>
+                            </div>
+                            <ul class="exp-desc">
+                                <li>Inspection and maintenance of main engines, hydraulic systems, and generators</li>
+                                <li>Air compressor overhaul, marine pump maintenance including ballast water treatment
+                                </li>
+                                <li>Welding, pipe installation, and surface coating experience</li>
+                            </ul>
+                        </div>
+
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div><span class="exp-title">Mechanical Technician Intern</span> — <span
+                                        class="exp-company">MENSA MAKİNA</span></div>
+                                <span class="exp-date">Aug – Sep 2023</span>
+                            </div>
+                            <ul class="exp-desc">
+                                <li>Designed and installed a complete ventilation system for a sheet metal processing
+                                    line</li>
+                                <li>Fabricated sheet metal components: pipes, flanges, and air filters</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ── PROJECTS ── -->
+                    <div class="section">
+                        <div class="section-title">Key Projects</div>
+
+                        <div class="proj-item">
+                            <span class="proj-name">TCSG FISILTI — Hybrid Coast Guard Vessel</span><br>
+                            <span class="proj-desc">Preliminary design of a 68m hybrid vessel with Counter Rotating
+                                Azipod propulsion, 24 kn max speed, 63 crew capacity</span>
+                        </div>
+
+                        <div class="proj-item">
+                            <span class="proj-name">KCS Hull with Rudder — CFD Resistance Prediction</span><br>
+                            <span class="proj-desc">Unsteady RANS + VOF free surface in STAR-CCM+, 5 cases across 3 mesh
+                                levels, 0.22% best deviation from experimental data</span>
+                        </div>
+
+                        <div class="proj-item">
+                            <span class="proj-name">DARPA SUBOFF — Appendage Resistance Analysis</span><br>
+                            <span class="proj-desc">Submarine hydrodynamics: AFF1/AFF3/AFF8 configurations, 0.5%
+                                deviation, ITTC uncertainty assessment</span>
+                        </div>
+
+                        <div class="proj-item">
+                            <span class="proj-name">Offshore Platform — Design & Analysis</span><br>
+                            <span class="proj-desc">Full concept: Rhinoceros 3D modeling + Maxsurf stability analysis +
+                                ANSYS Fluent CFD, 70×40m deck</span>
+                        </div>
+
+                        <div class="proj-item">
+                            <span class="proj-name">Alicat Mass Flow Controller — Control Interface</span><br>
+                            <span class="proj-desc">Production-grade Python desktop app with AsyncIO, real-time serial
+                                monitoring & automated data logging</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="skill-group">
-                    <div class="skill-label">Design & Modeling</div>
-                    <div class="skill-items">SolidWorks, Rhinoceros 3D, AutoCAD</div>
-                </div>
+                <!-- ── SIDEBAR ── -->
+                <div class="col-side">
 
-                <div class="skill-group">
-                    <div class="skill-label">Programming</div>
-                    <div class="skill-items">C / C++, Python, Arduino</div>
+                    <!-- ── SKILLS ── -->
+                    <div class="section">
+                        <div class="section-title">Skills</div>
+
+                        <div class="skill-group">
+                            <div class="skill-label">CFD & Analysis</div>
+                            <div class="skill-items">ANSYS Fluent, STAR-CCM+, Maxsurf, Python, MATLAB</div>
+                        </div>
+
+                        <div class="skill-group">
+                            <div class="skill-label">Design & Modeling</div>
+                            <div class="skill-items">SolidWorks, Rhinoceros 3D, AutoCAD</div>
+                        </div>
+
+                        <div class="skill-group">
+                            <div class="skill-label">Programming</div>
+                            <div class="skill-items">C / C++, Python, Arduino, HTML/CSS/JS</div>
+                        </div>
+                    </div>
+
+                    <!-- ── LANGUAGES ── -->
+                    <div class="section">
+                        <div class="section-title">Languages</div>
+                        <div class="lang-item"><span class="lang-flag">🇬🇧</span> English — Advanced</div>
+                        <div class="lang-item"><span class="lang-flag">🇩🇪</span> German — Intermediate (TELC B1)</div>
+                        <div class="lang-item"><span class="lang-flag">🇹🇷</span> Turkish — Native</div>
+                    </div>
+
+                    <!-- ── CERTIFICATIONS ── -->
+                    <div class="section">
+                        <div class="section-title">Certifications</div>
+                        <ul class="cert-list">
+                            <li>SolidWorks CSWA</li>
+                            <li>AutoCAD Certificate</li>
+                            <li>Python — freeCodeCamp</li>
+                            <li>Arduino — Udemy</li>
+                            <li>TELC Deutsch B1</li>
+                        </ul>
+                    </div>
+
+                    <!-- ── INTERESTS ── -->
+                    <div class="section">
+                        <div class="section-title">Interests</div>
+                        <div class="interest-tags">
+                            <span class="interest-tag">Hydrodynamics</span>
+                            <span class="interest-tag">Ship Design</span>
+                            <span class="interest-tag">CFD</span>
+                            <span class="interest-tag">Marine Systems</span>
+                            <span class="interest-tag">Defense Tech</span>
+                            <span class="interest-tag">Autonomous Systems</span>
+                            <span class="interest-tag">Propeller Design</span>
+                        </div>
+                    </div>
+
+                    <!-- ── ACTIVITIES ── -->
+                    <div class="section">
+                        <div class="section-title">Activities</div>
+                        <div class="skill-items">
+                            ⚓ ITU Shipbuilding Engineering Club — Active Member<br><br>
+                            🛡️ ITU SAVTEK — Defense Technologies Club
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- ── LANGUAGES ── -->
-            <div class="section">
-                <div class="section-title">Languages</div>
-                <div class="skill-group">
-                    <div class="skill-items">🇬🇧 English — Advanced</div>
-                    <div class="skill-items">🇩🇪 German — Intermediate (TELC B1)</div>
-                    <div class="skill-items">🇹🇷 Turkish — Native</div>
-                </div>
+            <!-- ═══════ FOOTER ═══════ -->
+            <div class="cv-footer">
+                🌐 <a href="https://muhammetaliyavuz-itu.github.io">muhammetaliyavuz-itu.github.io</a> &nbsp;·&nbsp;
+                💻 <a href="https://github.com/muhammetaliyavuz-itu">github.com/muhammetaliyavuz-itu</a> &nbsp;·&nbsp;
+                🔗 <a href="https://linkedin.com/in/yavuzitu">linkedin.com/in/yavuzitu</a><br>
+                References available upon request
             </div>
-
-            <!-- ── CERTIFICATIONS ── -->
-            <div class="section">
-                <div class="section-title">Certifications</div>
-                <ul class="cert-list" style="padding-left: 14px;">
-                    <li>SolidWorks CSWA</li>
-                    <li>AutoCAD Certificate</li>
-                    <li>Python — freeCodeCamp</li>
-                    <li>Arduino — Udemy</li>
-                    <li>TELC Deutsch B1</li>
-                </ul>
-            </div>
-
-            <!-- ── INTERESTS ── -->
-            <div class="section">
-                <div class="section-title">Interests</div>
-                <div class="skill-items">Hydrodynamics, Ship Design, Computational Fluid Dynamics, Marine Systems,
-                    Defense Technologies, Autonomous Systems</div>
-            </div>
-
         </div>
+
     </div>
 
-    <!-- ═══════ FOOTER ═══════ -->
-    <div class="cv-footer">
-        Portfolio: <a href="https://muhammetaliyavuz-itu.github.io">muhammetaliyavuz-itu.github.io</a> ·
-        GitHub: <a href="https://github.com/muhammetaliyavuz-itu">github.com/muhammetaliyavuz-itu</a> ·
-        References available upon request
-    </div>
+    <script>
+        function downloadPDF() {
+            const btn = document.getElementById('downloadBtn');
+            btn.textContent = '⏳ Generating...';
+            btn.classList.add('loading');
+
+            const element = document.getElementById('cvPage');
+            const opt = {
+                margin: 0,
+                filename: 'CV_Muhammet_Ali_Yavuz.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.textContent = '✅ Downloaded!';
+                btn.classList.remove('loading');
+                setTimeout(() => {
+                    btn.textContent = '📄 Download PDF';
+                }, 2000);
+            });
+        }
+
+        // Auto-download if opened with ?download=true
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('download') === 'true') {
+            window.addEventListener('load', () => {
+                setTimeout(downloadPDF, 1000);
+            });
+        }
+    </script>
 
 </body>
 
