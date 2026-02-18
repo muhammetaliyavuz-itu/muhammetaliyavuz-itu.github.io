@@ -400,15 +400,9 @@
                     <h1>Muhammet Ali Yavuz</h1>
                     <div class="subtitle">Naval Architect · CFD Engineer · Software Developer</div>
                     <a href="https://muhammetaliyavuz-itu.github.io" class="website-link" target="_blank">
-                        <!-- SVG Globe Icon: renders reliably in PDF with custom color -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                            </path>
-                        </svg>
+                        <!-- Base64 PNG Icon for reliable PDF rendering -->
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QIREh0tS0ulZQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAABx0lEQVRIx62VvUtCURiHn1tD0SD0AyerpaVFtJRGBdFILW2t/QmhP6GlrTW0tFTQ4h8QLa2tJbS4GEVJhSaElMOfQ8/p3C/13qs33APn3vf9nfM85xwvZJwjIgFACAACwCNwLCJb/wXAwL0A8CAiY6EAvOUDwJOIHIcC8J4PAk8icq4D8J0PAK8icoE34A04U46WJzClbQDP6hTIq1tF5FhEzsMBeA98AAIiMhcKwIe+B3xV/xOQs74H3AJb/wXAxL0BsCEiB6EAjOcDwKOITP8KgJ17D2BHRE5DAXjPB4AnETkJBWA8HwAeRWS62gGR2L0XsCUiJ6EAvOeDwJOInIQCMCw1MjsIHOp7wIu6B4yIyEkoAOP5APAoItP/AmDm3gPYEpGTUADe8wHgSUSOQwEYz6f/BwCo7wG36h7wKCKnoQCM5wPAo4hM/wuAmXsPYEtETkIBeM8HgScROQ4FYDwfAB5FZLraAZHYvRewJSInoQC854PAk4ichAIwLDUyO3wA2K/uAa/qHjAqIiehAIznA8CjiEz/C4CZew9gS0ROQgF4zweAJxE5DgVgPJ/+HwCgvgc8q3vAo4ichAIwng8AjyIy/S8A5q49gC0ROQ76A5bZ+1ftw9k9AAAAAElFTkSuQmCC"
+                            alt="Globe" style="width:12px; height:12px; vertical-align: middle; margin-right: 2px;">
                         muhammetaliyavuz-itu.github.io
                     </a>
                 </div>
@@ -646,7 +640,37 @@
                 const imgData = canvas.toDataURL('image/jpeg', 0.95);
                 const { jsPDF } = window.jspdf;
                 const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-                pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+                const pdfWidth = 210;
+                const pdfHeight = 297;
+                pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+
+                // --- ADD CLICKABLE LINKS ---
+                // We need to map HTML coordinates to PDF coordinates
+                // Scale factor: PDF width (210mm) / HTML element offsetWidth
+                const scaleFactor = pdfWidth / element.offsetWidth;
+
+                // Find all anchor tags in the CV
+                const links = element.getElementsByTagName('a');
+
+                // Offset of the cv-page relative to the viewport
+                const rectBase = element.getBoundingClientRect();
+
+                for (let i = 0; i < links.length; i++) {
+                    const link = links[i];
+                    if (!link.href) continue;
+
+                    const rect = link.getBoundingClientRect();
+
+                    // Calculate position relative to the cv-page element
+                    const x = (rect.left - rectBase.left) * scaleFactor;
+                    const y = (rect.top - rectBase.top) * scaleFactor;
+                    const w = rect.width * scaleFactor;
+                    const h = rect.height * scaleFactor;
+
+                    // Add link to PDF
+                    pdf.link(x, y, w, h, { url: link.href });
+                }
+
                 pdf.save('CV_Muhammet_Ali_Yavuz.pdf');
 
                 element.style.boxShadow = '';
