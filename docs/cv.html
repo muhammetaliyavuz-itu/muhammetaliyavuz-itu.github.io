@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV — Muhammet Ali Yavuz</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -612,36 +612,43 @@
     </div>
 
     <script>
-        function downloadPDF() {
+        async function downloadPDF() {
             const btn = document.getElementById('downloadBtn');
             btn.textContent = '⏳ Generating...';
             btn.classList.add('loading');
 
             const element = document.getElementById('cvPage');
-
-            // Remove box-shadow before capture (it adds extra pixels)
             element.style.boxShadow = 'none';
 
-            const opt = {
-                margin: 0,
-                filename: 'CV_Muhammet_Ali_Yavuz.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: {
-                    scale: 2,
-                    useCORS: true
-                },
-                jsPDF: { unit: 'mm', format: [210, 297], orientation: 'portrait' },
-                pagebreak: { mode: 'avoid-all' }
-            };
+            try {
+                // Wait for fonts to be ready
+                await document.fonts.ready;
 
-            html2pdf().set(opt).from(element).save().then(() => {
+                // Capture element as canvas
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
+                });
+
+                // Create exactly 1-page A4 PDF
+                const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+                pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+                pdf.save('CV_Muhammet_Ali_Yavuz.pdf');
+
                 element.style.boxShadow = '';
                 btn.textContent = '✅ Downloaded!';
                 btn.classList.remove('loading');
-                setTimeout(() => {
-                    btn.textContent = '📄 Download PDF';
-                }, 2000);
-            });
+                setTimeout(() => { btn.textContent = '📄 Download PDF'; }, 2000);
+            } catch (e) {
+                console.error('PDF generation error:', e);
+                element.style.boxShadow = '';
+                btn.textContent = '❌ Error - try again';
+                btn.classList.remove('loading');
+            }
         }
 
         // Auto-download if opened with ?download=true
