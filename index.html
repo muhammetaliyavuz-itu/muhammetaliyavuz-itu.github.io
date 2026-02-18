@@ -634,6 +634,26 @@
                 </div>
 
                 <div class="modal-section">
+                    <h3>Technical Specifications</h3>
+                    <div class="modal-specs">
+                        <div class="spec-item"><span class="spec-label">Experimental Drag</span><span
+                                class="spec-value">83.852 N</span></div>
+                        <div class="spec-item"><span class="spec-label">Drag Coeff (Ct)</span><span
+                                class="spec-value">0.00365</span></div>
+                        <div class="spec-item"><span class="spec-label">Ship Velocity</span><span
+                                class="spec-value">2.196
+                                m/s</span></div>
+                        <div class="spec-item"><span class="spec-label">Froude Number</span><span
+                                class="spec-value">0.26</span></div>
+                        <div class="spec-item"><span class="spec-label">Wetted Area</span><span class="spec-value">9.55
+                                m²</span></div>
+                        <div class="spec-item"><span class="spec-label">Density (ρ)</span><span
+                                class="spec-value">997.56
+                                kg/m³</span></div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
                     <h3>Simulation Results</h3>
                     <div class="mt-container">
                         <table class="modal-table">
@@ -723,23 +743,15 @@
             </div>
             <div class="modal-sidebar">
                 <div class="modal-section">
-                    <h3>Technical Specifications</h3>
-                    <div class="modal-specs">
-                        <div class="spec-item"><span class="spec-label">Experimental Drag</span><span
-                                class="spec-value">83.852 N</span></div>
-                        <div class="spec-item"><span class="spec-label">Drag Coeff (Ct)</span><span
-                                class="spec-value">0.00365</span></div>
-                        <div class="spec-item"><span class="spec-label">Ship Velocity</span><span
-                                class="spec-value">2.196
-                                m/s</span></div>
-                        <div class="spec-item"><span class="spec-label">Froude Number</span><span
-                                class="spec-value">0.26</span></div>
-                        <div class="spec-item"><span class="spec-label">Wetted Area</span><span class="spec-value">9.55
-                                m²</span></div>
-                        <div class="spec-item"><span class="spec-label">Density (ρ)</span><span
-                                class="spec-value">997.56
-                                kg/m³</span></div>
-                    </div>
+                    <h3>Study Highlights</h3>
+                    <ul class="modal-list">
+                        <li><strong>Method:</strong> Unsteady RANS with Volume of Fluid (VOF)</li>
+                        <li><strong>Software:</strong> STAR-CCM+</li>
+                        <li><strong>Mesh Strategy:</strong> 3 refinement levels (1.05M - 2.03M cells)</li>
+                        <li><strong>Time Steps:</strong> Sensitivity analysis (0.016s vs 0.04s)</li>
+                        <li><strong>Goal:</strong> Validation against experimental data</li>
+                        <li><strong>Outcome:</strong> Grid independence verification</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -769,28 +781,36 @@
                 </div>
 
                 <div class="modal-section">
-                    <h3>Key Results</h3>
-                    <ul class="modal-list">
-                        <li>Achieved deviations as low as <strong>0.5%</strong> from experimental data in optimal
-                            configurations</li>
-                        <li>Analysed resistance components (pressure and viscous) and part-by-part contributions (hull,
-                            sail, rudder) across multiple speeds</li>
-                        <li>Performed mesh refinement and uncertainty assessment following ITTC guidelines</li>
-                        <li>Evaluated velocity fields, static/total pressure contours, streamlines, and y⁺ distributions
-                        </li>
-                    </ul>
+                    <h3>Technical Specifications</h3>
+                    <div class="modal-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Software</span>
+                            <span class="spec-value">STAR-CCM+ 2024.1</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Turbulence Model</span>
+                            <span class="spec-value">k-ε</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Configurations</span>
+                            <span class="spec-value">AFF1, AFF3, AFF8</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Reynolds Number</span>
+                            <span class="spec-value">1.2 × 10⁷</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Mesh Cells</span>
+                            <span class="spec-value">4.2M - 6.8M</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Deviation</span>
+                            <span class="spec-value">0.5% from EFD</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-section">
-                    <h3>Configurations Analyzed</h3>
-                    <ul class="modal-list">
-                        <li><strong>AFF1 (Bare Hull):</strong> Baseline configuration without appendages for reference
-                            resistance</li>
-                        <li><strong>AFF3 (Hull + Rudder):</strong> Hull with rudder to assess rudder resistance
-                            contribution</li>
-                        <li><strong>AFF8 (Hull + Sail + Rudder):</strong> Complete configuration with sail and rudder
-                        </li>
-                    </ul>
-                </div>
+
+
                 <div class="modal-section">
                     <h3>Visual Results</h3>
                     <div class="modal-gallery">
@@ -818,33 +838,27 @@
         </div>
         <div class="modal-sidebar">
             <div class="modal-section">
-                <h3>Technical Specifications</h3>
-                <div class="modal-specs">
-                    <div class="spec-item">
-                        <span class="spec-label">Software</span>
-                        <span class="spec-value">STAR-CCM+ 2024.1</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Turbulence Model</span>
-                        <span class="spec-value">k-ε</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Configurations</span>
-                        <span class="spec-value">AFF1, AFF3, AFF8</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Reynolds Number</span>
-                        <span class="spec-value">1.2 × 10⁷</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Mesh Cells</span>
-                        <span class="spec-value">4.2M - 6.8M</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Deviation</span>
-                        <span class="spec-value">0.5% from EFD</span>
-                    </div>
-                </div>
+                <h3>Key Results</h3>
+                <ul class="modal-list">
+                    <li>Achieved deviations as low as <strong>0.5%</strong> from experimental data in optimal
+                        configurations</li>
+                    <li>Analysed resistance components (pressure and viscous) and part-by-part contributions (hull,
+                        sail, rudder) across multiple speeds</li>
+                    <li>Performed mesh refinement and uncertainty assessment following ITTC guidelines</li>
+                    <li>Evaluated velocity fields, static/total pressure contours, streamlines, and y⁺ distributions
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-section">
+                <h3>Configurations Analyzed</h3>
+                <ul class="modal-list">
+                    <li><strong>AFF1 (Bare Hull):</strong> Baseline configuration without appendages for reference
+                        resistance</li>
+                    <li><strong>AFF3 (Hull + Rudder):</strong> Hull with rudder to assess rudder resistance
+                        contribution</li>
+                    <li><strong>AFF8 (Hull + Sail + Rudder):</strong> Complete configuration with sail and rudder
+                    </li>
+                </ul>
             </div>
         </div>
         </div>
@@ -869,6 +883,59 @@
                         offshore environments with adequate stability margins and structural integrity.</p>
                 </div>
 
+                <div class="modal-section">
+                    <h3>Technical Specifications</h3>
+                    <div class="modal-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Deck Dimensions</span>
+                            <span class="spec-value">70m × 40m</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Derrick Height</span>
+                            <span class="spec-value">25 meters</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Platform Type</span>
+                            <span class="spec-value">Semi-submersible</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Design Software</span>
+                            <span class="spec-value">Rhino 3D, Maxsurf</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">CFD Software</span>
+                            <span class="spec-value">ANSYS Fluent</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Operating Depth</span>
+                            <span class="spec-value">500-1500m</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3>Visual Results</h3>
+                    <div class="modal-gallery">
+                        <figure class="ic"><img src="images/projects/offshore_platform/1.png"
+                                alt="Platform 3D Model — Front">
+                            <figcaption>Semi-submersible platform — Rhinoceros 3D model (front view)</figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/offshore_platform/2.png"
+                                alt="Platform 3D Model — Rear">
+                            <figcaption>Platform 3D model — Rear perspective with helipad visible</figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/offshore_platform/pressure_distribution.png"
+                                alt="Pressure Distribution">
+                            <figcaption>CFD pressure distribution on pontoon hulls (ANSYS Fluent)</figcaption>
+                        </figure>
+                        <figure class="ic"><img src="images/projects/offshore_platform/resistance_graph.png"
+                                alt="Resistance Graph">
+                            <figcaption>Resistance vs. speed curve — Maxsurf analysis</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-sidebar">
                 <div class="modal-section">
                     <h3>Design Phases</h3>
                     <ul class="modal-list">
@@ -895,60 +962,7 @@
                         <li>CFD-validated hydrodynamic performance in operational sea states</li>
                     </ul>
                 </div>
-                <div class="modal-section">
-                    <h3>Visual Results</h3>
-                    <div class="modal-gallery">
-                        <figure class="ic"><img src="images/projects/offshore_platform/1.png"
-                                alt="Platform 3D Model — Front">
-                            <figcaption>Semi-submersible platform — Rhinoceros 3D model (front view)</figcaption>
-                        </figure>
-                        <figure class="ic"><img src="images/projects/offshore_platform/2.png"
-                                alt="Platform 3D Model — Rear">
-                            <figcaption>Platform 3D model — Rear perspective with helipad visible</figcaption>
-                        </figure>
-                        <figure class="ic"><img src="images/projects/offshore_platform/pressure_distribution.png"
-                                alt="Pressure Distribution">
-                            <figcaption>CFD pressure distribution on pontoon hulls (ANSYS Fluent)</figcaption>
-                        </figure>
-                        <figure class="ic"><img src="images/projects/offshore_platform/resistance_graph.png"
-                                alt="Resistance Graph">
-                            <figcaption>Resistance vs. speed curve — Maxsurf analysis</figcaption>
-                        </figure>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div class="modal-sidebar">
-            <div class="modal-section">
-                <h3>Technical Specifications</h3>
-                <div class="modal-specs">
-                    <div class="spec-item">
-                        <span class="spec-label">Deck Dimensions</span>
-                        <span class="spec-value">70m × 40m</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Derrick Height</span>
-                        <span class="spec-value">25 meters</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Platform Type</span>
-                        <span class="spec-value">Semi-submersible</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Design Software</span>
-                        <span class="spec-value">Rhino 3D, Maxsurf</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">CFD Software</span>
-                        <span class="spec-value">ANSYS Fluent</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Operating Depth</span>
-                        <span class="spec-value">500-1500m</span>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     </template>
 
