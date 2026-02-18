@@ -916,9 +916,10 @@ ul {
 
 .tlr {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: .4rem
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .4rem;
+    text-align: right
 }
 
 .blive {
@@ -934,6 +935,12 @@ ul {
 .tdate {
     font-size: .82rem;
     color: var(--t3)
+}
+
+.ttype {
+    font-size: .78rem;
+    color: var(--cy);
+    font-weight: 500
 }
 
 .tlc ul {
