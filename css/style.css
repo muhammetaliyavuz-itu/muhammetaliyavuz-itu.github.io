@@ -1895,7 +1895,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr 380px;
     /* Sol genis, sag 380px sabit */
-    gap: 0 2.5rem;
+    gap: 0 1.5rem;
     /* Iki kolon arasi bosluk (Sag/Sol) */
     padding: 3rem
         /* Kenarlardan iceri bosluk */
