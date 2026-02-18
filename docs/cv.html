@@ -622,8 +622,17 @@
                 margin: 0,
                 filename: 'CV_Muhammet_Ali_Yavuz.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true,
+                    width: 794,
+                    height: 1122,
+                    windowWidth: 794,
+                    windowHeight: 1122
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak: { mode: 'avoid-all' }
             };
 
             html2pdf().set(opt).from(element).save().then(() => {
@@ -639,7 +648,7 @@
         const params = new URLSearchParams(window.location.search);
         if (params.get('download') === 'true') {
             window.addEventListener('load', () => {
-                setTimeout(downloadPDF, 1000);
+                setTimeout(downloadPDF, 1500);
             });
         }
     </script>
