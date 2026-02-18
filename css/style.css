@@ -1893,7 +1893,7 @@ ul {
    ========================================= */
 .modal-body {
     display: grid;
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 1fr 320px;
     /* Sol genis, sag 380px sabit */
     gap: 0 1.5rem;
     /* Iki kolon arasi bosluk (Sag/Sol) */
