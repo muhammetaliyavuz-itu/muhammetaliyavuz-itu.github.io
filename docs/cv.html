@@ -30,9 +30,11 @@
 
         .cv-page {
             width: 210mm;
-            min-height: 297mm;
+            height: 297mm;
+            max-height: 297mm;
+            overflow: hidden;
             margin: 0 auto;
-            padding: 14mm 16mm 12mm 16mm;
+            padding: 12mm 16mm 10mm 16mm;
             background: #fff;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
             display: flex;
@@ -47,8 +49,10 @@
             .cv-page {
                 box-shadow: none;
                 margin: 0;
-                padding: 14mm 16mm 12mm 16mm;
-                min-height: 100vh;
+                padding: 12mm 16mm 10mm 16mm;
+                height: 297mm;
+                max-height: 297mm;
+                overflow: hidden;
             }
 
             .download-bar {
@@ -132,14 +136,15 @@
             align-items: center;
             gap: 6px;
             margin-top: 6px;
-            padding: 4px 12px;
-            background: linear-gradient(135deg, #0f4c75, #1b4f72);
+            padding: 4px 14px;
+            background: linear-gradient(135deg, #ff6d00, #ff9100);
             color: #fff;
             text-decoration: none;
             border-radius: 4px;
             font-size: 8.5pt;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.3px;
+            box-shadow: 0 2px 8px rgba(255, 109, 0, 0.35);
         }
 
         .website-link .globe {
