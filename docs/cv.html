@@ -146,9 +146,10 @@
             letter-spacing: 0.3px;
         }
 
-        .website-link .globe {
-            font-size: 11px;
-            color: #ff6d00;
+        .website-link svg {
+            width: 12px;
+            height: 12px;
+            stroke: #ff9100;
         }
 
         .contact-info {
@@ -399,7 +400,16 @@
                     <h1>Muhammet Ali Yavuz</h1>
                     <div class="subtitle">Naval Architect · CFD Engineer · Software Developer</div>
                     <a href="https://muhammetaliyavuz-itu.github.io" class="website-link" target="_blank">
-                        <span class="globe">🌐</span> muhammetaliyavuz-itu.github.io
+                        <!-- SVG Globe Icon: renders reliably in PDF with custom color -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
+                        </svg>
+                        muhammetaliyavuz-itu.github.io
                     </a>
                 </div>
                 <div class="contact-info">
