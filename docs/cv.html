@@ -554,7 +554,7 @@
 
                         <div class="skill-group">
                             <div class="skill-label">Programming</div>
-                            <div class="skill-items">C / C++, Python, Arduino, HTML/CSS/JS</div>
+                            <div class="skill-items">C / C++, Python, Arduino</div>
                         </div>
                     </div>
 
@@ -627,6 +627,19 @@
             try {
                 // Wait for fonts to be ready
                 await document.fonts.ready;
+
+                // Ensure all images are loaded
+                const images = Array.from(element.getElementsByTagName('img'));
+                await Promise.all(images.map(img => {
+                    if (img.complete) return Promise.resolve();
+                    return new Promise((resolve) => {
+                        img.onload = resolve;
+                        img.onerror = resolve;
+                    });
+                }));
+
+                // Small delay to ensure rendering is stable
+                await new Promise(r => setTimeout(r, 100));
 
                 // Capture element as canvas
                 const canvas = await html2canvas(element, {
