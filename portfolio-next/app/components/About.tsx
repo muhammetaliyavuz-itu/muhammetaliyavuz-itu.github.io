@@ -159,14 +159,9 @@ export default function About() {
                                             <div key={tag.name}>
                                                 <div className="flex justify-center mb-1">
                                                     <span style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t2)", fontWeight: 500, textAlign: "center" }}>
-                                                        {tag.name} {tag.pct && <span style={{ fontFamily: "var(--fm)", fontSize: "0.72rem", color: "var(--t3)" }}>({tag.pct}%)</span>}
+                                                        {tag.name}
                                                     </span>
                                                 </div>
-                                                {tag.pct && (
-                                                    <div className="skill-progress">
-                                                        <div className="skill-progress-fill" style={{ width: `${tag.pct}%`, background: `linear-gradient(90deg, ${group.color}, ${group.color}80)` }} />
-                                                    </div>
-                                                )}
                                             </div>
                                         ))}
                                     </div>
