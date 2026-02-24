@@ -1,0 +1,29 @@
+warning: in the working copy of 'portfolio-next/app/components/Experience.tsx', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/portfolio-next/app/components/Experience.tsx b/portfolio-next/app/components/Experience.tsx[m
+[1mindex cd9f4d8..40cb6ea 100644[m
+[1m--- a/portfolio-next/app/components/Experience.tsx[m
+[1m+++ b/portfolio-next/app/components/Experience.tsx[m
+[36m@@ -31,9 +31,10 @@[m [mconst experiences = [[m
+     },[m
+     {[m
+         period: "Aug 2024 — Sep 2024",[m
+[31m-        title: "Production Engineer Intern",[m
+[32m+[m[32m        title: "Production Engineer",[m
+         company: "Beşiktaş Shipyard",[m
+         current: false,[m
+[32m+[m[32m        fullTime: true,[m
+         bullets: [[m
+             "Inspection and maintenance of main engines, hydraulic systems, and generators.",[m
+             "Air compressor overhaul including cooling system repair.",[m
+[36m@@ -53,9 +54,10 @@[m [mconst experiences = [[m
+     },[m
+     {[m
+         period: "Aug 2023 — Sep 2023",[m
+[31m-        title: "Mechanical Technician Intern",[m
+[32m+[m[32m        title: "Mechanical Engineer",[m
+         company: "MENSA MAKİNA",[m
+         current: false,[m
+[32m+[m[32m        fullTime: true,[m
+         bullets: [[m
+             "Designed and installed a complete ventilation system for a sheet metal processing line, including ductwork layout and airflow planning.",[m
+             "Fabricated sheet metal components such as pipes, flanges, and air filters for the ventilation unit.",[m
