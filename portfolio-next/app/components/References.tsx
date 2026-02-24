@@ -27,7 +27,7 @@ export default function References() {
                     style={{
                         padding: "2rem 2.5rem",
                         background: "var(--card)",
-                        backdropFilter: "blur(12px)",
+                        backdropFilter: "blur(8px)",
                         border: "1px solid var(--bdr)",
                         borderRadius: "14px",
                         maxWidth: "500px",

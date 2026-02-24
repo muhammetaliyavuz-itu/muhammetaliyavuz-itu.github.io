@@ -117,18 +117,18 @@ export default function CVPage() {
                                 <div>
                                     <div className="flex justify-between items-baseline mb-1">
                                         <h3 className="font-bold text-slate-900 text-[0.95rem]">Beşiktaş Shipyard</h3>
-                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2024 – Sep 2024</span>
+                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2024 – Sep 2024 · Full-time Internship</span>
                                     </div>
-                                    <p className="text-[0.85rem] font-bold text-blue-700">Production Engineer Intern</p>
+                                    <p className="text-[0.85rem] font-bold text-blue-700">Production Engineer</p>
                                     <p className="text-xs text-slate-600 font-medium mt-1">Maintenance of engines, hydraulic systems, and marine pumps.</p>
                                 </div>
 
                                 <div>
                                     <div className="flex justify-between items-baseline mb-1">
                                         <h3 className="font-bold text-slate-900 text-[0.95rem]">Mensa Makina</h3>
-                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2023 – Sep 2023</span>
+                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2023 – Sep 2023 · Full-time Internship</span>
                                     </div>
-                                    <p className="text-[0.85rem] font-bold text-blue-700">Mechanical Technician Intern</p>
+                                    <p className="text-[0.85rem] font-bold text-blue-700">Mechanical Engineer</p>
                                 </div>
                             </div>
                         </section>

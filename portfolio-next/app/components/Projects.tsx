@@ -41,7 +41,7 @@ export default function Projects({ onOpenModal }: ProjectsProps) {
                                 <div className="relative overflow-hidden" style={{ height: "200px" }}>
                                     <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" style={{ objectPosition: project.imageStyle || "center" }} />
                                     <div className="absolute inset-0" style={{ background: `linear-gradient(to top, var(--card) 0%, transparent 60%), ${project.gradient}`, opacity: 0.8 }} />
-                                    <span className="absolute top-4 left-4" style={{ padding: "0.3rem 0.8rem", background: "rgba(0,0,0,0.5)", backdropFilter: "blur(10px)", borderRadius: "6px", fontFamily: "var(--fm)", fontSize: "0.72rem", color: "var(--cy)", letterSpacing: "1px", textTransform: "uppercase", border: "1px solid rgba(34,211,238,0.2)" }}>
+                                    <span className="absolute top-4 left-4" style={{ padding: "0.3rem 0.8rem", background: "rgba(0,0,0,0.5)", backdropFilter: "blur(4px)", borderRadius: "6px", fontFamily: "var(--fm)", fontSize: "0.72rem", color: "var(--cy)", letterSpacing: "1px", textTransform: "uppercase", border: "1px solid rgba(34,211,238,0.2)" }}>
                                         {project.badge}
                                     </span>
                                 </div>

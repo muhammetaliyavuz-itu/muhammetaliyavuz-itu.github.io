@@ -237,13 +237,13 @@ export default function Hero() {
                 <div ref={subRef} className="absolute"
                     style={{ top: "42%", left: "-320px", width: "200px", opacity: 0.3, animation: "swim 45s linear infinite", zIndex: 1 }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/theme/submarine.svg" alt="Submarine" className="w-full h-auto" style={{ filter: "drop-shadow(0 0 24px rgba(34,211,238,0.4))" }} />
+                    <img src="/images/theme/submarine.svg" alt="Submarine" className="w-full h-auto" />
                 </div>
 
                 <div className="fish-school">
                     {[{ delay: "0s", dur: "20s", top: "22%", size: 24 }, { delay: "7s", dur: "26s", top: "62%", size: 18 }, { delay: "14s", dur: "30s", top: "48%", size: 14 }, { delay: "3s", dur: "22s", top: "35%", size: 20 }].map((fish, i) => (
                         // eslint-disable-next-line @next/next/no-img-element
-                        <img key={i} src="/images/theme/fish.svg" alt="" className="absolute" style={{ width: `${fish.size}px`, top: fish.top, opacity: 0.2, animation: `fishSwim ${fish.dur} linear infinite`, animationDelay: fish.delay, filter: "drop-shadow(0 0 6px rgba(34,211,238,0.5))" }} />
+                        <img key={i} src="/images/theme/fish.svg" alt="" className="absolute" style={{ width: `${fish.size}px`, top: fish.top, opacity: 0.2, animation: `fishSwim ${fish.dur} linear infinite`, animationDelay: fish.delay }} />
                     ))}
                 </div>
             </div>

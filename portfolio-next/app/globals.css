@@ -238,8 +238,8 @@ ul {
 /* ===== GLASS CARDS ===== */
 .glass-card {
   background: var(--card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--bdr);
   border-radius: var(--r2);
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -563,10 +563,12 @@ ul {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.3;
+  filter: blur(80px);
+  /* Reduced from 120px for performance */
+  opacity: 0.2;
   pointer-events: none;
   animation: auroraShift 12s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 /* ===== 3D TILT HOVER ===== */

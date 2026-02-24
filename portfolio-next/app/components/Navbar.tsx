@@ -85,7 +85,7 @@ export default function Navbar() {
                 className="fixed top-0 left-0 right-0 z-50 transition-all duration-400"
                 style={{
                     background: scrolled ? "var(--card)" : "transparent",
-                    backdropFilter: scrolled ? "blur(20px)" : "none",
+                    backdropFilter: scrolled ? "blur(8px)" : "none",
                     borderBottom: scrolled ? "1px solid var(--bdr)" : "none",
                     boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.3)" : "none",
                 }}
@@ -163,7 +163,7 @@ export default function Navbar() {
 
                 {menuOpen && (
                     <div className="mobile-menu-enter md:hidden absolute top-[68px] left-0 right-0"
-                        style={{ background: "var(--card)", backdropFilter: "blur(20px)", borderTop: "1px solid var(--bdr)", padding: "1rem 2rem" }}>
+                        style={{ background: "var(--card)", backdropFilter: "blur(8px)", borderTop: "1px solid var(--bdr)", padding: "1rem 2rem" }}>
                         {navLinks.map((link) => (
                             <a key={link.href} href={link.href}
                                 onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}

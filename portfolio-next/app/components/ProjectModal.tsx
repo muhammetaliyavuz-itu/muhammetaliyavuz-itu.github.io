@@ -39,7 +39,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             className="modal-overlay-bg fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-8"
             style={{
                 background: "rgba(8,12,20,0.92)",
-                backdropFilter: "blur(12px)",
+                backdropFilter: "blur(6px)",
             }}
             onClick={onClose}
         >
@@ -47,7 +47,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 className="relative w-full max-w-[1200px] max-h-[90vh] overflow-y-auto"
                 style={{
                     background: "var(--card)",
-                    backdropFilter: "blur(12px)",
+                    backdropFilter: "blur(6px)",
                     border: "1px solid var(--bdr)",
                     borderRadius: "16px",
                     boxShadow: "0 24px 64px rgba(0,0,0,0.6)",

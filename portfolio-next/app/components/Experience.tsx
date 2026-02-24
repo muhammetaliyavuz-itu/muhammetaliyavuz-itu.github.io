@@ -31,9 +31,11 @@ const experiences = [
     },
     {
         period: "Aug 2024 — Sep 2024",
-        title: "Production Engineer Intern",
+        title: "Production Engineer",
         company: "Beşiktaş Shipyard",
         current: false,
+        fullTime: true,
+        internship: true,
         bullets: [
             "Inspection and maintenance of main engines, hydraulic systems, and generators.",
             "Air compressor overhaul including cooling system repair.",
@@ -53,9 +55,11 @@ const experiences = [
     },
     {
         period: "Aug 2023 — Sep 2023",
-        title: "Mechanical Technician Intern",
+        title: "Mechanical Engineer",
         company: "MENSA MAKİNA",
         current: false,
+        fullTime: true,
+        internship: true,
         bullets: [
             "Designed and installed a complete ventilation system for a sheet metal processing line, including ductwork layout and airflow planning.",
             "Fabricated sheet metal components such as pipes, flanges, and air filters for the ventilation unit.",
@@ -144,7 +148,7 @@ export default function Experience() {
                                             letterSpacing: "0.5px",
                                             textTransform: "uppercase"
                                         }}>
-                                            FULL TIME
+                                            {(exp as any).internship ? "FULL TIME INTERNSHIP" : "FULL TIME"}
                                         </span>
                                     )}
                                 </div>
