@@ -1,4 +1,45 @@
-# 🔧 VSCode'dan Site Güncelleme Rehberi
+
+
+1/2
+
+Next.js 16.1.6
+Turbopack
+Console Error
+
+
+
+Encountered two children with the same key, ``. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+app/components/Projects.tsx (56:45) @ <unknown>
+
+
+  54 |                                     <div className="flex justify-center gap-5" style={{ borderTop: "1px solid var(--bdr)", paddingTop: "0.8rem" }}>
+  55 |                                         {project.metrics.map((m) => (
+> 56 |                                             <div key={m.label} className="flex flex-col">
+     |                                             ^
+  57 |                                                 <span style={{ fontFamily: "var(--fh)", fontSize: "1rem", fontWeight: 700, color: "var(--cy)" }}>{m.value}</span>
+  58 |                                                 <span style={{ fontFamily: "var(--fb)", fontSize: "0.68rem", color: "var(--t3)", textTransform: "uppercase", letterSpacing: "0.5px", fontWeight: 500 }}>{m.label}</span>
+  59 |                                             </div>
+Call Stack
+26
+
+Show 19 ignore-listed frame(s)
+div
+<anonymous>
+<unknown>
+app/components/Projects.tsx (56:45)
+Array.map
+<anonymous>
+<unknown>
+app/components/Projects.tsx (55:58)
+Array.map
+<anonymous>
+Projects
+app/components/Projects.tsx (33:31)
+Home
+app/page.tsx (32:7)
+1
+2
+Was this helpful?# 🔧 VSCode'dan Site Güncelleme Rehberi
 
 ## 📥 ADIM 1: Dosyaları İndir ve Aç
 
