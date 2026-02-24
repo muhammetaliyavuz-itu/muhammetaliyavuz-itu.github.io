@@ -87,47 +87,12 @@ function AnimatedCounterStat({ target, decimals = 0, duration = 2000, label, uni
     );
 }
 
-function DepthBadge() {
-    const [depth, setDepth] = useState(0);
-    const [scrollDepth, setScrollDepth] = useState(0);
-
-    useEffect(() => {
-        let ticking = false;
-        const update = () => {
-            const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-            const d = Math.round(pct * 420);
-            setScrollDepth(d);
-            ticking = false;
-        };
-        const onScroll = () => {
-            if (!ticking) {
-                window.requestAnimationFrame(update);
-                ticking = true;
-            }
-        };
-        window.addEventListener("scroll", onScroll, { passive: true });
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
-
-    useEffect(() => {
-        let v = 0;
-        const target = 38;
-        const step = () => {
-            v += 1;
-            setDepth(v);
-            if (v < target) requestAnimationFrame(step);
-        };
-        const t = setTimeout(() => requestAnimationFrame(step), 800);
-        return () => clearTimeout(t);
-    }, []);
-
-    const displayDepth = scrollDepth > 0 ? scrollDepth : depth;
-
+function InfoBadge() {
     return (
         <div className="flex justify-center mb-6" style={{ animation: "fadeUp 0.6s ease 0.1s both" }}>
             <span className="hero-depth-badge" style={{ fontFamily: "var(--fm)", fontSize: "0.72rem" }}>
                 <span className="dot" />
-                DEPTH: {displayDepth}m — Naval Architecture &amp; Ocean Engineering · ITU · b. August 2003
+                Naval Architecture &amp; Ocean Engineering · ITU · b. August 2003
             </span>
         </div>
     );
@@ -264,7 +229,7 @@ export default function Hero() {
 
             {/* HERO CONTENT */}
             <div className="relative z-10 text-center max-w-3xl mx-auto">
-                <DepthBadge />
+                <InfoBadge />
 
                 {/* Name */}
                 <h1 style={{ fontFamily: "var(--fh)", fontSize: "clamp(3.2rem, 9vw, 6.5rem)", fontWeight: 800, lineHeight: 1.0, letterSpacing: "-2px", animation: "fadeUp 0.7s ease 0.2s both", marginBottom: "1.2rem" }}>
