@@ -139,7 +139,7 @@ export default function CVPage() {
                             <div className="space-y-6 max-w-[95%]">
                                 <div>
                                     <h3 className="font-bold text-slate-900 text-[0.95rem]">TCSG FISILTI — Hybrid Coast Guard Vessel</h3>
-                                    <p className="text-[0.85rem] text-slate-700 font-medium mt-1 leading-relaxed">Commanded preliminary design of a 68m hybrid propulsion vessel tailored for surveillance, special ops, and environmental response.</p>
+                                    <p className="text-[0.85rem] text-slate-700 font-medium mt-1 leading-relaxed">Commanded preliminary design of a 69.5m hybrid propulsion vessel tailored for surveillance, special ops, and environmental response.</p>
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-slate-900 text-[0.95rem]">KCS Hull with Rudder</h3>

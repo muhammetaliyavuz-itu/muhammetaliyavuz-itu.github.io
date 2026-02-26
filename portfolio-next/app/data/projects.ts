@@ -58,15 +58,15 @@ export interface Project {
 export const projects: Project[] = [
     {
         id: "tcsg",
-        title: "TCSG FISILTI — Hybrid Coast Guard Vessel",
+        title: "Undergraduation Project - TCSG FISILTI (WHISPER)",
         shortDesc:
-            "Designed for surveillance, environmental response, and special ops, this 68m hybrid vessel features Azipod propulsion and extensive mission equipment.",
+            "Designed for surveillance, environmental response, and special ops, this 69.5m hybrid vessel features Azipod propulsion and extensive mission equipment.",
         badge: "Ship Design · Preliminary",
         image: "/images/projects/undergraduation/side_view.png",
         imageStyle: "object-contain p-2",
         gradient: "from-slate-800 to-slate-950",
         metrics: [
-            { value: "68m", label: "LOA" },
+            { value: "69.5 m", label: "LOA" },
             { value: "24 kn", label: "Speed" },
             { value: "Hybrid", label: "Propulsion" },
         ],
