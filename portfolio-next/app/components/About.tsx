@@ -126,10 +126,7 @@ export default function About() {
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 } } }} className="mb-16 max-w-3xl w-full text-center">
                     <div>
                         <p style={{ fontFamily: "var(--fb)", fontSize: "0.95rem", color: "var(--t2)", lineHeight: 1.8 }}>
-                            Senior-year <span className="accent-cy">Naval Architecture &amp; Ocean Engineering</span> student at Istanbul Technical University
-                            with hands-on experience in <span className="accent-bl">CFD simulation</span>,{" "}
-                            <span className="accent-or">ship design</span>, and research-grade software development.
-                            Passionate about bridging engineering analysis with modern technology.
+                            An innovation-driven young engineer who blends hands-on field experience with <span className="accent-cy">Computational Fluid Dynamics (CFD)</span>, <span className="accent-bl">Experimental Fluid Dynamics (EFD)</span>, and <span className="accent-or">software development</span>. I don't just analyze hydrodynamics and fluid mechanics problems on a screen; I validate them through active field tests and offer creative solutions by automating processes with my coding skills. Based on analytical thinking and rational data, I am an energetic team player who thinks outside the box and is eager to continuously learn. My goal is to create globally valuable engineering projects guided by science and data.
                         </p>
                     </div>
                 </motion.div>

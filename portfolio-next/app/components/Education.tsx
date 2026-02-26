@@ -55,7 +55,7 @@ export default function Education() {
                         <div className="flex flex-col gap-1 mb-4 items-center">
                             <h3 style={{ fontFamily: "var(--fh)", fontSize: "1.2rem", fontWeight: 700, color: "var(--t1)" }}>B.Sc. Naval Architecture &amp; Ocean Engineering</h3>
                             <p style={{ fontFamily: "var(--fb)", fontSize: "0.92rem", color: "var(--cy)", fontWeight: 500 }}>Istanbul Technical University</p>
-                            <p style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t3)" }}>Expected Graduation — 2026</p>
+                            <p style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t3)" }}>Expected Graduation — July - 2026</p>
                         </div>
 
                         <div className="flex items-baseline justify-center gap-2 mb-4" style={{ padding: "0.75rem 1rem", background: "var(--cyd)", borderRadius: "8px", border: "1px solid var(--bdr)" }}>
