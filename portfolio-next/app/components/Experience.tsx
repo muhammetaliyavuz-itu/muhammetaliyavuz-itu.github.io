@@ -8,6 +8,7 @@ const experiences = [
         period: "Aug 2025 — Present",
         title: "CFD Engineer & Software Developer",
         company: "ITUKAT",
+        companyUrl: "https://itukat.itu.edu.tr/en/home/",
         current: true,
         fullTime: true,
         bullets: [
@@ -33,6 +34,7 @@ const experiences = [
         period: "Aug 2024 — Sep 2024",
         title: "Production Engineer",
         company: "Beşiktaş Shipyard",
+        companyUrl: "https://www.besiktasshipyard.com/",
         current: false,
         fullTime: true,
         internship: true,
@@ -91,12 +93,67 @@ const fadeInUp = {
     }),
 };
 
+/* Floating fish SVG silhouettes */
+function SwimmingFish() {
+    const fishConfigs = [
+        { size: 40, top: "18%", duration: 28, delay: 0, reverse: false, opacity: 0.035 },
+        { size: 28, top: "45%", duration: 35, delay: 8, reverse: true, opacity: 0.025 },
+        { size: 52, top: "72%", duration: 42, delay: 15, reverse: false, opacity: 0.03 },
+        { size: 22, top: "30%", duration: 30, delay: 22, reverse: true, opacity: 0.02 },
+    ];
+    return (
+        <>
+            {fishConfigs.map((f, i) => (
+                <div key={i} style={{
+                    position: "absolute", top: f.top, zIndex: 0, opacity: f.opacity, pointerEvents: "none",
+                    animation: `${f.reverse ? "fishSwimReverse" : "fishSwim"} ${f.duration}s linear ${f.delay}s infinite`,
+                    ...(f.reverse ? { right: "-60px" } : { left: "-60px" }),
+                }}>
+                    <svg width={f.size} height={f.size * 0.5} viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style={{ transform: f.reverse ? "scaleX(1)" : "scaleX(-1)" }}>
+                        <path d="M70 20C70 20 60 5 40 5C20 5 8 15 2 20C8 25 20 35 40 35C60 35 70 20 70 20Z" fill="var(--cy)" />
+                        <path d="M72 20L80 12V28L72 20Z" fill="var(--cy)" />
+                        <circle cx="18" cy="18" r="2.5" fill="var(--bg)" />
+                    </svg>
+                </div>
+            ))}
+        </>
+    );
+}
+
+/* Rising bubble particles */
+function Bubbles() {
+    const bubbles = [
+        { size: 4, left: "12%", duration: 14, delay: 0 },
+        { size: 6, left: "28%", duration: 18, delay: 5 },
+        { size: 3, left: "55%", duration: 12, delay: 2 },
+        { size: 5, left: "72%", duration: 20, delay: 10 },
+        { size: 3, left: "88%", duration: 16, delay: 7 },
+        { size: 4, left: "40%", duration: 22, delay: 14 },
+    ];
+    return (
+        <>
+            {bubbles.map((b, i) => (
+                <div key={i} style={{
+                    position: "absolute", bottom: "-10px", left: b.left, zIndex: 0,
+                    width: b.size, height: b.size, borderRadius: "50%",
+                    border: "1px solid var(--cy)", opacity: 0,
+                    animation: `rise ${b.duration}s ease-in ${b.delay}s infinite`,
+                    pointerEvents: "none",
+                }} />
+            ))}
+        </>
+    );
+}
+
 export default function Experience() {
     const timeline = useOnScreen();
 
     return (
         <section className="py-24 noise-overlay flex flex-col items-center w-full" id="experience" style={{ position: "relative", overflow: "hidden" }}>
             <div className="aurora-glow" style={{ top: "20%", right: "-5%", background: "radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 70%)", animationDelay: "3s" }} />
+            <SwimmingFish />
+            <Bubbles />
 
             <div className="max-w-[1160px] mx-auto px-8 relative z-10 flex flex-col items-center w-full">
                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="section-line mb-16 text-center w-full">
@@ -162,15 +219,26 @@ export default function Experience() {
                                 }}>
                                     {exp.title}
                                 </h3>
-                                <p style={{
-                                    fontFamily: "var(--fb)",
-                                    fontSize: "0.88rem",
-                                    color: "var(--cy)",
-                                    fontWeight: 500,
-                                    marginBottom: "0.75rem",
-                                }}>
-                                    {exp.company}
-                                </p>
+                                {exp.companyUrl ? (
+                                    <a href={exp.companyUrl} target="_blank" rel="noopener noreferrer"
+                                        style={{
+                                            fontFamily: "var(--fb)", fontSize: "0.88rem", color: "var(--cy)",
+                                            fontWeight: 500, marginBottom: "0.75rem", display: "block",
+                                            textDecoration: "none", transition: "opacity 0.2s ease",
+                                        }}
+                                        onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.75"; e.currentTarget.style.textDecoration = "underline"; }}
+                                        onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.textDecoration = "none"; }}
+                                    >
+                                        {exp.company} ↗
+                                    </a>
+                                ) : (
+                                    <p style={{
+                                        fontFamily: "var(--fb)", fontSize: "0.88rem", color: "var(--cy)",
+                                        fontWeight: 500, marginBottom: "0.75rem",
+                                    }}>
+                                        {exp.company}
+                                    </p>
+                                )}
 
                                 <ul className="flex flex-col gap-2 mb-4 items-center">
                                     {exp.bullets.map((b, bi) => (

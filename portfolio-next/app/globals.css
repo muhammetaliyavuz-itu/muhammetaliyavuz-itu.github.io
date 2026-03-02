@@ -283,6 +283,16 @@ ul {
   }
 }
 
+@keyframes fishSwimReverse {
+  0% {
+    transform: translateX(calc(100vw + 200px));
+  }
+
+  100% {
+    transform: translateX(-200px);
+  }
+}
+
 @keyframes rise {
   0% {
     transform: translateY(0) translateX(0);
