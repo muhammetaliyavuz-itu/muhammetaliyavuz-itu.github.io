@@ -251,22 +251,7 @@ export default function Experience() {
                                     </p>
                                 )}
 
-                                {(exp as any).description && (
-                                    <p style={{
-                                        fontFamily: "var(--fb)",
-                                        fontSize: "0.85rem",
-                                        color: "var(--t2)",
-                                        lineHeight: 1.7,
-                                        marginBottom: "0.5rem",
-                                        fontStyle: "italic",
-                                        maxWidth: "90%",
-                                        margin: "0 auto 0.75rem auto"
-                                    }}>
-                                        {(exp as any).description}
-                                    </p>
-                                )}
-
-                                <ul className="flex flex-col gap-2 mb-4 items-center">
+                                <ul className="flex flex-col gap-2 mb-4 items-start mx-auto w-fit" style={{ listStyleType: "disc", paddingLeft: "20px" }}>
                                     {exp.bullets.map((b, bi) => (
                                         <li key={bi} style={{
                                             fontFamily: "var(--fb)",
@@ -274,6 +259,7 @@ export default function Experience() {
                                             color: "var(--t2)",
                                             lineHeight: 1.7,
                                             maxWidth: "90%",
+                                            textAlign: "left",
                                         }}>
                                             {b}
                                         </li>
