@@ -11,8 +11,8 @@ const experiences = [
         companyUrl: "https://itukat.itu.edu.tr/en/home/",
         current: true,
         fullTime: true,
+        description: "Projects undertaken were conducted under confidentiality constraints. Public descriptions focus on methodologies and technical contributions.",
         bullets: [
-            "Projects undertaken were conducted under confidentiality constraints. Public descriptions focus on methodologies and technical contributions.",
             "Force and moment analysis in CFD simulations, including validation through experimental (EFD) data.",
             "Development of control and automation algorithms for engineering applications."
         ],
@@ -233,6 +233,21 @@ export default function Experience() {
                                         fontWeight: 500, marginBottom: "0.75rem",
                                     }}>
                                         {exp.company}
+                                    </p>
+                                )}
+
+                                {(exp as any).description && (
+                                    <p style={{
+                                        fontFamily: "var(--fb)",
+                                        fontSize: "0.85rem",
+                                        color: "var(--t2)",
+                                        lineHeight: 1.7,
+                                        marginBottom: "0.5rem",
+                                        fontStyle: "italic",
+                                        maxWidth: "90%",
+                                        margin: "0 auto 0.75rem auto"
+                                    }}>
+                                        {(exp as any).description}
                                     </p>
                                 )}
 
