@@ -24,8 +24,6 @@ export default function Navbar() {
     useEffect(() => {
         const saved = localStorage.getItem("theme") || "dark";
         setTheme(saved);
-        // document.documentElement.setAttribute is already done in layout script to avoid initial flash,
-        // but we keep it here to sync state in case it differs.
         document.documentElement.setAttribute("data-theme", saved);
 
         let ticking = false;
@@ -90,8 +88,8 @@ export default function Navbar() {
                     boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.3)" : "none",
                 }}
             >
-                {/* Desktop nav — Truly centered globally relative to entire <nav> width */}
-                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 whitespace-nowrap pointer-events-none">
+                {/* Desktop nav — nav links + theme toggle, all centered together */}
+                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 whitespace-nowrap pointer-events-none items-center">
                     <ul className="flex items-center gap-8 pointer-events-auto relative">
                         {navLinks.map((link) => {
                             const isActive = activeSection === link.href.slice(1);
@@ -111,9 +109,19 @@ export default function Navbar() {
                                 </li>
                             );
                         })}
-
-
                     </ul>
+
+                    {/* Theme Toggle - right next to nav links */}
+                    <button onClick={toggleTheme}
+                        className="pointer-events-auto flex items-center justify-center w-[38px] h-[38px] rounded-lg border transition-all duration-300 cursor-pointer ml-8"
+                        style={{ borderColor: "var(--bdr)", color: "var(--t2)", background: "transparent" }}
+                        aria-label="Toggle theme"
+                        onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--cy)"; e.currentTarget.style.color = "var(--cy)"; e.currentTarget.style.background = "var(--cyd)"; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--bdr)"; e.currentTarget.style.color = "var(--t2)"; e.currentTarget.style.background = "transparent"; }}>
+                        <span key={themeKey} className="theme-icon-enter flex items-center justify-center">
+                            {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
+                        </span>
+                    </button>
                 </div>
 
                 <div className="w-full px-8 md:px-24 flex items-center justify-between h-[68px] relative pointer-events-none">
@@ -125,20 +133,6 @@ export default function Navbar() {
                         <span style={{ color: "var(--t1)" }}>MAY</span>
                         <span style={{ color: "var(--cy)" }} className="group-hover:scale-110 inline-block transition-transform">]</span>
                     </a>
-
-                    {/* Desktop Theme Toggle - Positioned right */}
-                    <div className="hidden md:flex items-center gap-3 pointer-events-auto mr-8">
-                        <button onClick={toggleTheme}
-                            className="flex items-center justify-center w-[38px] h-[38px] rounded-lg border transition-all duration-300 cursor-pointer"
-                            style={{ borderColor: "var(--bdr)", color: "var(--t2)", background: "transparent" }}
-                            aria-label="Toggle theme"
-                            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--cy)"; e.currentTarget.style.color = "var(--cy)"; e.currentTarget.style.background = "var(--cyd)"; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--bdr)"; e.currentTarget.style.color = "var(--t2)"; e.currentTarget.style.background = "transparent"; }}>
-                            <span key={themeKey} className="theme-icon-enter flex items-center justify-center">
-                                {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
-                            </span>
-                        </button>
-                    </div>
 
                     {/* Mobile Controls - Positioned right */}
                     <div className="flex md:hidden items-center gap-3 pointer-events-auto mr-4 md:mr-0">
