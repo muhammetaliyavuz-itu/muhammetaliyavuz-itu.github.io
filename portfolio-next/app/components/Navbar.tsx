@@ -113,7 +113,7 @@ export default function Navbar() {
 
                     {/* Theme Toggle - right next to nav links */}
                     <button onClick={toggleTheme}
-                        className="pointer-events-auto flex items-center justify-center w-[38px] h-[38px] rounded-lg border transition-all duration-300 cursor-pointer ml-[200px]"
+                        className="pointer-events-auto flex items-center justify-center w-[38px] h-[38px] rounded-lg border transition-all duration-300 cursor-pointer ml-[2000px]"
                         style={{ borderColor: "var(--bdr)", color: "var(--t2)", background: "transparent" }}
                         aria-label="Toggle theme"
                         onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--cy)"; e.currentTarget.style.color = "var(--cy)"; e.currentTarget.style.background = "var(--cyd)"; }}
