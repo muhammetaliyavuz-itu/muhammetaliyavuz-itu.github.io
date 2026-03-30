@@ -85,6 +85,36 @@ export default function Education() {
                             onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 20px 50px rgba(0,0,0,0.3)"; }}
                             onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
                             <div className="flex flex-col gap-1 mb-4 items-center">
+                                <h3 style={{ fontFamily: "var(--fh)", fontSize: "1.2rem", fontWeight: 700, color: "var(--t1)" }}>ATHENS Network Exchange Programme</h3>
+                                <p style={{ fontFamily: "var(--fb)", fontSize: "0.92rem", color: "#22c55e", fontWeight: 500 }}>Delft University of Technology</p>
+                                <p style={{ fontFamily: "var(--fb)", fontSize: "0.85rem", color: "var(--t3)" }}>14 March – 21 March 2026 · Delft, Netherlands</p>
+                                <div style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)", padding: "4px 12px", borderRadius: "20px", marginTop: "4px" }}>
+                                    <p style={{ fontFamily: "var(--fb)", fontSize: "0.85rem", color: "#22c55e", fontWeight: 500 }}>TUD14 — Computer Aided Analysis &amp; Optimization of Sustainable Electrical Power Systems</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-baseline justify-center gap-2 mb-4" style={{ padding: "0.75rem 1rem", background: "rgba(34,197,94,0.08)", borderRadius: "8px", border: "1px solid rgba(34,197,94,0.2)" }}>
+                                <span style={{ fontFamily: "var(--fh)", fontSize: "1.8rem", fontWeight: 700, color: "#22c55e", lineHeight: 1 }}>9</span>
+                                <span style={{ fontFamily: "var(--fb)", fontSize: "0.85rem", color: "var(--t3)" }}>/ 10 Local Mark</span>
+                            </div>
+
+                            <div>
+                                <p style={{ fontFamily: "var(--fb)", fontSize: "0.78rem", color: "var(--t3)", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.6rem", fontWeight: 500 }}>Certificate</p>
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    <span className="tech-tag">🎓 ATHENS Network — March 2026 Session</span>
+                                    <span className="tech-tag">✅ Verified · BN22-JYBT-79WV-HDCV</span>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }}
+                        variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.3 } } }}
+                        className="flex justify-center w-full">
+                        <div className="glass-card shine-sweep text-center" style={{ padding: "2rem 2.5rem", borderRadius: "var(--r)", maxWidth: "680px", width: "100%", transition: "transform 0.3s ease, box-shadow 0.3s ease" }}
+                            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 20px 50px rgba(0,0,0,0.3)"; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
+                            <div className="flex flex-col gap-1 mb-4 items-center">
                                 <h3 style={{ fontFamily: "var(--fh)", fontSize: "1.2rem", fontWeight: 700, color: "var(--t1)" }}>High-School Diploma</h3>
                                 <p style={{ fontFamily: "var(--fb)", fontSize: "0.92rem", color: "var(--bl)", fontWeight: 500 }}>Erbil Koru Anatolian High School</p>
                                 <p style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t3)" }}>Konya, Türkiye | 09/2017 – 07/2021</p>
