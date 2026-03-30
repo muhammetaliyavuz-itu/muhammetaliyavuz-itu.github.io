@@ -1,21 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, CheckCircle } from "lucide-react";
+import { ExternalLink, CheckCircle, Copy, Check } from "lucide-react";
+import { useState } from "react";
 
 const certs = [
-    { category: "EXCHANGE", name: "ATHENS Network — TU Delft", color: "#22c55e", url: "https://register.athensnetwork.eu/verify" },
+    { category: "EXCHANGE", name: "ATHENS Network — TU Delft", color: "#22c55e", url: "https://register.athensnetwork.eu/verify", verificationCode: "BN22-JYBT-79WV-HDCV" },
     { category: "CAD", name: "SolidWorks (CSWA)", color: "var(--bl)", url: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9JG2FEML5U" },
     { category: "CAD", name: "AutoCAD Certificate", color: "var(--bl)", url: "https://coursera.org/verify/LXRP49PG83TZ" },
     { category: "PROGRAMMING", name: "Python (freeCodeCamp)", color: "var(--or)", url: "https://www.freecodecamp.org/certification/muhali-itu/scientific-computing-with-python-v7" },
     { category: "EMBEDDED", name: "Arduino Certificate", color: "var(--or)", url: "https://www.udemy.com/certificate/UC-74396a11-d4a8-4924-947b-f6af469f287e/" },
     { category: "LANGUAGE", name: "TELC Deutsch B1", color: "var(--cy)", url: "https://results.telc.net/qr/JfgH5TJpT96WF1qbG0pVcwnzx5BYe0eNiHHrqN_Mq3Lnsl3NNCVKvam7jM_xm5zr" },
-] as { category: string; name: string; sub?: string; color: string; url: string }[];
+] as { category: string; name: string; sub?: string; color: string; url: string; verificationCode?: string }[];
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 25 },
     visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const, delay: i * 0.12 } }),
 };
+
+function CopyButton({ code }: { code: string }) {
+    const [copied, setCopied] = useState(false);
+    const handleCopy = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        navigator.clipboard.writeText(code).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        });
+    };
+    return (
+        <button
+            onClick={handleCopy}
+            title="Copy verification code"
+            style={{
+                background: "none", border: "none", cursor: "pointer", padding: "2px 4px",
+                display: "inline-flex", alignItems: "center", color: copied ? "#22c55e" : "var(--cy)",
+                transition: "color 0.2s", flexShrink: 0,
+            }}
+        >
+            {copied ? <Check size={13} /> : <Copy size={13} />}
+        </button>
+    );
+}
 
 export default function Certifications() {
     return (
@@ -39,6 +65,12 @@ export default function Certifications() {
                             </div>
                             <p style={{ fontFamily: "var(--fh)", fontSize: "0.95rem", fontWeight: 600, color: "var(--t1)", flex: 1 }}>{cert.name}</p>
                             {cert.sub && <p style={{ fontFamily: "var(--fb)", fontSize: "0.68rem", color: "var(--t3)", lineHeight: 1.4, textAlign: "center" }}>{cert.sub}</p>}
+                            {cert.verificationCode && (
+                                <div style={{ display: "flex", alignItems: "center", gap: "4px", background: "rgba(34,211,238,0.07)", borderRadius: "6px", padding: "4px 8px", border: "1px solid rgba(34,211,238,0.2)" }}>
+                                    <span style={{ fontFamily: "var(--fb)", fontSize: "0.65rem", color: "var(--t3)", letterSpacing: "0.5px", whiteSpace: "nowrap" }}>{cert.verificationCode}</span>
+                                    <CopyButton code={cert.verificationCode} />
+                                </div>
+                            )}
                             <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: "var(--fb)", fontSize: "0.72rem", fontWeight: 500, color: "var(--cy)", letterSpacing: "0.5px" }}>
                                 Verify <ExternalLink size={12} />
                             </div>
