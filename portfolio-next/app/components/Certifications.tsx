@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { ExternalLink, CheckCircle } from "lucide-react";
 
 const certs = [
+    { category: "EXCHANGE", name: "ATHENS Network — TU Delft", sub: "TUD14 · Computer Aided Analysis & Optimization of Sustainable Electrical Power Systems · 9/10", color: "#22c55e", url: "https://register.athensnetwork.eu/verify" },
     { category: "CAD", name: "SolidWorks (CSWA)", color: "var(--bl)", url: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9JG2FEML5U" },
     { category: "CAD", name: "AutoCAD Certificate", color: "var(--bl)", url: "https://coursera.org/verify/LXRP49PG83TZ" },
     { category: "PROGRAMMING", name: "Python (freeCodeCamp)", color: "var(--or)", url: "https://www.freecodecamp.org/certification/muhali-itu/scientific-computing-with-python-v7" },
     { category: "EMBEDDED", name: "Arduino Certificate", color: "var(--or)", url: "https://www.udemy.com/certificate/UC-74396a11-d4a8-4924-947b-f6af469f287e/" },
     { category: "LANGUAGE", name: "TELC Deutsch B1", color: "var(--cy)", url: "https://results.telc.net/qr/JfgH5TJpT96WF1qbG0pVcwnzx5BYe0eNiHHrqN_Mq3Lnsl3NNCVKvam7jM_xm5zr" },
-];
+] as { category: string; name: string; sub?: string; color: string; url: string }[];
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 25 },
@@ -37,6 +38,7 @@ export default function Certifications() {
                                 <CheckCircle size={16} className="group-hover:scale-125 transition-transform duration-300" style={{ color: "var(--cy)", filter: "drop-shadow(0 0 4px rgba(34,211,238,0.4))" }} />
                             </div>
                             <p style={{ fontFamily: "var(--fh)", fontSize: "0.95rem", fontWeight: 600, color: "var(--t1)", flex: 1 }}>{cert.name}</p>
+                            {cert.sub && <p style={{ fontFamily: "var(--fb)", fontSize: "0.68rem", color: "var(--t3)", lineHeight: 1.4, textAlign: "center" }}>{cert.sub}</p>}
                             <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: "var(--fb)", fontSize: "0.72rem", fontWeight: 500, color: "var(--cy)", letterSpacing: "0.5px" }}>
                                 Verify <ExternalLink size={12} />
                             </div>

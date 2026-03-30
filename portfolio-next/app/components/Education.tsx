@@ -99,11 +99,12 @@ export default function Education() {
                             </div>
 
                             <div>
-                                <p style={{ fontFamily: "var(--fb)", fontSize: "0.78rem", color: "var(--t3)", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.6rem", fontWeight: 500 }}>Certificate</p>
-                                <div className="flex flex-wrap justify-center gap-2">
-                                    <span className="tech-tag">🎓 ATHENS Network — March 2026 Session</span>
-                                    <span className="tech-tag">✅ Verified · BN22-JYBT-79WV-HDCV</span>
-                                </div>
+                                <a href="https://register.athensnetwork.eu/verify" target="_blank" rel="noopener noreferrer"
+                                    style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", fontWeight: 600, color: "#22c55e", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "4px", padding: "4px 14px", border: "1px solid rgba(34,197,94,0.35)", borderRadius: "20px", transition: "background 0.2s" }}
+                                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(34,197,94,0.12)"; }}
+                                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; }}>
+                                    🎓 Certificate <span style={{ fontSize: "0.7rem" }}>↗</span>
+                                </a>
                             </div>
                         </div>
                     </motion.div>
