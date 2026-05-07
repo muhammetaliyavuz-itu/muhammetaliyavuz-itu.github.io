@@ -3,6 +3,47 @@
 import { motion } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
 
+function AnimatedSkillBar({ name, pct, color }: { name: string; pct: number; color: string }) {
+    const ref = useRef<HTMLDivElement>(null);
+    const [go, setGo] = useState(false);
+
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        const obs = new IntersectionObserver(([e]) => {
+            if (e.isIntersecting) { setGo(true); obs.unobserve(el); }
+        }, { threshold: 0.4 });
+        obs.observe(el);
+        return () => obs.disconnect();
+    }, []);
+
+    return (
+        <div ref={ref} style={{ marginBottom: "0.65rem" }}>
+            <div className="flex justify-between items-center" style={{ marginBottom: "0.3rem" }}>
+                <span style={{ fontFamily: "var(--fb)", fontSize: "0.8rem", color: "var(--t2)", fontWeight: 500 }}>
+                    {name}
+                </span>
+                <span style={{
+                    fontFamily: "var(--fm)", fontSize: "0.7rem", color, fontWeight: 600,
+                    opacity: go ? 1 : 0, transition: "opacity 0.4s ease 0.6s",
+                }}>
+                    {pct}%
+                </span>
+            </div>
+            <div style={{ height: "3px", background: "rgba(148,163,184,0.08)", borderRadius: "2px", overflow: "hidden" }}>
+                <div style={{
+                    height: "100%",
+                    borderRadius: "2px",
+                    width: go ? `${pct}%` : "0%",
+                    background: `linear-gradient(90deg, ${color}, ${color}99)`,
+                    transition: "width 1.1s cubic-bezier(0.23,1,0.32,1) 0.2s",
+                    boxShadow: go ? `0 0 6px ${color}55` : "none",
+                }} />
+            </div>
+        </div>
+    );
+}
+
 function TiltCard({ children }: { children: React.ReactNode }) {
     const ref = useRef<HTMLDivElement>(null);
     const handleMouse = useCallback((e: React.MouseEvent) => {
@@ -151,18 +192,33 @@ export default function About() {
                             variants={{ hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: gi * 0.1 } } }}>
                             <TiltCard>
                                 <div className="glass-card" style={{ padding: "1.5rem", borderRadius: "var(--r)", height: "100%" }}>
-                                    <h3 style={{ fontFamily: "var(--fh)", fontSize: "0.95rem", fontWeight: 700, color: group.color, marginBottom: "1rem", textAlign: "center" }}>{group.title}</h3>
-                                    <div className="flex flex-col gap-3">
-                                        {group.tags.map((tag: any) => (
-                                            <div key={tag.name}>
-                                                <div className="flex justify-center mb-1">
-                                                    <span style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t2)", fontWeight: 500, textAlign: "center" }}>
-                                                        {tag.name}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        ))}
+                                    <div className="flex items-center justify-center gap-2 mb-3">
+                                        <div style={{ width: "16px", height: "1px", background: group.color, opacity: 0.5 }} />
+                                        <h3 style={{ fontFamily: "var(--fh)", fontSize: "0.85rem", fontWeight: 700, color: group.color, textTransform: "uppercase", letterSpacing: "1.5px" }}>{group.title}</h3>
+                                        <div style={{ width: "16px", height: "1px", background: group.color, opacity: 0.5 }} />
                                     </div>
+                                    {group.tags[0] && (group.tags[0] as any).pct !== undefined ? (
+                                        <div style={{ marginTop: "0.5rem" }}>
+                                            {group.tags.map((tag: any) => (
+                                                <AnimatedSkillBar key={tag.name} name={tag.name} pct={tag.pct} color={group.color} />
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="flex flex-wrap justify-center gap-2" style={{ marginTop: "0.5rem" }}>
+                                            {group.tags.map((tag: any) => (
+                                                <span key={tag.name} style={{
+                                                    fontFamily: "var(--fb)", fontSize: "0.78rem", color: "var(--t2)", fontWeight: 500,
+                                                    padding: "0.3rem 0.75rem", border: "1px solid var(--bdr)", borderRadius: "6px",
+                                                    background: "rgba(255,255,255,0.03)", transition: "all 0.2s ease",
+                                                }}
+                                                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = group.color; e.currentTarget.style.color = group.color; }}
+                                                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--bdr)"; e.currentTarget.style.color = "var(--t2)"; }}
+                                                >
+                                                    {tag.name}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                             </TiltCard>
                         </motion.div>

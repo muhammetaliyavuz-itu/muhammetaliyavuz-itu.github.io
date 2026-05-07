@@ -277,6 +277,29 @@ export default function Hero() {
                 </div>
             </div>
 
+            {/* Depth gauge — left side */}
+            <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-1 pointer-events-none" style={{ animation: "fadeUp 0.7s ease 1.1s both", opacity: 0.5 }}>
+                <span style={{ fontFamily: "var(--fm)", fontSize: "0.55rem", color: "var(--cy)", letterSpacing: "2px", writingMode: "vertical-rl", textOrientation: "mixed", transform: "rotate(180deg)", textTransform: "uppercase", marginBottom: "0.5rem" }}>DEPTH</span>
+                <div style={{ width: "1px", height: "140px", background: "linear-gradient(to bottom, var(--cy), transparent)", position: "relative" }}>
+                    {[0, 30, 60, 90, 120].map((y) => (
+                        <div key={y} style={{ position: "absolute", top: `${y}px`, left: "4px", display: "flex", alignItems: "center", gap: "4px" }}>
+                            <div style={{ width: y % 60 === 0 ? "8px" : "4px", height: "1px", background: "var(--cy)", opacity: y % 60 === 0 ? 0.7 : 0.4 }} />
+                            {y % 60 === 0 && <span style={{ fontFamily: "var(--fm)", fontSize: "0.5rem", color: "var(--cy)", opacity: 0.6 }}>{y === 0 ? "0m" : `${y * 2}m`}</span>}
+                        </div>
+                    ))}
+                </div>
+                <div style={{ fontFamily: "var(--fm)", fontSize: "0.55rem", color: "var(--cy)", opacity: 0.5, marginTop: "0.5rem", letterSpacing: "1px" }}>ASL</div>
+            </div>
+
+            {/* Coordinates — right side */}
+            <div className="absolute right-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-end gap-1 pointer-events-none" style={{ animation: "fadeUp 0.7s ease 1.2s both", opacity: 0.4 }}>
+                <span style={{ fontFamily: "var(--fm)", fontSize: "0.5rem", color: "var(--cy)", letterSpacing: "1px", textTransform: "uppercase" }}>Position</span>
+                <span style={{ fontFamily: "var(--fm)", fontSize: "0.55rem", color: "var(--t3)", letterSpacing: "0.5px" }}>41.0082° N</span>
+                <span style={{ fontFamily: "var(--fm)", fontSize: "0.55rem", color: "var(--t3)", letterSpacing: "0.5px" }}>28.9784° E</span>
+                <div style={{ width: "1px", height: "40px", background: "linear-gradient(to bottom, var(--cy), transparent)", margin: "0.3rem 0", alignSelf: "flex-end" }} />
+                <span style={{ fontFamily: "var(--fm)", fontSize: "0.5rem", color: "var(--cy)", opacity: 0.6, letterSpacing: "1px" }}>Istanbul</span>
+            </div>
+
             {/* Scroll indicator */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3" style={{ animation: "fadeUp 0.7s ease 0.9s both" }}>
                 <div className="overflow-hidden" style={{ width: "1px", height: "40px" }}>
