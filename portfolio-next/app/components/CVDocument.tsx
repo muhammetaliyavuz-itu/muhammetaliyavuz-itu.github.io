@@ -350,7 +350,7 @@ export default function CVDocument() {
 
                             <View style={s.expItem}>
                                 <View style={s.entryHeader}>
-                                    <Text style={s.entryRole}>CFD Engineer &amp; Software Developer</Text>
+                                    <Text style={s.entryRole}>Jr. Researcher</Text>
                                     <Text style={s.entryDate}>Aug 2025 – Present · Full-time</Text>
                                 </View>
                                 <Text style={s.entrySubtitle}>ITUKAT</Text>
