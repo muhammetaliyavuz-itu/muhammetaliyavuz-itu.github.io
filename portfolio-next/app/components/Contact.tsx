@@ -29,7 +29,7 @@ export default function Contact() {
                     I&apos;m open to internship opportunities, research collaborations, and technical projects in naval architecture and CFD.
                 </motion.p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl w-full mx-auto">
                     {contacts.map((c, i) => {
                         const Icon = c.icon;
                         const Tag = c.href ? "a" : "div";
