@@ -196,19 +196,6 @@ const MailIcon = () => (
     </Svg>
 );
 
-const PhoneIcon = () => (
-    <Svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 24 24">
-        <Path
-            d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"
-            stroke={ICON_STROKE}
-            strokeWidth={2}
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-    </Svg>
-);
-
 const LinkedInIcon = () => (
     <Svg width={ICON_SIZE} height={ICON_SIZE} viewBox="0 0 24 24">
         <Rect x={2} y={2} width={20} height={20} rx={3} fill={PRIMARY} />
@@ -276,15 +263,6 @@ export default function CVDocument() {
                             </Link>
                             <View style={s.iconBox}>
                                 <MailIcon />
-                            </View>
-                        </View>
-
-                        <View style={s.contactRow}>
-                            <Link src="tel:+905510929667" style={[s.link, s.contactText]}>
-                                +90 551 092 9667
-                            </Link>
-                            <View style={s.iconBox}>
-                                <PhoneIcon />
                             </View>
                         </View>
 

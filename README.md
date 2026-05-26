@@ -62,7 +62,6 @@ portfolio/
 ### 1. Update Contact Information
 In `index.html`, search for:
 - Email: `yavuzmu21@itu.edu.tr`
-- Phone: `+90 551 092 9667`
 - LinkedIn: `in/yavuzitu`
 - GitHub: `muhammetaliyavuz-itu`
 

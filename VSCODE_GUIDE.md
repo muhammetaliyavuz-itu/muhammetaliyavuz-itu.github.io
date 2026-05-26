@@ -107,7 +107,6 @@ portfolio/
 
 **Ctrl+F (Windows) / Cmd+F (Mac)** ile ara:
 - `yavuzmu21@itu.edu.tr` → Doğru mu?
-- `+90 551 092 9667` → Doğru mu?
 - `in/yavuzitu` → Doğru mu?
 
 #### B) CV PDF'ini Ekle

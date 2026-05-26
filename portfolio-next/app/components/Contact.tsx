@@ -1,12 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Phone, MapPin } from "lucide-react";
+import { Mail, Linkedin, MapPin } from "lucide-react";
 
 const contacts = [
     { icon: Mail, label: "Email", value: "yavuzmu21@itu.edu.tr", href: "mailto:yavuzmu21@itu.edu.tr", color: "var(--cy)" },
     { icon: Linkedin, label: "LinkedIn", value: "Muhammet Ali Yavuz", href: "https://www.linkedin.com/in/yavuzitu", color: "var(--bl)" },
-    { icon: Phone, label: "Phone", value: "+90 551 092 9667", href: "tel:+905510929667", color: "var(--or)" },
     { icon: MapPin, label: "Location", value: "Istanbul, Turkey", href: null, color: "var(--cy)" },
 ];
 

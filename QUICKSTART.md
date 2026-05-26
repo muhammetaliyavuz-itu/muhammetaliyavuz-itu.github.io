@@ -114,7 +114,7 @@ git push origin main
 
 ### İçerik Güncelle
 `index.html` dosyasında:
-- İletişim bilgileri (email, telefon, LinkedIn)
+- İletişim bilgileri (email, LinkedIn)
 - Proje detayları
 - Deneyim açıklamaları
 - Eğitim bilgileri
