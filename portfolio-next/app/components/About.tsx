@@ -78,7 +78,7 @@ const skills = [
 ];
 
 const stats = [
-    { value: 3.26, label: "CGPA", decimals: 2 },
+    { value: 3.25, label: "CGPA", decimals: 2 },
     { value: 6, label: "CFD Projects", decimals: 0 },
     { value: 3, label: "Internships", decimals: 0 },
 ];

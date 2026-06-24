@@ -55,7 +55,7 @@ export default function CVPage() {
                             <div>
                                 <h3 className="font-extrabold text-slate-800 text-[0.95rem]">Istanbul Technical University</h3>
                                 <p className="text-[0.85rem] font-bold text-blue-700 mt-1">Naval Architecture & Ocean Engineering</p>
-                                <p className="text-xs text-slate-600 mt-1 font-semibold">GPA: 3.26 / 4.0</p>
+                                <p className="text-xs text-slate-600 mt-1 font-semibold">GPA: 3.25 / 4.0</p>
                                 <p className="text-xs text-slate-500 mt-0.5 font-medium">Expected Graduation: 2026</p>
                             </div>
                         </section>

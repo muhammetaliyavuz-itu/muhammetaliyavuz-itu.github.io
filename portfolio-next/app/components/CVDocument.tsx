@@ -307,7 +307,7 @@ export default function CVDocument() {
                             </View>
                             <Text style={s.entrySubtitle}>Istanbul Technical University</Text>
                             <Text style={s.eduDetails}>
-                                GPA: 3.26 / 4.0   ·   <Text style={s.eduHighlight}>5-Year Program (Including 1-Year English Preparatory)</Text>
+                                GPA: 3.25 / 4.0   ·   <Text style={s.eduHighlight}>5-Year Program (Including 1-Year English Preparatory)</Text>
                             </Text>
 
                             <View style={[s.entryHeader, { marginTop: 4 }]}>

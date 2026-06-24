@@ -63,7 +63,7 @@ export default function Education() {
                             </div>
 
                             <div className="flex items-baseline justify-center gap-2 mb-4" style={{ padding: "0.75rem 1rem", background: "var(--cyd)", borderRadius: "8px", border: "1px solid var(--bdr)" }}>
-                                <span style={{ fontFamily: "var(--fh)", fontSize: "1.8rem", fontWeight: 700, color: "var(--cy)", lineHeight: 1 }}><AnimatedGPA target={3.26} /></span>
+                                <span style={{ fontFamily: "var(--fh)", fontSize: "1.8rem", fontWeight: 700, color: "var(--cy)", lineHeight: 1 }}><AnimatedGPA target={3.25} /></span>
                                 <span style={{ fontFamily: "var(--fb)", fontSize: "0.85rem", color: "var(--t3)" }}>/ 4.00 GPA</span>
                             </div>
 

@@ -252,7 +252,7 @@ export default function Hero() {
 
                 {/* Stats */}
                 <div className="flex justify-center gap-10 mb-20 flex-wrap" style={{ animation: "fadeUp 0.7s ease 0.45s both" }}>
-                    <AnimatedCounterStat target={3.26} decimals={2} duration={2500} label="GPA" unit="/ 4.0" color="var(--cy)" />
+                    <AnimatedCounterStat target={3.25} decimals={2} duration={2500} label="GPA" unit="/ 4.0" color="var(--cy)" />
                     <AnimatedCounterStat target={6} decimals={0} duration={2000} label="CFD Projects" unit="+" color="var(--bl)" />
                     <AnimatedCounterStat target={3} decimals={0} duration={1800} label="Internships" unit="+" color="var(--or)" />
                 </div>
