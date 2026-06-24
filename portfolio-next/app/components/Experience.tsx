@@ -28,6 +28,31 @@ const experiences = [
         ],
     },
     {
+        period: "Jun 2026",
+        title: "Production Engineer",
+        company: "Anadolu Shipyard",
+        companyUrl: "https://www.anadolushipyard.com/",
+        current: false,
+        fullTime: true,
+        internship: true,
+        description: "A defense shipyard building military naval platforms. Combat and navigation systems are subject to confidentiality; descriptions below focus on propulsion, mechanical assembly, and quality processes.",
+        bullets: [
+            "Gas turbine (GE LM2500) foundation mounting and micron-level precision alignment, including coupling tolerancing with micrometer and dial comparator.",
+            "Propeller shaft line alignment using optical leveling and a wall-mounted reflector reference network.",
+            "Controllable-pitch-propeller (CPP) blade-bolt assembly with elongation-controlled tightening and non-destructive (crack) inspection.",
+            "CODAG propulsion architecture (twin diesel + GE LM2500 gas turbine, MRG/CCG transmission) and multi-coat hull surface preparation and coating.",
+        ],
+        features: [
+            {
+                label: "Vessels",
+                items: [
+                    { name: "T.C.G. 161–166", type: "New-Type Landing Craft" },
+                    { name: "T.C.G. 516 · 519 · 522", type: "I-Class Frigate (MİLGEM)" }
+                ]
+            },
+        ],
+    },
+    {
         period: "Aug 2024 — Sep 2024",
         title: "Production Engineer",
         company: "Besiktas Shipyard",
@@ -274,21 +299,31 @@ export default function Experience() {
                                                 <span style={{ fontFamily: "var(--fb)", fontSize: "0.7rem", color: "var(--t3)", textTransform: "uppercase", letterSpacing: "0.5px", fontWeight: 500, marginBottom: "0.4rem" }}>{f.label}</span>
                                                 {f.items ? (
                                                     <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
-                                                        {f.items.map((item, idx) => (
-                                                            <div key={item.name} className="flex items-center">
-                                                                <a
-                                                                    href={item.url}
-                                                                    target="_blank"
-                                                                    rel="noopener noreferrer"
-                                                                    className="group flex flex-col items-center transition-opacity hover:opacity-80"
-                                                                    style={{ textDecoration: "none" }}
-                                                                >
-                                                                    <span style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t1)", fontWeight: 600 }}>{item.name} ↗</span>
-                                                                    <span style={{ fontFamily: "var(--fm)", fontSize: "0.68rem", color: "var(--cy)", opacity: 0.8, marginTop: "1px" }}>IMO:{item.imo}</span>
-                                                                </a>
+                                                        {f.items.map((item, idx) => {
+                                                            const it = item as { name: string; imo?: string; url?: string; type?: string };
+                                                            return (
+                                                            <div key={it.name} className="flex items-center">
+                                                                {it.url ? (
+                                                                    <a
+                                                                        href={it.url}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="group flex flex-col items-center transition-opacity hover:opacity-80"
+                                                                        style={{ textDecoration: "none" }}
+                                                                    >
+                                                                        <span style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t1)", fontWeight: 600 }}>{it.name} ↗</span>
+                                                                        {it.imo && <span style={{ fontFamily: "var(--fm)", fontSize: "0.68rem", color: "var(--cy)", opacity: 0.8, marginTop: "1px" }}>IMO:{it.imo}</span>}
+                                                                    </a>
+                                                                ) : (
+                                                                    <div className="flex flex-col items-center">
+                                                                        <span style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t1)", fontWeight: 600 }}>{it.name}</span>
+                                                                        {it.type && <span style={{ fontFamily: "var(--fm)", fontSize: "0.68rem", color: "var(--cy)", opacity: 0.8, marginTop: "1px" }}>{it.type}</span>}
+                                                                    </div>
+                                                                )}
                                                                 {idx < f.items.length - 1 && <span style={{ color: "var(--t3)", margin: "0 0.5rem", opacity: 0.4 }}>•</span>}
                                                             </div>
-                                                        ))}
+                                                            );
+                                                        })}
                                                     </div>
                                                 ) : (
                                                     <span style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t1)", fontWeight: 500 }}>

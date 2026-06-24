@@ -351,6 +351,19 @@ export default function CVDocument() {
                             <View style={s.expItem}>
                                 <View style={s.entryHeader}>
                                     <Text style={s.entryRole}>Production Engineer</Text>
+                                    <Text style={s.entryDate}>Jun 2026 · Full-time Internship</Text>
+                                </View>
+                                <Text style={s.entrySubtitle}>Anadolu Shipyard</Text>
+                                <Text style={s.expConfidential}>
+                                    Military naval platforms; combat &amp; navigation systems under confidentiality.
+                                </Text>
+                                <Bullet>Gas turbine (GE LM2500) foundation mounting and micron-level coupling alignment.</Bullet>
+                                <Bullet>CPP blade-bolt elongation-controlled assembly, propeller shaft line alignment, and NDT.</Bullet>
+                            </View>
+
+                            <View style={s.expItem}>
+                                <View style={s.entryHeader}>
+                                    <Text style={s.entryRole}>Production Engineer</Text>
                                     <Text style={s.entryDate}>Aug – Sep 2024 · Full-time Internship</Text>
                                 </View>
                                 <Text style={s.entrySubtitle}>Besiktas Shipyard</Text>
