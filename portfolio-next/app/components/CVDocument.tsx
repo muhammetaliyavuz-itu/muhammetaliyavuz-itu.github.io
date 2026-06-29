@@ -333,7 +333,7 @@ export default function CVDocument() {
                                 </View>
                                 <Text style={s.entrySubtitle}>ITUKAT</Text>
                                 <Text style={s.expConfidential}>
-                                    Conducted under confidentiality constraints; descriptions focus on methodology.
+                                    Projects undertaken were conducted under confidentiality constraints; descriptions focus on methodology.
                                 </Text>
                                 <Bullet>Force and moment analysis in CFD with experimental (EFD) validation.</Bullet>
                                 <Bullet>Control and automation algorithms for engineering applications.</Bullet>
