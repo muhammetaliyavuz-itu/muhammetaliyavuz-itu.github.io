@@ -37,7 +37,7 @@ export default function Navbar() {
                     const scrollHeight = doc.scrollHeight - doc.clientHeight;
                     setProgress(scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0);
 
-                    const sections = ["home", "about", "experience", "projects", "education", "certifications", "contact", "references"];
+                    const sections = ["home", "about", "experience", "projects", "education", "memberships", "certifications", "contact", "references"];
                     let current = "home";
                     for (const id of sections) {
                         const el = document.getElementById(id);

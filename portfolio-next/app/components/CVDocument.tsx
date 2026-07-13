@@ -456,6 +456,12 @@ export default function CVDocument() {
                         </View>
 
                         <View style={s.section}>
+                            <Text style={s.sectionTitle}>Memberships</Text>
+                            <Text style={s.certItem}>· SNAME — Student Member</Text>
+                            <Text style={s.certVerify}>Society of Naval Architects &amp; Marine Engineers</Text>
+                        </View>
+
+                        <View style={s.section}>
                             <Text style={s.sectionTitle}>Interests</Text>
                             <View style={s.interestRow}>
                                 {["Hydrodynamics", "Ship Design", "CFD", "Marine Systems", "Defense Tech", "Autonomous Systems", "Propeller Design"].map((tag) => (

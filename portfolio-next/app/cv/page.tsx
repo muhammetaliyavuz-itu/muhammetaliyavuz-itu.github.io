@@ -60,6 +60,16 @@ export default function CVPage() {
                             </div>
                         </section>
 
+                        {/* Memberships */}
+                        <section>
+                            <h2 className="text-sm font-bold text-slate-900 uppercase tracking-widest border-b border-slate-300 pb-2 mb-4">Memberships</h2>
+                            <div>
+                                <h3 className="font-extrabold text-slate-800 text-[0.95rem]">SNAME</h3>
+                                <p className="text-[0.85rem] font-bold text-blue-700 mt-1">Student Member</p>
+                                <p className="text-xs text-slate-500 mt-1 font-medium leading-relaxed">The Society of Naval Architects &amp; Marine Engineers</p>
+                            </div>
+                        </section>
+
                         {/* Expertise */}
                         <section>
                             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-widest border-b border-slate-300 pb-2 mb-4">Expertise</h2>

@@ -8,6 +8,7 @@ import Experience from "@/app/components/Experience";
 import Projects from "@/app/components/Projects";
 import ProjectModal from "@/app/components/ProjectModal";
 import Education from "@/app/components/Education";
+import Memberships from "@/app/components/Memberships";
 import Certifications from "@/app/components/Certifications";
 import Contact from "@/app/components/Contact";
 import References from "@/app/components/References";
@@ -33,6 +34,7 @@ export default function Home() {
       <Experience />
       <Projects onOpenModal={openModal} />
       <Education />
+      <Memberships />
       <Certifications />
       <Contact />
       <References />
