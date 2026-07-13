@@ -14,7 +14,6 @@ import Contact from "@/app/components/Contact";
 import References from "@/app/components/References";
 import Footer from "@/app/components/Footer";
 import ScrollToTop from "@/app/components/ScrollToTop";
-import CustomCursor from "@/app/components/CustomCursor";
 import { projects, type Project } from "@/app/data/projects";
 
 export default function Home() {
@@ -27,7 +26,6 @@ export default function Home() {
 
   return (
     <>
-      <CustomCursor />
       <Navbar />
       <Hero />
       <About />
