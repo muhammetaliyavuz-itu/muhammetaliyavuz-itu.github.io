@@ -88,7 +88,7 @@ export default function Navbar() {
                     boxShadow: scrolled ? "0 4px 30px rgba(0,0,0,0.3)" : "none",
                 }}
             >
-                {/* Desktop nav links — centered at 50% */}
+                {/* Desktop nav links - centered at 50% */}
                 <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 whitespace-nowrap pointer-events-none">
                     <ul className="flex items-center gap-8 pointer-events-auto relative">
                         {navLinks.map((link) => {
@@ -112,7 +112,7 @@ export default function Navbar() {
                     </ul>
                 </div>
 
-                {/* Desktop Theme Toggle — centered in right quarter (75% = midpoint between 50% and 100%) */}
+                {/* Desktop Theme Toggle - centered in right quarter (75% = midpoint between 50% and 100%) */}
                 <button
                     onClick={toggleTheme}
                     className="hidden md:flex absolute left-3/4 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 items-center justify-center w-[38px] h-[38px] rounded-lg border transition-all duration-300 cursor-pointer pointer-events-auto"

@@ -8,7 +8,7 @@ import Spotlight from "./Spotlight";
 const ROLES = [
     "Naval Architect",
     "CFD Engineer",
-    "Software Developer",
+    "Software Architect",
 ];
 
 function TypewriterRole({ words, speed = 80, pause = 2200 }: { words: string[], speed?: number, pause?: number }) {
@@ -245,7 +245,7 @@ export default function Hero() {
                     </span>
                 </h1>
 
-                {/* Role — readable font */}
+                {/* Role - readable font */}
                 <div style={{ height: "2rem", marginBottom: "3rem", animation: "fadeUp 0.7s ease 0.35s both" }}>
                     <TypewriterRole words={ROLES} />
                 </div>
@@ -257,7 +257,7 @@ export default function Hero() {
                     <AnimatedCounterStat target={3} decimals={0} duration={1800} label="Internships" unit="+" color="var(--or)" />
                 </div>
 
-                {/* CTA Buttons — expanded gap and enhanced glow */}
+                {/* CTA Buttons - expanded gap and enhanced glow */}
                 <div className="flex justify-center gap-6 flex-wrap mt-8" style={{ animation: "fadeUp 0.7s ease 0.55s both" }}>
                     <a href="#projects"
                         onClick={(e) => { e.preventDefault(); smoothScrollTo("#projects"); }}
@@ -277,7 +277,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Depth gauge — left side */}
+            {/* Depth gauge - left side */}
             <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-1 pointer-events-none" style={{ animation: "fadeUp 0.7s ease 1.1s both", opacity: 0.5 }}>
                 <span style={{ fontFamily: "var(--fm)", fontSize: "0.55rem", color: "var(--cy)", letterSpacing: "2px", writingMode: "vertical-rl", textOrientation: "mixed", transform: "rotate(180deg)", textTransform: "uppercase", marginBottom: "0.5rem" }}>DEPTH</span>
                 <div style={{ width: "1px", height: "140px", background: "linear-gradient(to bottom, var(--cy), transparent)", position: "relative" }}>

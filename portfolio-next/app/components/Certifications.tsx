@@ -11,17 +11,17 @@ const submarineTraining: CertificateDetail = {
     title: "Certificate of Attendance",
     subtitle: "Submarine Technology and Design Training",
     recipient: "Mr. Muhammet Ali Yavuz",
-    body: "Has earned this certificate by attending the 26-hour Submarine Technology and Design Training, organized by the GMO Student Commission on 26–27 October and 23–24 November 2024, and delivered by Asst. Prof. Dr. Munir Cansın Özden.",
+    body: "Has earned this certificate by attending the 26-hour Submarine Technology and Design Training, organized by the GMO Student Commission on 26-27 October and 23-24 November 2024, and delivered by Asst. Prof. Dr. Munir Cansın Özden.",
     signatories: [
         { name: "Asst. Prof. Dr. Munir Cansın Özden", role: "Instructor" },
         { name: "Bülent Hüseyinoğlu", role: "Chairman of the Board, GMO" },
     ],
-    note: "GMO — Chamber of Naval Architects and Marine Engineers of Türkiye (Gemi Mühendisleri Odası). Translated from the Turkish original shown above.",
+    note: "GMO - Chamber of Naval Architects and Marine Engineers of Türkiye (Gemi Mühendisleri Odası). Translated from the Turkish original shown above.",
 };
 
 const certs = [
-    { category: "EXCHANGE", name: "ATHENS Network — TU Delft", color: "#22c55e", url: "https://register.athensnetwork.eu/verify", verificationCode: "BN22-JYBT-79WV-HDCV" },
-    { category: "TRAINING", name: "Submarine Technology & Design", sub: "GMO Student Commission · 26 hours · Oct–Nov 2024", color: "var(--cy)", certificate: submarineTraining },
+    { category: "EXCHANGE", name: "ATHENS Network - TU Delft", color: "#22c55e", url: "https://register.athensnetwork.eu/verify", verificationCode: "BN22-JYBT-79WV-HDCV" },
+    { category: "TRAINING", name: "Submarine Technology & Design", sub: "GMO Student Commission · 26 hours · Oct-Nov 2024", color: "var(--cy)", certificate: submarineTraining },
     { category: "CAD", name: "SolidWorks (CSWA)", color: "var(--bl)", url: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9JG2FEML5U" },
     { category: "CAD", name: "AutoCAD Certificate", color: "var(--bl)", url: "https://coursera.org/verify/LXRP49PG83TZ" },
     { category: "PROGRAMMING", name: "Python (freeCodeCamp)", color: "var(--or)", url: "https://www.freecodecamp.org/certification/muhali-itu/scientific-computing-with-python-v7" },

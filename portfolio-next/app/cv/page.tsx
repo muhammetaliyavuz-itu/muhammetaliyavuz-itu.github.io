@@ -108,7 +108,7 @@ export default function CVPage() {
                                 <div>
                                     <div className="flex justify-between items-baseline mb-1">
                                         <h3 className="font-bold text-slate-900 text-[0.95rem]">ITUKAT</h3>
-                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2025 – Present</span>
+                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2025 - Present</span>
                                     </div>
                                     <p className="text-[0.85rem] font-bold text-blue-700">Jr. Researcher</p>
                                     <p className="text-xs text-slate-600 font-medium mt-1">Force and moment measurement in CFD and comparison with EFD results.<br />Control and automation code development.</p>
@@ -117,7 +117,7 @@ export default function CVPage() {
                                 <div>
                                     <div className="flex justify-between items-baseline mb-1">
                                         <h3 className="font-bold text-slate-900 text-[0.95rem]">ITU Ata Nutku Towing Tank</h3>
-                                        <span className="text-xs font-bold text-slate-500 uppercase">Sep 2024 – Present</span>
+                                        <span className="text-xs font-bold text-slate-500 uppercase">Sep 2024 - Present</span>
                                     </div>
                                     <p className="text-[0.85rem] font-bold text-blue-700">Curious Student</p>
                                     <p className="text-xs text-slate-600 font-medium mt-1">Hands-on experience in resistance, propulsion, and seakeeping experiments.</p>
@@ -126,7 +126,7 @@ export default function CVPage() {
                                 <div>
                                     <div className="flex justify-between items-baseline mb-1">
                                         <h3 className="font-bold text-slate-900 text-[0.95rem]">Besiktas Shipyard</h3>
-                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2024 – Sep 2024 · Full-time Internship</span>
+                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2024 - Sep 2024 · Full-time Internship</span>
                                     </div>
                                     <p className="text-[0.85rem] font-bold text-blue-700">Production Engineer</p>
                                     <p className="text-xs text-slate-600 font-medium mt-1">Maintenance of engines, hydraulic systems, and marine pumps.</p>
@@ -135,7 +135,7 @@ export default function CVPage() {
                                 <div>
                                     <div className="flex justify-between items-baseline mb-1">
                                         <h3 className="font-bold text-slate-900 text-[0.95rem]">Mensa Makina</h3>
-                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2023 – Sep 2023 · Full-time Internship</span>
+                                        <span className="text-xs font-bold text-slate-500 uppercase">Aug 2023 - Sep 2023 · Full-time Internship</span>
                                     </div>
                                     <p className="text-[0.85rem] font-bold text-blue-700">Mechanical Engineer</p>
                                 </div>
@@ -147,7 +147,7 @@ export default function CVPage() {
                             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-widest border-b border-slate-300 pb-2 mb-4">Featured Projects</h2>
                             <div className="space-y-6 max-w-[95%]">
                                 <div>
-                                    <h3 className="font-bold text-slate-900 text-[0.95rem]">TCSG FISILTI — Hybrid Coast Guard Vessel</h3>
+                                    <h3 className="font-bold text-slate-900 text-[0.95rem]">TCSG FISILTI - Hybrid Coast Guard Vessel</h3>
                                     <p className="text-[0.85rem] text-slate-700 font-medium mt-1 leading-relaxed">Commanded preliminary design of a 69.5m hybrid propulsion vessel tailored for surveillance, special ops, and environmental response.</p>
                                 </div>
                                 <div>

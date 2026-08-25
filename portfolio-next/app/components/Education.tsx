@@ -69,7 +69,7 @@ export default function Education() {
                             <div>
                                 <p style={{ fontFamily: "var(--fb)", fontSize: "0.78rem", color: "var(--t3)", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.6rem", fontWeight: 500 }}>Activities &amp; Clubs</p>
                                 <div className="flex flex-wrap justify-center gap-2">
-                                    {["⚓ ITU Shipbuilding Engineering Club", "🛡️ ITU SAVTEK — Defense Technologies"].map((club) => (
+                                    {["⚓ ITU Shipbuilding Engineering Club", "🛡️ ITU SAVTEK - Defense Technologies"].map((club) => (
                                         <span key={club} className="tech-tag">{club}</span>
                                     ))}
                                 </div>
@@ -86,9 +86,9 @@ export default function Education() {
                             <div className="flex flex-col gap-1 mb-4 items-center">
                                 <h3 style={{ fontFamily: "var(--fh)", fontSize: "1.2rem", fontWeight: 700, color: "var(--t1)" }}>ATHENS Network Exchange Programme</h3>
                                 <p style={{ fontFamily: "var(--fb)", fontSize: "0.92rem", color: "#22c55e", fontWeight: 500 }}>Delft University of Technology</p>
-                                <p style={{ fontFamily: "var(--fb)", fontSize: "0.85rem", color: "var(--t3)" }}>14 March – 21 March 2026 · Delft, Netherlands</p>
+                                <p style={{ fontFamily: "var(--fb)", fontSize: "0.85rem", color: "var(--t3)" }}>14 March - 21 March 2026 · Delft, Netherlands</p>
                                 <div style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)", padding: "4px 12px", borderRadius: "20px", marginTop: "4px" }}>
-                                    <p style={{ fontFamily: "var(--fb)", fontSize: "0.85rem", color: "#22c55e", fontWeight: 500 }}>TUD14 — Computer Aided Analysis &amp; Optimization of Sustainable Electrical Power Systems</p>
+                                    <p style={{ fontFamily: "var(--fb)", fontSize: "0.85rem", color: "#22c55e", fontWeight: 500 }}>TUD14 - Computer Aided Analysis &amp; Optimization of Sustainable Electrical Power Systems</p>
                                 </div>
                             </div>
 
@@ -117,7 +117,7 @@ export default function Education() {
                             <div className="flex flex-col gap-1 mb-4 items-center">
                                 <h3 style={{ fontFamily: "var(--fh)", fontSize: "1.2rem", fontWeight: 700, color: "var(--t1)" }}>High-School Diploma</h3>
                                 <p style={{ fontFamily: "var(--fb)", fontSize: "0.92rem", color: "var(--bl)", fontWeight: 500 }}>Erbil Koru Anatolian High School</p>
-                                <p style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t3)" }}>Konya, Türkiye | 09/2017 – 07/2021</p>
+                                <p style={{ fontFamily: "var(--fb)", fontSize: "0.82rem", color: "var(--t3)" }}>Konya, Türkiye | 09/2017 - 07/2021</p>
                             </div>
 
                             <div className="flex items-baseline justify-center gap-2 mb-4" style={{ padding: "0.75rem 1rem", background: "var(--bld)", borderRadius: "8px", border: "1px solid var(--bdr)" }}>
@@ -128,7 +128,7 @@ export default function Education() {
                             <div>
                                 <p style={{ fontFamily: "var(--fb)", fontSize: "0.78rem", color: "var(--t3)", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.6rem", fontWeight: 500 }}>Achievements &amp; Activities</p>
                                 <div className="flex flex-wrap justify-center gap-2">
-                                    <span className="tech-tag">🎓 2nd in Graduating Class</span>
+                                    <span className="tech-tag">🎓 Ranked 2nd in School</span>
                                     <span className="tech-tag">🥇 Volleyball Tournament 1st Place</span>
                                 </div>
                             </div>

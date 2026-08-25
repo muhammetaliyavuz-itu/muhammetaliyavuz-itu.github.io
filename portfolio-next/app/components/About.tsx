@@ -67,7 +67,7 @@ const skills = [
     },
     {
         title: "Languages",
-        tags: ["Turkish — Native", "English — Advanced", "German — Intermediate"],
+        tags: ["Turkish - Native", "English - Advanced", "German - Intermediate"],
         color: "var(--cy)",
     },
     {

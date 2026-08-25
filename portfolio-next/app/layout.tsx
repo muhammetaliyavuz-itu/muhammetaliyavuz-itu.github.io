@@ -23,9 +23,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammet Ali Yavuz — Naval Architecture",
+  title: "Muhammet Ali Yavuz - Naval Architecture",
   description:
-    "Naval Architecture & Ocean Engineering portfolio. CFD Engineer, Software Developer, and Naval Architect at Istanbul Technical University.",
+    "Naval Architecture & Ocean Engineering portfolio. CFD Engineer, Software Architect, and Naval Architect at Istanbul Technical University.",
   keywords: [
     "Naval Architecture",
     "CFD",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Muhammet Ali Yavuz" }],
   openGraph: {
-    title: "Muhammet Ali Yavuz — Naval Architecture",
+    title: "Muhammet Ali Yavuz - Naval Architecture",
     description:
-      "Naval Architecture & Ocean Engineering portfolio. CFD Engineer, Software Developer.",
+      "Naval Architecture & Ocean Engineering portfolio. CFD Engineer, Software Architect.",
     type: "website",
   },
 };
@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* ── Security meta tags (static export — HTTP headers unavailable) ── */}
+        {/* ── Security meta tags (static export - HTTP headers unavailable) ── */}
         <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />

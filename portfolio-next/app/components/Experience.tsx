@@ -5,7 +5,7 @@ import { useRef, useState, useEffect } from "react";
 
 const experiences = [
     {
-        period: "Aug 2025 — Present",
+        period: "Aug 2025 - Present",
         title: "Jr. Researcher",
         company: "ITUKAT",
         companyUrl: "https://itukat.itu.edu.tr/en/home/",
@@ -18,7 +18,7 @@ const experiences = [
         ],
     },
     {
-        period: "Sep 2024 — Present",
+        period: "Sep 2024 - Present",
         title: "Curious Student",
         company: "ITU Ata Nutku Towing Tank",
         current: true,
@@ -46,14 +46,14 @@ const experiences = [
             {
                 label: "Vessels",
                 items: [
-                    { name: "T.C.G. 161–166", type: "New-Type Landing Craft" },
+                    { name: "T.C.G. 161-166", type: "New-Type Landing Craft" },
                     { name: "T.C.G. 516 · 519 · 522", type: "I-Class Frigate (MİLGEM)" }
                 ]
             },
         ],
     },
     {
-        period: "Aug 2024 — Sep 2024",
+        period: "Aug 2024 - Sep 2024",
         title: "Production Engineer",
         company: "Besiktas Shipyard",
         companyUrl: "https://www.besiktasshipyard.com/",
@@ -78,7 +78,7 @@ const experiences = [
         ],
     },
     {
-        period: "Aug 2023 — Sep 2023",
+        period: "Aug 2023 - Sep 2023",
         title: "Mechanical Engineer",
         company: "MENSA MAKİNA",
         current: false,
@@ -204,7 +204,7 @@ export default function Experience() {
                                     e.currentTarget.style.boxShadow = "none";
                                     e.currentTarget.style.borderColor = "var(--bdr)";
                                 }}>
-                                {/* Period badge — mono is OK here */}
+                                {/* Period badge - mono is OK here */}
                                 <div className="flex items-center justify-center gap-2 mb-1">
                                     <span style={{
                                         fontFamily: "var(--fm)",

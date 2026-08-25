@@ -169,7 +169,7 @@ const s = StyleSheet.create({
 });
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
-    <Text style={s.expBullet}>– {children}</Text>
+    <Text style={s.expBullet}>- {children}</Text>
 );
 
 // Inline SVG icons (Feather-style, 24x24 viewBox), 11x11 rendered.
@@ -239,7 +239,7 @@ const PinIcon = () => (
 export default function CVDocument() {
     return (
         <Document
-            title="CV — Muhammet Ali Yavuz"
+            title="CV - Muhammet Ali Yavuz"
             author="Muhammet Ali Yavuz"
             subject="Curriculum Vitae"
             keywords="Naval Architecture, CFD, Ocean Engineering, OpenFOAM, STAR-CCM+, ANSYS Fluent"
@@ -250,7 +250,7 @@ export default function CVDocument() {
                     <View style={s.headerLeft}>
                         <Text style={s.name}>Muhammet Ali Yavuz</Text>
                         <Text style={s.subtitle}>
-                            Naval Architect · CFD Engineer · Software Developer
+                            Naval Architect · CFD Engineer · Software Architect
                         </Text>
                         <Link src="https://yavuzma.github.io" style={s.portfolioBadge}>
                             Portfolio: yavuzma.github.io
@@ -304,7 +304,7 @@ export default function CVDocument() {
 
                             <View style={s.entryHeader}>
                                 <Text style={s.entryRole}>BSc Shipbuilding &amp; Ocean Engineering</Text>
-                                <Text style={s.entryDate}>Sep 2021 – Present</Text>
+                                <Text style={s.entryDate}>Sep 2021 - Present</Text>
                             </View>
                             <Text style={s.entrySubtitle}>Istanbul Technical University</Text>
                             <Text style={s.eduDetails}>
@@ -313,7 +313,7 @@ export default function CVDocument() {
 
                             <View style={[s.entryHeader, { marginTop: 4 }]}>
                                 <Text style={s.entryRole}>ATHENS Exchange Programme</Text>
-                                <Text style={s.entryDate}>14–21 Mar 2026</Text>
+                                <Text style={s.entryDate}>14-21 Mar 2026</Text>
                             </View>
                             <Text style={s.entrySubtitle}>Delft University of Technology</Text>
                             <Text style={s.eduDetails}>
@@ -330,7 +330,7 @@ export default function CVDocument() {
                             <View style={s.expItem}>
                                 <View style={s.entryHeader}>
                                     <Text style={s.entryRole}>Jr. Researcher</Text>
-                                    <Text style={s.entryDate}>Aug 2025 – Present · Full-time</Text>
+                                    <Text style={s.entryDate}>Aug 2025 - Present · Full-time</Text>
                                 </View>
                                 <Text style={s.entrySubtitle}>ITUKAT</Text>
                                 <Text style={s.expConfidential}>
@@ -343,7 +343,7 @@ export default function CVDocument() {
                             <View style={s.expItem}>
                                 <View style={s.entryHeader}>
                                     <Text style={s.entryRole}>Curious Student</Text>
-                                    <Text style={s.entryDate}>Sep 2024 – Present</Text>
+                                    <Text style={s.entryDate}>Sep 2024 - Present</Text>
                                 </View>
                                 <Text style={s.entrySubtitle}>ITU Ata Nutku Towing Tank</Text>
                                 <Bullet>Resistance, propulsion, and seakeeping experiments; towing-tank testing procedures.</Bullet>
@@ -365,7 +365,7 @@ export default function CVDocument() {
                             <View style={s.expItem}>
                                 <View style={s.entryHeader}>
                                     <Text style={s.entryRole}>Production Engineer</Text>
-                                    <Text style={s.entryDate}>Aug – Sep 2024 · Full-time Internship</Text>
+                                    <Text style={s.entryDate}>Aug - Sep 2024 · Full-time Internship</Text>
                                 </View>
                                 <Text style={s.entrySubtitle}>Besiktas Shipyard</Text>
                                 <Bullet>Maintenance of main engines, hydraulics, generators; air-compressor &amp; ballast pump overhaul.</Bullet>
@@ -375,7 +375,7 @@ export default function CVDocument() {
                             <View style={s.expItem}>
                                 <View style={s.entryHeader}>
                                     <Text style={s.entryRole}>Mechanical Engineer</Text>
-                                    <Text style={s.entryDate}>Aug – Sep 2023 · Full-time Internship</Text>
+                                    <Text style={s.entryDate}>Aug - Sep 2023 · Full-time Internship</Text>
                                 </View>
                                 <Text style={s.entrySubtitle}>MENSA MAKINA</Text>
                                 <Bullet>Designed and installed a complete ventilation system for a sheet-metal processing line.</Bullet>
@@ -388,31 +388,31 @@ export default function CVDocument() {
                             <Text style={s.sectionTitle}>Key Projects</Text>
 
                             <View style={s.projItem}>
-                                <Text style={s.projName}>TCSG FISILTI — Hybrid Coast Guard Vessel</Text>
+                                <Text style={s.projName}>TCSG FISILTI - Hybrid Coast Guard Vessel</Text>
                                 <Text style={s.projDesc}>
                                     69.5 m hybrid vessel with Counter-Rotating Azipod propulsion, 24 kn max speed, 63 crew capacity.
                                 </Text>
                             </View>
                             <View style={s.projItem}>
-                                <Text style={s.projName}>KCS Hull with Rudder — CFD Resistance</Text>
+                                <Text style={s.projName}>KCS Hull with Rudder - CFD Resistance</Text>
                                 <Text style={s.projDesc}>
                                     Unsteady RANS + VOF in STAR-CCM+; 5 cases × 3 mesh levels; 0.22% deviation from EFD.
                                 </Text>
                             </View>
                             <View style={s.projItem}>
-                                <Text style={s.projName}>DARPA SUBOFF — Appendage Resistance</Text>
+                                <Text style={s.projName}>DARPA SUBOFF - Appendage Resistance</Text>
                                 <Text style={s.projDesc}>
                                     AFF1 / AFF3 / AFF8 configurations, 0.5% deviation, ITTC uncertainty assessment.
                                 </Text>
                             </View>
                             <View style={s.projItem}>
-                                <Text style={s.projName}>Offshore Platform — Design &amp; Analysis</Text>
+                                <Text style={s.projName}>Offshore Platform - Design &amp; Analysis</Text>
                                 <Text style={s.projDesc}>
                                     70 × 40 m operational deck; Rhinoceros 3D + Maxsurf stability + ANSYS Fluent CFD.
                                 </Text>
                             </View>
                             <View style={s.projItem}>
-                                <Text style={s.projName}>Alicat Mass Flow Controller — Control Interface</Text>
+                                <Text style={s.projName}>Alicat Mass Flow Controller - Control Interface</Text>
                                 <Text style={s.projDesc}>
                                     Python desktop app with AsyncIO serial I/O, real-time monitoring &amp; CSV logging.
                                 </Text>
@@ -440,27 +440,27 @@ export default function CVDocument() {
 
                         <View style={s.section}>
                             <Text style={s.sectionTitle}>Languages</Text>
-                            <Text style={s.langItem}>English — Advanced</Text>
-                            <Text style={s.langItem}>German — Intermediate</Text>
-                            <Text style={s.langItem}>Turkish — Native</Text>
+                            <Text style={s.langItem}>English - Advanced</Text>
+                            <Text style={s.langItem}>German - Intermediate</Text>
+                            <Text style={s.langItem}>Turkish - Native</Text>
                         </View>
 
                         <View style={s.section}>
                             <Text style={s.sectionTitle}>Certifications</Text>
-                            <Text style={s.certItem}>· ATHENS Network — TU Delft (Mar 2026)</Text>
+                            <Text style={s.certItem}>· ATHENS Network - TU Delft (Mar 2026)</Text>
                             <Text style={s.certVerify}>BN22-JYBT-79WV-HDCV</Text>
                             <Text style={s.certItem}>· Submarine Technology &amp; Design</Text>
-                            <Text style={s.certSub}>GMO · 26 h · Oct–Nov 2024</Text>
+                            <Text style={s.certSub}>GMO · 26 h · Oct-Nov 2024</Text>
                             <Text style={s.certItem}>· SolidWorks CSWA</Text>
                             <Text style={s.certItem}>· AutoCAD Certificate</Text>
-                            <Text style={s.certItem}>· Python — freeCodeCamp</Text>
-                            <Text style={s.certItem}>· Arduino — Udemy</Text>
+                            <Text style={s.certItem}>· Python - freeCodeCamp</Text>
+                            <Text style={s.certItem}>· Arduino - Udemy</Text>
                             <Text style={s.certItem}>· TELC Deutsch B1</Text>
                         </View>
 
                         <View style={s.section}>
                             <Text style={s.sectionTitle}>Memberships</Text>
-                            <Text style={s.certItem}>· SNAME — Student Member</Text>
+                            <Text style={s.certItem}>· SNAME - Student Member</Text>
                             <Text style={s.certVerify}>Society of Naval Architects &amp; Marine Engineers</Text>
                         </View>
 
@@ -477,7 +477,7 @@ export default function CVDocument() {
                             <Text style={s.sectionTitle}>Activities</Text>
                             <Text style={s.activitiesText}>
                                 ITU Shipbuilding Engineering Club{"\n"}
-                                ITU SAVTEK — Defense Technologies
+                                ITU SAVTEK - Defense Technologies
                             </Text>
                         </View>
                     </View>

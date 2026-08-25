@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="footer-top-border" />
             <div className="w-full h-[100px] relative flex items-center">
 
-                {/* Logo — centered in left half (0% → 50%) → sits at 25% */}
+                {/* Logo - centered in left half (0% → 50%) → sits at 25% */}
                 <div className="absolute left-1/4 -translate-x-1/2 z-10 flex items-center">
                     <span className="text-lg font-bold tracking-wide" style={{ fontFamily: "var(--fh)" }}>
                         <span style={{ color: "var(--cy)", display: "inline-block", animation: "heartbeat 3s ease-in-out infinite" }}>[</span>
@@ -19,14 +19,14 @@ export default function Footer() {
                     </span>
                 </div>
 
-                {/* Copyright — true center at 50% */}
+                {/* Copyright - true center at 50% */}
                 <div className="hidden sm:block absolute left-1/2 -translate-x-1/2 z-10 pointer-events-none">
                     <p style={{ fontFamily: "var(--fb)", fontSize: "0.85rem", color: "var(--t3)", letterSpacing: "0.3px", whiteSpace: "nowrap" }} className="pointer-events-auto">
-                        © {year} Muhammet Ali Yavuz — Naval Architecture
+                        © {year} Muhammet Ali Yavuz - Naval Architecture
                     </p>
                 </div>
 
-                {/* Socials — centered in right half (50% → 100%) → sits at 75% */}
+                {/* Socials - centered in right half (50% → 100%) → sits at 75% */}
                 <div className="absolute left-3/4 -translate-x-1/2 z-10 flex gap-3">
                     {[
                         { icon: Github, href: "https://github.com/muhammetaliyavuz-itu", label: "GitHub" },
