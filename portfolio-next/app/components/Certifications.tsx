@@ -1,18 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, CheckCircle, Copy, Check } from "lucide-react";
+import { ExternalLink, CheckCircle, Copy, Check, Eye } from "lucide-react";
 import { useState } from "react";
+import CertificateModal, { type CertificateDetail } from "./CertificateModal";
+
+const submarineTraining: CertificateDetail = {
+    image: "/images/certificates/submarine-technology-design-gmo.png",
+    alt: "Certificate of attendance for the GMO Submarine Technology and Design Training",
+    title: "Certificate of Attendance",
+    subtitle: "Submarine Technology and Design Training",
+    recipient: "Mr. Muhammet Ali Yavuz",
+    body: "Has earned this certificate by attending the 26-hour Submarine Technology and Design Training, organized by the GMO Student Commission on 26–27 October and 23–24 November 2024, and delivered by Asst. Prof. Dr. Munir Cansın Özden.",
+    signatories: [
+        { name: "Asst. Prof. Dr. Munir Cansın Özden", role: "Instructor" },
+        { name: "Bülent Hüseyinoğlu", role: "Chairman of the Board, GMO" },
+    ],
+    note: "GMO — Chamber of Naval Architects and Marine Engineers of Türkiye (Gemi Mühendisleri Odası). Translated from the Turkish original shown above.",
+};
 
 const certs = [
     { category: "EXCHANGE", name: "ATHENS Network — TU Delft", color: "#22c55e", url: "https://register.athensnetwork.eu/verify", verificationCode: "BN22-JYBT-79WV-HDCV" },
-    { category: "TRAINING", name: "Submarine Technology & Design", sub: "GMO Student Commission · 26 hours · Oct–Nov 2024", color: "var(--cy)" },
+    { category: "TRAINING", name: "Submarine Technology & Design", sub: "GMO Student Commission · 26 hours · Oct–Nov 2024", color: "var(--cy)", certificate: submarineTraining },
     { category: "CAD", name: "SolidWorks (CSWA)", color: "var(--bl)", url: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9JG2FEML5U" },
     { category: "CAD", name: "AutoCAD Certificate", color: "var(--bl)", url: "https://coursera.org/verify/LXRP49PG83TZ" },
     { category: "PROGRAMMING", name: "Python (freeCodeCamp)", color: "var(--or)", url: "https://www.freecodecamp.org/certification/muhali-itu/scientific-computing-with-python-v7" },
     { category: "EMBEDDED", name: "Arduino Certificate", color: "var(--or)", url: "https://www.udemy.com/certificate/UC-74396a11-d4a8-4924-947b-f6af469f287e/" },
     { category: "LANGUAGE", name: "TELC Deutsch B1", color: "var(--cy)", url: "https://results.telc.net/qr/JfgH5TJpT96WF1qbG0pVcwnzx5BYe0eNiHHrqN_Mq3Lnsl3NNCVKvam7jM_xm5zr" },
-] as { category: string; name: string; sub?: string; color: string; url?: string; verificationCode?: string }[];
+] as { category: string; name: string; sub?: string; color: string; url?: string; verificationCode?: string; certificate?: CertificateDetail }[];
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 25 },
@@ -45,6 +60,8 @@ function CopyButton({ code }: { code: string }) {
 }
 
 export default function Certifications() {
+    const [openCert, setOpenCert] = useState<CertificateDetail | null>(null);
+
     return (
         <section className="py-24 noise-overlay flex flex-col items-center w-full" id="certifications" style={{ background: "var(--bg2)", position: "relative", overflow: "hidden" }}>
             <div className="max-w-[1160px] mx-auto px-8 relative z-10 flex flex-col items-center w-full">
@@ -55,36 +72,53 @@ export default function Certifications() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl w-full">
                     {certs.map((cert, i) => {
                         const Card = (cert.url ? motion.a : motion.div) as typeof motion.a;
-                        const linkProps = cert.url ? { href: cert.url, target: "_blank", rel: "noopener noreferrer" } : {};
+                        const detail = cert.certificate;
+                        const linkProps = cert.url
+                            ? { href: cert.url, target: "_blank", rel: "noopener noreferrer" }
+                            : detail
+                                ? {
+                                    onClick: () => setOpenCert(detail),
+                                    onKeyDown: (e: React.KeyboardEvent) => {
+                                        if (e.key === "Enter" || e.key === " ") {
+                                            e.preventDefault();
+                                            setOpenCert(detail);
+                                        }
+                                    },
+                                    role: "button",
+                                    tabIndex: 0,
+                                }
+                                : {};
                         return (
-                        <Card key={cert.name} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} custom={i} variants={fadeInUp}
-                            {...linkProps}
-                            className="glass-card shine-sweep gradient-border-wrap group text-center"
-                            style={{ padding: "1.5rem 1.25rem", borderRadius: "var(--r)", textDecoration: "none", cursor: cert.url ? "pointer" : "default", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", transition: "transform 0.3s ease, box-shadow 0.3s ease" }}
-                            onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.3)"; }}
-                            onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
-                            <div className="flex items-center justify-center gap-2 w-full">
-                                <span style={{ fontFamily: "var(--fb)", fontSize: "0.68rem", color: cert.color, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600 }}>{cert.category}</span>
-                                <CheckCircle size={16} className="group-hover:scale-125 transition-transform duration-300" style={{ color: "var(--cy)", filter: "drop-shadow(0 0 4px rgba(34,211,238,0.4))" }} />
-                            </div>
-                            <p style={{ fontFamily: "var(--fh)", fontSize: "0.95rem", fontWeight: 600, color: "var(--t1)", flex: 1 }}>{cert.name}</p>
-                            {cert.sub && <p style={{ fontFamily: "var(--fb)", fontSize: "0.68rem", color: "var(--t3)", lineHeight: 1.4, textAlign: "center" }}>{cert.sub}</p>}
-                            {cert.verificationCode && (
-                                <div style={{ display: "flex", alignItems: "center", gap: "4px", background: "rgba(34,211,238,0.07)", borderRadius: "6px", padding: "4px 8px", border: "1px solid rgba(34,211,238,0.2)" }}>
-                                    <span style={{ fontFamily: "var(--fb)", fontSize: "0.65rem", color: "var(--t3)", letterSpacing: "0.5px", whiteSpace: "nowrap" }}>{cert.verificationCode}</span>
-                                    <CopyButton code={cert.verificationCode} />
+                            <Card key={cert.name} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} custom={i} variants={fadeInUp}
+                                {...linkProps}
+                                className="glass-card shine-sweep gradient-border-wrap group text-center"
+                                style={{ padding: "1.5rem 1.25rem", borderRadius: "var(--r)", textDecoration: "none", cursor: cert.url || detail ? "pointer" : "default", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", transition: "transform 0.3s ease, box-shadow 0.3s ease" }}
+                                onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.3)"; }}
+                                onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
+                                <div className="flex items-center justify-center gap-2 w-full">
+                                    <span style={{ fontFamily: "var(--fb)", fontSize: "0.68rem", color: cert.color, letterSpacing: "1.5px", textTransform: "uppercase", fontWeight: 600 }}>{cert.category}</span>
+                                    <CheckCircle size={16} className="group-hover:scale-125 transition-transform duration-300" style={{ color: "var(--cy)", filter: "drop-shadow(0 0 4px rgba(34,211,238,0.4))" }} />
                                 </div>
-                            )}
-                            {cert.url && (
-                                <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: "var(--fb)", fontSize: "0.72rem", fontWeight: 500, color: "var(--cy)", letterSpacing: "0.5px" }}>
-                                    Verify <ExternalLink size={12} />
-                                </div>
-                            )}
-                        </Card>
+                                <p style={{ fontFamily: "var(--fh)", fontSize: "0.95rem", fontWeight: 600, color: "var(--t1)", flex: 1 }}>{cert.name}</p>
+                                {cert.sub && <p style={{ fontFamily: "var(--fb)", fontSize: "0.68rem", color: "var(--t3)", lineHeight: 1.4, textAlign: "center" }}>{cert.sub}</p>}
+                                {cert.verificationCode && (
+                                    <div style={{ display: "flex", alignItems: "center", gap: "4px", background: "rgba(34,211,238,0.07)", borderRadius: "6px", padding: "4px 8px", border: "1px solid rgba(34,211,238,0.2)" }}>
+                                        <span style={{ fontFamily: "var(--fb)", fontSize: "0.65rem", color: "var(--t3)", letterSpacing: "0.5px", whiteSpace: "nowrap" }}>{cert.verificationCode}</span>
+                                        <CopyButton code={cert.verificationCode} />
+                                    </div>
+                                )}
+                                {(cert.url || detail) && (
+                                    <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: "var(--fb)", fontSize: "0.72rem", fontWeight: 500, color: "var(--cy)", letterSpacing: "0.5px" }}>
+                                        {cert.url ? <>Verify <ExternalLink size={12} /></> : <>View Certificate <Eye size={12} /></>}
+                                    </div>
+                                )}
+                            </Card>
                         );
                     })}
                 </div>
             </div>
+
+            <CertificateModal certificate={openCert} onClose={() => setOpenCert(null)} />
         </section>
     );
 }
