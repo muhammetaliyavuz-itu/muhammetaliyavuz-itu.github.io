@@ -85,6 +85,10 @@ export default function CVPage() {
                                     Software Dev & Automation
                                     <p className="text-xs text-slate-500 font-medium mt-1 leading-relaxed">Python, AsyncIO, C/C++, MATLAB, Arduino</p>
                                 </li>
+                                <li className="font-bold">
+                                    AI
+                                    <p className="text-xs text-slate-500 font-medium mt-1 leading-relaxed">ChatGPT, Claude, Gemini</p>
+                                </li>
                             </ul>
                         </section>
 
@@ -110,7 +114,7 @@ export default function CVPage() {
                                         <h3 className="font-bold text-slate-900 text-[0.95rem]">ITUKAT</h3>
                                         <span className="text-xs font-bold text-slate-500 uppercase">Aug 2025 - Present</span>
                                     </div>
-                                    <p className="text-[0.85rem] font-bold text-blue-700">Jr. Researcher</p>
+                                    <p className="text-[0.85rem] font-bold text-blue-700">Undergraduate Researcher</p>
                                     <p className="text-xs text-slate-600 font-medium mt-1">Force and moment measurement in CFD and comparison with EFD results.<br />Control and automation code development.</p>
                                 </div>
 

@@ -6,7 +6,7 @@ import { useRef, useState, useEffect } from "react";
 const experiences = [
     {
         period: "Aug 2025 - Present",
-        title: "Jr. Researcher",
+        title: "Undergraduate Researcher",
         company: "ITUKAT",
         companyUrl: "https://itukat.itu.edu.tr/en/home/",
         current: true,

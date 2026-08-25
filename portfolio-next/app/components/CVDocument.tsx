@@ -329,7 +329,7 @@ export default function CVDocument() {
 
                             <View style={s.expItem}>
                                 <View style={s.entryHeader}>
-                                    <Text style={s.entryRole}>Jr. Researcher</Text>
+                                    <Text style={s.entryRole}>Undergraduate Researcher</Text>
                                     <Text style={s.entryDate}>Aug 2025 - Present · Full-time</Text>
                                 </View>
                                 <Text style={s.entrySubtitle}>ITUKAT</Text>
@@ -436,6 +436,10 @@ export default function CVDocument() {
                                 <Text style={s.skillLabel}>Programming: </Text>
                                 C / C++, Python, MATLAB, Arduino
                             </Text>
+                            <Text style={s.skillRow}>
+                                <Text style={s.skillLabel}>AI: </Text>
+                                ChatGPT, Claude, Gemini
+                            </Text>
                         </View>
 
                         <View style={s.section}>
@@ -467,7 +471,7 @@ export default function CVDocument() {
                         <View style={s.section}>
                             <Text style={s.sectionTitle}>Interests</Text>
                             <View style={s.interestRow}>
-                                {["Hydrodynamics", "Ship Design", "CFD", "Marine Systems", "Defense Tech", "Autonomous Systems", "Propeller Design"].map((tag) => (
+                                {["Hydrodynamics", "Ship Design", "CFD", "Hydroacoustics", "Marine Systems", "Defense Tech", "Autonomous Systems", "Propeller Design", "AI"].map((tag) => (
                                     <Text key={tag} style={s.interestTag}>{tag}</Text>
                                 ))}
                             </View>
