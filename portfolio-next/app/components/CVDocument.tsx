@@ -134,6 +134,7 @@ const s = StyleSheet.create({
 
     certItem: { fontSize: 8.5, marginBottom: 1.5, color: INK },
     certVerify: { fontSize: 6.5, fontFamily: "Courier", color: MUTED, marginLeft: 8 },
+    certSub: { fontSize: 7.2, color: MUTED, marginLeft: 8, marginBottom: 2 },
 
     interestRow: { flexDirection: "row", flexWrap: "wrap", gap: 3 },
     interestTag: {
@@ -303,7 +304,7 @@ export default function CVDocument() {
 
                             <View style={s.entryHeader}>
                                 <Text style={s.entryRole}>BSc Shipbuilding &amp; Ocean Engineering</Text>
-                                <Text style={s.entryDate}>Sep 2021 – Jul 2026 (exp.)</Text>
+                                <Text style={s.entryDate}>Sep 2021 – Present</Text>
                             </View>
                             <Text style={s.entrySubtitle}>Istanbul Technical University</Text>
                             <Text style={s.eduDetails}>
@@ -448,6 +449,8 @@ export default function CVDocument() {
                             <Text style={s.sectionTitle}>Certifications</Text>
                             <Text style={s.certItem}>· ATHENS Network — TU Delft (Mar 2026)</Text>
                             <Text style={s.certVerify}>BN22-JYBT-79WV-HDCV</Text>
+                            <Text style={s.certItem}>· Submarine Technology &amp; Design</Text>
+                            <Text style={s.certSub}>GMO · 26 h · Oct–Nov 2024</Text>
                             <Text style={s.certItem}>· SolidWorks CSWA</Text>
                             <Text style={s.certItem}>· AutoCAD Certificate</Text>
                             <Text style={s.certItem}>· Python — freeCodeCamp</Text>

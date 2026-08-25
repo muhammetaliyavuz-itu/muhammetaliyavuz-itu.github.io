@@ -6,12 +6,13 @@ import { useState } from "react";
 
 const certs = [
     { category: "EXCHANGE", name: "ATHENS Network — TU Delft", color: "#22c55e", url: "https://register.athensnetwork.eu/verify", verificationCode: "BN22-JYBT-79WV-HDCV" },
+    { category: "TRAINING", name: "Submarine Technology & Design", sub: "GMO Student Commission · 26 hours · Oct–Nov 2024", color: "var(--cy)" },
     { category: "CAD", name: "SolidWorks (CSWA)", color: "var(--bl)", url: "https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-9JG2FEML5U" },
     { category: "CAD", name: "AutoCAD Certificate", color: "var(--bl)", url: "https://coursera.org/verify/LXRP49PG83TZ" },
     { category: "PROGRAMMING", name: "Python (freeCodeCamp)", color: "var(--or)", url: "https://www.freecodecamp.org/certification/muhali-itu/scientific-computing-with-python-v7" },
     { category: "EMBEDDED", name: "Arduino Certificate", color: "var(--or)", url: "https://www.udemy.com/certificate/UC-74396a11-d4a8-4924-947b-f6af469f287e/" },
     { category: "LANGUAGE", name: "TELC Deutsch B1", color: "var(--cy)", url: "https://results.telc.net/qr/JfgH5TJpT96WF1qbG0pVcwnzx5BYe0eNiHHrqN_Mq3Lnsl3NNCVKvam7jM_xm5zr" },
-] as { category: string; name: string; sub?: string; color: string; url: string; verificationCode?: string }[];
+] as { category: string; name: string; sub?: string; color: string; url?: string; verificationCode?: string }[];
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 25 },
@@ -52,11 +53,14 @@ export default function Certifications() {
                 </motion.div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl w-full">
-                    {certs.map((cert, i) => (
-                        <motion.a key={cert.name} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} custom={i} variants={fadeInUp}
-                            href={cert.url} target="_blank" rel="noopener noreferrer"
+                    {certs.map((cert, i) => {
+                        const Card = (cert.url ? motion.a : motion.div) as typeof motion.a;
+                        const linkProps = cert.url ? { href: cert.url, target: "_blank", rel: "noopener noreferrer" } : {};
+                        return (
+                        <Card key={cert.name} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} custom={i} variants={fadeInUp}
+                            {...linkProps}
                             className="glass-card shine-sweep gradient-border-wrap group text-center"
-                            style={{ padding: "1.5rem 1.25rem", borderRadius: "var(--r)", textDecoration: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", transition: "transform 0.3s ease, box-shadow 0.3s ease" }}
+                            style={{ padding: "1.5rem 1.25rem", borderRadius: "var(--r)", textDecoration: "none", cursor: cert.url ? "pointer" : "default", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", transition: "transform 0.3s ease, box-shadow 0.3s ease" }}
                             onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.3)"; }}
                             onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}>
                             <div className="flex items-center justify-center gap-2 w-full">
@@ -71,11 +75,14 @@ export default function Certifications() {
                                     <CopyButton code={cert.verificationCode} />
                                 </div>
                             )}
-                            <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: "var(--fb)", fontSize: "0.72rem", fontWeight: 500, color: "var(--cy)", letterSpacing: "0.5px" }}>
-                                Verify <ExternalLink size={12} />
-                            </div>
-                        </motion.a>
-                    ))}
+                            {cert.url && (
+                                <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontFamily: "var(--fb)", fontSize: "0.72rem", fontWeight: 500, color: "var(--cy)", letterSpacing: "0.5px" }}>
+                                    Verify <ExternalLink size={12} />
+                                </div>
+                            )}
+                        </Card>
+                        );
+                    })}
                 </div>
             </div>
         </section>
