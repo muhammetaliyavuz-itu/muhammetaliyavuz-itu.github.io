@@ -83,7 +83,7 @@ export default function CVPage() {
                                 </li>
                                 <li className="font-bold">
                                     Software Dev & Automation
-                                    <p className="text-xs text-slate-500 font-medium mt-1 leading-relaxed">Python, AsyncIO, C/C++, MATLAB, Arduino, AI-Assisted Development</p>
+                                    <p className="text-xs text-slate-500 font-medium mt-1 leading-relaxed">Python, AsyncIO, C/C++, MATLAB, Arduino</p>
                                 </li>
                             </ul>
                         </section>
