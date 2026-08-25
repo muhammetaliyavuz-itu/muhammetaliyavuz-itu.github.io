@@ -434,11 +434,7 @@ export default function CVDocument() {
                             </Text>
                             <Text style={s.skillRow}>
                                 <Text style={s.skillLabel}>Programming: </Text>
-                                C / C++, Python, MATLAB, Arduino
-                            </Text>
-                            <Text style={s.skillRow}>
-                                <Text style={s.skillLabel}>AI: </Text>
-                                ChatGPT, Claude, Gemini
+                                C / C++, Python, MATLAB, Arduino, AI-Assisted Development
                             </Text>
                         </View>
 
